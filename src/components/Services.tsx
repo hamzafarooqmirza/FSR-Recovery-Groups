@@ -111,7 +111,7 @@ function ServiceCard({ s }: { s: Service }) {
         sizes="(min-width: 1024px) 25vw, 100vw"
         className="object-cover transition-transform duration-500 group-hover:scale-105"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/55 via-40% to-transparent" />
       <div className="absolute inset-x-0 bottom-0 p-6">
         <h3
           className={`font-heading font-bold text-white ${
