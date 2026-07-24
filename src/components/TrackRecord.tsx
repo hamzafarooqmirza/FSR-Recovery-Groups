@@ -16,7 +16,7 @@ export function TrackRecord() {
         className="object-cover opacity-30"
         aria-hidden="true"
       />
-      <div className="absolute inset-0 bg-black/80" aria-hidden="true" />
+      <div className="absolute inset-0 bg-navy/90" aria-hidden="true" />
 
       <div className="relative mx-auto max-w-[1100px] px-6 text-center">
         <h2 className="font-heading text-3xl font-extrabold text-white sm:text-4xl">
