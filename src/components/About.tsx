@@ -3,7 +3,10 @@ import { Button } from "./Button";
 
 export function About() {
   return (
-    <section id="about" className="relative bg-white pb-20 pt-2 lg:pb-28">
+    <section id="about" className="relative overflow-hidden bg-white pb-20 pt-2 lg:pb-28">
+      <span className="pointer-events-none absolute right-[38%] top-2 hidden h-[10px] w-16 -rotate-[35deg] rounded-full bg-navy lg:block" />
+      <span className="pointer-events-none absolute right-[9%] top-16 hidden h-[10px] w-24 -rotate-[8deg] rounded-full bg-navy lg:block" />
+
       <div className="mx-auto grid max-w-[1400px] grid-cols-1 items-center gap-12 px-6 lg:grid-cols-2 lg:gap-16 lg:px-10">
         <div>
           <p className="font-heading text-2xl font-bold tracking-wide text-red">ABOUT</p>
