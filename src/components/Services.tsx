@@ -5,6 +5,7 @@ import { WhatsAppIcon } from "./icons";
 
 type Service = {
   title: string;
+  description: string;
   image: string;
   colStart: string;
   colSpan: string;
@@ -16,6 +17,8 @@ type Service = {
 const services: Service[] = [
   {
     title: "24/7 Vehicle Breakdown Recovery",
+    description:
+      "Round-the-clock recovery for any breakdown, wherever you are on the road, day or night.",
     image: "/images/service-breakdown.jpg",
     colStart: "lg:col-start-1",
     colSpan: "lg:col-span-1",
@@ -25,6 +28,8 @@ const services: Service[] = [
   },
   {
     title: "Roadside Assistance",
+    description:
+      "On-the-spot help with minor faults so you can get back on your way without a full tow.",
     image: "/images/service-roadside.jpg",
     colStart: "lg:col-start-2",
     colSpan: "lg:col-span-1",
@@ -33,6 +38,8 @@ const services: Service[] = [
   },
   {
     title: "Jumpstart Services",
+    description:
+      "Flat battery? We'll get your engine running again in minutes, anywhere you're parked.",
     image: "/images/service-jumpstart.jpg",
     colStart: "lg:col-start-3",
     colSpan: "lg:col-span-1",
@@ -41,6 +48,8 @@ const services: Service[] = [
   },
   {
     title: "Winch Out",
+    description:
+      "Stuck in mud, sand, or a ditch? Our winches pull your vehicle free without further damage.",
     image: "/images/service-winch.jpg",
     colStart: "lg:col-start-4",
     colSpan: "lg:col-span-1",
@@ -49,6 +58,8 @@ const services: Service[] = [
   },
   {
     title: "Accident Emergency Assistance",
+    description:
+      "Fast, careful recovery from the scene of a collision, handled with care and full insurance.",
     image: "/images/service-accident.jpg",
     colStart: "lg:col-start-2",
     colSpan: "lg:col-span-3",
@@ -57,6 +68,8 @@ const services: Service[] = [
   },
   {
     title: "Changing Spare Tyre",
+    description:
+      "Quick, safe roadside tyre changes so a puncture doesn't leave you waiting around.",
     image: "/images/service-tyre.jpg",
     colStart: "lg:col-start-2",
     colSpan: "lg:col-span-1",
@@ -65,6 +78,8 @@ const services: Service[] = [
   },
   {
     title: "Refueling",
+    description:
+      "Run out of fuel? We'll bring enough to get you safely to the nearest station.",
     image: "/images/service-refuel.jpg",
     colStart: "lg:col-start-3",
     colSpan: "lg:col-span-1",
@@ -73,6 +88,8 @@ const services: Service[] = [
   },
   {
     title: "Vehicle Transporting",
+    description:
+      "Safe, secure transport for vehicles that can't be driven, over any distance.",
     image: "/images/service-transport.jpg",
     colStart: "lg:col-start-4",
     colSpan: "lg:col-span-1",
@@ -103,6 +120,13 @@ function ServiceCard({ s }: { s: Service }) {
         >
           {s.title}
         </h3>
+        <p
+          className={`mt-2 text-white/80 ${
+            s.big ? "max-w-[90%] text-[14px]" : "max-w-[92%] text-[13px]"
+          }`}
+        >
+          {s.description}
+        </p>
         <Link
           href="#contact"
           className="mt-4 inline-flex items-center justify-center rounded-full bg-red px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-red-dark"
