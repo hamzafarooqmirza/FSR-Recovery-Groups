@@ -34,11 +34,9 @@ export function Gallery() {
           Our Photo Gallery<span className="text-red">!</span>
         </h2>
         <p className="mx-auto mt-4 max-w-2xl text-[15px] text-white/70">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
-          gravida ultrices sagittis. Donec rhoncus sapien lacus, sit amet
-          dignissim ipsum tristique ut. Integer egestas dignissim quam et
-          iaculis. In aliquet, tellus efficitur consequat scelerisque, libero
-          ex faucibus tortor, lacinia maximus elit sem ac libero.
+          A look at our recovery team in action, from roadside tyre changes
+          to winching vehicles out of difficult terrain. These are the jobs
+          that keep our customers moving, whatever the weather or location.
         </p>
 
         <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-3">

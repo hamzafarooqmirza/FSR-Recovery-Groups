@@ -128,14 +128,12 @@ export function Services() {
           </h2>
         </div>
         <p className="mt-4 max-w-3xl text-[15px] leading-relaxed text-navy/70">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
-          gravida ultrices sagittis. Donec rhoncus sapien lacus, sit amet
-          dignissim ipsum tristique ut. Integer egestas dignissim quam et
-          iaculis. In aliquet, tellus efficitur consequat scelerisque, libero
-          ex faucibus tortor, lacinia maximus elit sem ac libero. Donec
-          sodales finibus pellentesque. Nunc tellus diam, cursus et rhoncus
-          non, hendrerit eget leo. Nulla in porttitor nunc. Curabitur a ipsum
-          non arcu viverra sodales quis id dolor.
+          From roadside breakdowns to full accident recovery, our range of
+          services covers every situation you might face on the road. Each
+          job is handled by trained professionals using the right equipment
+          for the task, so whether it&rsquo;s a simple jumpstart or a
+          multi-vehicle transport, you can count on a fast, professional
+          response, wherever and whenever you need us.
         </p>
 
         <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:grid-rows-3">

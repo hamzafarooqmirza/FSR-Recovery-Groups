@@ -56,11 +56,11 @@ export function Hero() {
             Services<span className="text-red">.</span>
           </h1>
           <p className="mt-5 max-w-xl text-[15px] leading-relaxed text-white/70">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec massa
-            erat, varius tempus tincidunt in, vehicula quis orci. Sed faucibus
-            ultrices velit vel bibendum. Proin magna velit, euismod eget urna
-            vitae, viverra semper quam. Pellentesque aliquet ornare lacus, sit
-            amet semper orci venenatis ac.
+            When you break down or get caught in an accident, every minute on
+            the roadside counts. Our fully trained recovery team and modern
+            fleet reach you fast, day or night, so you&rsquo;re never left
+            stranded for long. From a simple jumpstart to a full vehicle
+            transport, we get you and your car back on the road safely.
           </p>
           <div className="mt-8">
             <Button href="#contact" icon={<WhatsAppIcon className="h-4 w-4" />}>
