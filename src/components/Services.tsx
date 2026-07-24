@@ -1,0 +1,155 @@
+import Image from "next/image";
+import Link from "next/link";
+import { Button } from "./Button";
+import { WhatsAppIcon } from "./icons";
+
+type Service = {
+  title: string;
+  image: string;
+  colStart: string;
+  colSpan: string;
+  rowStart: string;
+  rowSpan: string;
+  big?: boolean;
+};
+
+const services: Service[] = [
+  {
+    title: "24/7 Vehicle Breakdown Recovery",
+    image: "/images/service-breakdown.jpg",
+    colStart: "lg:col-start-1",
+    colSpan: "lg:col-span-1",
+    rowStart: "lg:row-start-1",
+    rowSpan: "lg:row-span-3",
+    big: true,
+  },
+  {
+    title: "Roadside Assistance",
+    image: "/images/service-roadside.jpg",
+    colStart: "lg:col-start-2",
+    colSpan: "lg:col-span-1",
+    rowStart: "lg:row-start-1",
+    rowSpan: "lg:row-span-1",
+  },
+  {
+    title: "Jumpstart Services",
+    image: "/images/service-jumpstart.jpg",
+    colStart: "lg:col-start-3",
+    colSpan: "lg:col-span-1",
+    rowStart: "lg:row-start-1",
+    rowSpan: "lg:row-span-1",
+  },
+  {
+    title: "Winch Out",
+    image: "/images/service-winch.jpg",
+    colStart: "lg:col-start-4",
+    colSpan: "lg:col-span-1",
+    rowStart: "lg:row-start-1",
+    rowSpan: "lg:row-span-1",
+  },
+  {
+    title: "Accident Emergency Assistance",
+    image: "/images/service-accident.jpg",
+    colStart: "lg:col-start-2",
+    colSpan: "lg:col-span-3",
+    rowStart: "lg:row-start-2",
+    rowSpan: "lg:row-span-1",
+  },
+  {
+    title: "Changing Spare Tyre",
+    image: "/images/service-tyre.jpg",
+    colStart: "lg:col-start-2",
+    colSpan: "lg:col-span-1",
+    rowStart: "lg:row-start-3",
+    rowSpan: "lg:row-span-1",
+  },
+  {
+    title: "Refueling",
+    image: "/images/service-refuel.jpg",
+    colStart: "lg:col-start-3",
+    colSpan: "lg:col-span-1",
+    rowStart: "lg:row-start-3",
+    rowSpan: "lg:row-span-1",
+  },
+  {
+    title: "Vehicle Transporting",
+    image: "/images/service-transport.jpg",
+    colStart: "lg:col-start-4",
+    colSpan: "lg:col-span-1",
+    rowStart: "lg:row-start-3",
+    rowSpan: "lg:row-span-1",
+  },
+];
+
+function ServiceCard({ s }: { s: Service }) {
+  return (
+    <div
+      className={`group relative overflow-hidden rounded-2xl ${s.colStart} ${s.colSpan} ${s.rowStart} ${s.rowSpan}`}
+      style={{ minHeight: s.big ? 520 : 230 }}
+    >
+      <Image
+        src={s.image}
+        alt={s.title}
+        fill
+        sizes="(min-width: 1024px) 25vw, 100vw"
+        className="object-cover transition-transform duration-500 group-hover:scale-105"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent" />
+      <div className="absolute inset-x-0 bottom-0 p-6">
+        <h3
+          className={`font-heading font-bold text-white ${
+            s.big ? "text-2xl" : "text-xl"
+          } max-w-[85%]`}
+        >
+          {s.title}
+        </h3>
+        <Link
+          href="#contact"
+          className="mt-4 inline-flex items-center justify-center rounded-full bg-red px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-red-dark"
+        >
+          Read more
+        </Link>
+      </div>
+    </div>
+  );
+}
+
+export function Services() {
+  return (
+    <section id="services" className="bg-white py-20 lg:py-28">
+      <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
+        <div className="flex items-center gap-3">
+          <span className="flex items-end gap-[3px]">
+            <span className="h-7 w-[4px] -skew-x-12 rounded-sm bg-red" />
+            <span className="h-7 w-[4px] -skew-x-12 rounded-sm bg-red" />
+          </span>
+          <h2 className="font-heading text-3xl font-extrabold text-navy sm:text-4xl">
+            Our Key Service Offerings<span className="text-red">.</span>
+          </h2>
+        </div>
+        <p className="mt-4 max-w-3xl text-[15px] leading-relaxed text-navy/70">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
+          gravida ultrices sagittis. Donec rhoncus sapien lacus, sit amet
+          dignissim ipsum tristique ut. Integer egestas dignissim quam et
+          iaculis. In aliquet, tellus efficitur consequat scelerisque, libero
+          ex faucibus tortor, lacinia maximus elit sem ac libero. Donec
+          sodales finibus pellentesque. Nunc tellus diam, cursus et rhoncus
+          non, hendrerit eget leo. Nulla in porttitor nunc. Curabitur a ipsum
+          non arcu viverra sodales quis id dolor.
+        </p>
+
+        <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:grid-rows-3">
+          {services.map((s) => (
+            <ServiceCard key={s.title} s={s} />
+          ))}
+        </div>
+
+        <div className="mt-12 flex justify-center">
+          <Button href="#contact" icon={<WhatsAppIcon className="h-4 w-4" />}>
+            Call Now
+          </Button>
+        </div>
+      </div>
+    </section>
+  );
+}
