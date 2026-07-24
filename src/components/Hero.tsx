@@ -42,7 +42,7 @@ function DecorPlus({ className }: { className?: string }) {
 
 export function Hero() {
   return (
-    <section id="home" className="relative overflow-hidden bg-navy pt-14 pb-4 lg:pt-20">
+    <section id="home" className="relative overflow-hidden bg-navy pt-14 lg:pt-20">
       <DecorCircleArrow className="pointer-events-none absolute left-2 top-24 h-24 w-24 lg:left-10" />
       <DecorCloud className="pointer-events-none absolute left-[18%] top-14 h-14 w-24 lg:top-10" />
       <DecorCircleArrow className="pointer-events-none absolute right-[6%] top-32 h-20 w-20" />
