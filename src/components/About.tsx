@@ -68,8 +68,8 @@ export function About() {
         </div>
 
         <div className="relative">
-          <div className="absolute -right-4 -bottom-6 h-[85%] w-[70%] rounded-tl-[110px] bg-navy" />
-          <div className="relative overflow-hidden rounded-tr-[110px] rounded-bl-[28px] rounded-br-[28px] rounded-tl-[28px] shadow-xl">
+          <div className="absolute -right-5 -bottom-5 h-[92%] w-[35%] bg-navy" />
+          <div className="relative overflow-hidden rounded-tr-[180px] shadow-xl">
             <Image
               src="/images/about-tow.jpg"
               alt="Tow truck loading a red car for recovery"

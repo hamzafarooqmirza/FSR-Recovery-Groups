@@ -13,10 +13,10 @@ export function TrackRecord() {
         src="/images/trackrecord-bg.jpg"
         alt=""
         fill
-        className="object-cover opacity-40"
+        className="object-cover opacity-30"
         aria-hidden="true"
       />
-      <div className="absolute inset-0 bg-navy/70" aria-hidden="true" />
+      <div className="absolute inset-0 bg-black/80" aria-hidden="true" />
 
       <div className="relative mx-auto max-w-[1100px] px-6 text-center">
         <h2 className="font-heading text-3xl font-extrabold text-white sm:text-4xl">
@@ -31,13 +31,13 @@ export function TrackRecord() {
 
         <div className="relative mt-16 grid grid-cols-1 gap-12 sm:grid-cols-3 sm:gap-6">
           <svg
-            viewBox="0 0 700 60"
-            className="pointer-events-none absolute left-1/2 top-6 hidden w-[70%] -translate-x-1/2 sm:block"
+            viewBox="0 0 700 100"
+            className="pointer-events-none absolute left-1/2 top-2 hidden w-[72%] -translate-x-1/2 sm:block"
             preserveAspectRatio="none"
             aria-hidden="true"
           >
             <path
-              d="M10,10 C 130,70 220,70 350,30 C 480,-10 570,-10 690,45"
+              d="M10,25 C 130,115 220,115 350,45 C 480,-25 570,-25 690,65"
               fill="none"
               stroke="white"
               strokeWidth="2.5"

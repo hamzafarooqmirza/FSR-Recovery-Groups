@@ -49,9 +49,9 @@ export function Hero() {
       <DecorPlus className="pointer-events-none absolute right-[22%] top-16 h-5 w-5" />
       <DecorPlus className="pointer-events-none absolute left-[46%] bottom-24 h-4 w-4" />
 
-      <div className="relative mx-auto grid max-w-[1400px] grid-cols-1 items-center gap-10 px-6 lg:grid-cols-2 lg:gap-6 lg:px-10">
+      <div className="relative mx-auto grid max-w-[1440px] grid-cols-1 items-center gap-10 px-6 lg:grid-cols-[1.3fr_1fr] lg:gap-4 lg:px-10">
         <div className="relative z-10">
-          <h1 className="font-heading text-[32px] font-extrabold leading-[1.2] text-white sm:text-[38px] lg:text-[44px]">
+          <h1 className="font-heading text-[32px] font-extrabold leading-[1.25] text-white sm:text-[38px] lg:text-[32px] xl:text-[35px]">
             Why FSR Recovery Groups Stands Out as the Best Choice for Towing
             Services<span className="text-red">.</span>
           </h1>
@@ -79,7 +79,7 @@ export function Hero() {
             width={1100}
             height={387}
             priority
-            className="w-full max-w-[640px] object-contain lg:max-w-none"
+            className="w-full max-w-[640px] object-contain lg:max-w-none lg:scale-[1.3] lg:origin-bottom-right"
           />
         </div>
       </div>
