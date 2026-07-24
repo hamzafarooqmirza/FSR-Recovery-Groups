@@ -14,11 +14,24 @@ const CURVE =
 
 const FILL = `${CURVE} L 1920,280 L 0,280 Z`;
 
+// Centers, on-curve y and local tangent angle sampled directly from the
+// traced curve data, then nudged down onto the white road surface (the
+// dashes are navy, so they'd vanish against the navy sky above the curve).
+// Deriving them from the real path keeps every dash glued to the curve
+// regardless of viewport width.
 const dashes = [
-  { x: 172, y: 78, rot: -20, w: 68 },
-  { x: 330, y: 45, rot: -10, w: 96 },
-  { x: 760, y: 128, rot: -48, w: 66 },
-];
+  { x: 110, y: 83.3, rot: -9.4 },
+  { x: 260, y: 43.0, rot: -11.2 },
+  { x: 420, y: 22.1, rot: -2.8 },
+  { x: 600, y: 20.0, rot: 0 },
+  { x: 780, y: 45.7, rot: 15.3 },
+  { x: 960, y: 110.5, rot: 25.0 },
+  { x: 1140, y: 187.3, rot: 19.7 },
+  { x: 1320, y: 232.4, rot: 10.4 },
+  { x: 1500, y: 247.0, rot: -0.2 },
+  { x: 1680, y: 243.7, rot: -6.9 },
+  { x: 1850, y: 209.3, rot: -12.5 },
+].map((d) => ({ ...d, y: d.y + 16, w: 34 }));
 
 export function RoadDivider() {
   return (
@@ -35,13 +48,13 @@ export function RoadDivider() {
         {dashes.map((d, i) => (
           <rect
             key={i}
-            x={d.x}
-            y={d.y}
+            x={d.x - d.w / 2}
+            y={d.y - 4.5}
             width={d.w}
             height="9"
             rx="4.5"
             fill="#0b2241"
-            transform={`rotate(${d.rot} ${d.x + d.w / 2} ${d.y + 4.5})`}
+            transform={`rotate(${d.rot} ${d.x} ${d.y})`}
           />
         ))}
       </svg>
