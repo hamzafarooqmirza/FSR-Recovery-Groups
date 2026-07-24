@@ -46,6 +46,22 @@ export function TrackRecord() {
             />
           </svg>
 
+          <svg
+            viewBox="0 0 60 500"
+            className="pointer-events-none absolute left-1/2 top-0 h-full w-10 -translate-x-1/2 sm:hidden"
+            preserveAspectRatio="none"
+            aria-hidden="true"
+          >
+            <path
+              d="M15,10 C 60,90 0,160 30,250 C 60,340 0,410 15,490"
+              fill="none"
+              stroke="white"
+              strokeWidth="2.5"
+              strokeDasharray="9 9"
+              strokeLinecap="round"
+            />
+          </svg>
+
           {stats.map((s) => (
             <div key={s.label} className="relative">
               <p className="font-heading text-5xl font-extrabold text-white sm:text-6xl">
