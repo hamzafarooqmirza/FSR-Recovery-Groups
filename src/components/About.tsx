@@ -50,7 +50,7 @@ export function About() {
           </div>
 
           <div className="mt-8">
-            <Button href="#services" variant="solid">
+            <Button href="/about" variant="solid">
               Read more
             </Button>
           </div>

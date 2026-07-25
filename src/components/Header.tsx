@@ -1,20 +1,22 @@
 "use client";
 
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import { Logo } from "./Logo";
 import { Button } from "./Button";
 import { WhatsAppIcon, ChevronDownIcon, MenuIcon, CloseIcon } from "./icons";
 
 const navLinks = [
-  { label: "Home", href: "#home", active: true },
-  { label: "About Us", href: "#about" },
-  { label: "Services", href: "#services", hasDropdown: true },
-  { label: "Gallery", href: "#gallery" },
-  { label: "Contact Us", href: "#contact" },
+  { label: "Home", href: "/" },
+  { label: "About Us", href: "/about" },
+  { label: "Services", href: "/#services", hasDropdown: true },
+  { label: "Gallery", href: "/#gallery" },
+  { label: "Contact Us", href: "/#contact" },
 ];
 
 export function Header() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
     <header className="sticky top-0 z-50 bg-navy">
@@ -22,28 +24,31 @@ export function Header() {
         <Logo variant="light" size="md" />
 
         <nav className="hidden items-center lg:flex">
-          {navLinks.map((link, i) => (
-            <div key={link.label} className="flex items-center">
-              {i !== 0 && <span className="mx-4 h-4 w-px bg-white/25" aria-hidden="true" />}
-              <a
-                href={link.href}
-                className="relative flex items-center gap-1 py-2 text-[15px] font-medium text-white/90 transition-colors hover:text-white"
-              >
-                {link.label}
-                {link.hasDropdown && <ChevronDownIcon className="h-2.5 w-2.5 text-red" />}
-                {link.active && (
-                  <span className="absolute -bottom-0.5 left-0 h-[3px] w-6 rounded-full bg-red" />
-                )}
-              </a>
-            </div>
-          ))}
+          {navLinks.map((link, i) => {
+            const isActive = pathname === link.href;
+            return (
+              <div key={link.label} className="flex items-center">
+                {i !== 0 && <span className="mx-4 h-4 w-px bg-white/25" aria-hidden="true" />}
+                <a
+                  href={link.href}
+                  className="relative flex items-center gap-1 py-2 text-[15px] font-medium text-white/90 transition-colors hover:text-white"
+                >
+                  {link.label}
+                  {link.hasDropdown && <ChevronDownIcon className="h-2.5 w-2.5 text-red" />}
+                  {isActive && (
+                    <span className="absolute -bottom-0.5 left-0 h-[3px] w-6 rounded-full bg-red" />
+                  )}
+                </a>
+              </div>
+            );
+          })}
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
           <Button href="tel:+447888502989" icon={<WhatsAppIcon className="h-4 w-4" />}>
             Call Now
           </Button>
-          <Button href="#contact" variant="outline">
+          <Button href="/#contact" variant="outline">
             Get a Free Quote
           </Button>
         </div>
@@ -77,7 +82,7 @@ export function Header() {
             <Button href="tel:+447888502989" icon={<WhatsAppIcon className="h-4 w-4" />}>
               Call Now
             </Button>
-            <Button href="#contact" variant="outline">
+            <Button href="/#contact" variant="outline">
               Get a Free Quote
             </Button>
           </div>
