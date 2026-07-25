@@ -30,7 +30,7 @@ export function Header({ activePath = "/" }: { activePath?: string }) {
             </a>
             <span className="hidden text-white/25 md:inline">|</span>
             <span>
-              <i className="fas fa-map-marker-alt mr-1"></i>24/7 across the region
+              <i className="fas fa-triangle-exclamation mr-1"></i>24/7 Emergency Towing &amp; Recovery – Fast Response, Call Now
             </span>
           </div>
           <div className="flex gap-4 text-base">
