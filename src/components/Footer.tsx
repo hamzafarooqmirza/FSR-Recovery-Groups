@@ -1,87 +1,89 @@
 import Link from "next/link";
 import { Logo } from "./Logo";
-import { Button } from "./Button";
-import { PhoneIcon, MailIcon } from "./icons";
-
-const quickLinks = [
-  { label: "Home", href: "/" },
-  { label: "About Us", href: "/about" },
-  { label: "Our Services", href: "/#services" },
-  { label: "Gallery", href: "/#gallery" },
-  { label: "Contact Us", href: "/#contact" },
-];
-
-const helpLinks = [
-  { label: "Terms & Conditions", href: "#" },
-  { label: "Privacy Policy", href: "#" },
-];
 
 export function Footer() {
   return (
-    <footer className="bg-navy">
-      <div className="mx-auto max-w-[1400px] px-6 py-16 lg:px-10">
-        <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
+    <footer className="bg-navy pt-16 pb-8 text-slate-300">
+      <div className="container-site">
+        <div className="mb-12 grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+          {/* Brand */}
           <div>
             <Logo variant="light" size="md" />
-            <p className="mt-5 max-w-xs text-[15px] leading-relaxed text-white/70">
-              Need Help Fast? Click Below To Get Your Free Quote Today And Let
-              Us Handle The Rest!
+            <p className="mt-4 mb-5 text-sm leading-7 text-slate-400">
+              Vehicle recovery, towing and roadside support for drivers across the region,
+              24 hours a day, every day of the year.
             </p>
-            <div className="mt-6">
-              <Button href="/#contact">Get a Free Quote</Button>
+            <div className="flex gap-3">
+              <a href="https://wa.me/447888502989" target="_blank" rel="noopener noreferrer" className="social-icon">
+                <i className="fab fa-whatsapp"></i>
+              </a>
+              <a href="#" className="social-icon">
+                <i className="fab fa-facebook-f"></i>
+              </a>
+              <a href="#" className="social-icon">
+                <i className="fab fa-instagram"></i>
+              </a>
             </div>
           </div>
 
-          <div className="border-white/15 lg:border-l lg:pl-10">
-            <h3 className="font-heading text-lg font-bold text-red">Quick Links</h3>
-            <ul className="mt-5 space-y-3">
-              {quickLinks.map((l) => (
-                <li key={l.label}>
-                  <Link href={l.href} className="text-[15px] text-white/75 hover:text-white">
-                    {l.label}
-                  </Link>
-                </li>
-              ))}
+          {/* Contact */}
+          <div>
+            <h4 className="mb-5 border-b border-red/40 pb-2 text-lg font-bold text-white">Contact Us</h4>
+            <div className="space-y-1">
+              <div className="contact-info-item">
+                <i className="fa-solid fa-phone mt-0.5 shrink-0 text-red"></i>
+                <a href="tel:+447888502989" className="transition hover:text-white">+44 7888 502989</a>
+              </div>
+              <div className="contact-info-item">
+                <i className="fa-solid fa-envelope mt-0.5 shrink-0 text-red"></i>
+                <a href="mailto:Fsrbreakdownrecovery@gmail.com" className="break-all text-sm transition hover:text-white">
+                  Fsrbreakdownrecovery@gmail.com
+                </a>
+              </div>
+              <div className="contact-info-item">
+                <i className="fa-solid fa-location-dot mt-0.5 shrink-0 text-red"></i>
+                <span>Covering the region, 24/7</span>
+              </div>
+              <div className="contact-info-item">
+                <i className="fa-solid fa-clock mt-0.5 shrink-0 text-red"></i>
+                <span>Available for urgent roadside enquiries</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Quick Links */}
+          <div>
+            <h4 className="mb-5 border-b border-red/40 pb-2 text-lg font-bold text-white">Quick Links</h4>
+            <ul className="space-y-3">
+              <li><Link href="/" className="footer-link"><i className="fa-solid fa-chevron-right text-xs text-red"></i>Home</Link></li>
+              <li><Link href="/services" className="footer-link"><i className="fa-solid fa-chevron-right text-xs text-red"></i>Services</Link></li>
+              <li><Link href="/about" className="footer-link"><i className="fa-solid fa-chevron-right text-xs text-red"></i>About Us</Link></li>
+              <li><Link href="/areas" className="footer-link"><i className="fa-solid fa-chevron-right text-xs text-red"></i>Areas Covered</Link></li>
+              <li><Link href="/contact" className="footer-link"><i className="fa-solid fa-chevron-right text-xs text-red"></i>Contact</Link></li>
             </ul>
           </div>
 
-          <div className="border-white/15 lg:border-l lg:pl-10">
-            <h3 className="font-heading text-lg font-bold text-red">Contact Us</h3>
-            <ul className="mt-5 space-y-4">
-              <li className="flex items-center gap-3 text-[15px] text-white/75">
-                <PhoneIcon className="h-4 w-4 shrink-0 text-white/60" />
-                <a href="tel:+447888502989" className="hover:text-white">
-                  +447888502989
-                </a>
-              </li>
-              <li className="flex items-center gap-3 text-[15px] text-white/75">
-                <MailIcon className="h-4 w-4 shrink-0 text-white/60" />
-                <a href="mailto:youremailhere@abc.com" className="hover:text-white">
-                  youremailhere@abc.com
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          <div className="border-white/15 lg:border-l lg:pl-10">
-            <h3 className="font-heading text-lg font-bold text-red">Help</h3>
-            <ul className="mt-5 space-y-3">
-              {helpLinks.map((l) => (
-                <li key={l.label}>
-                  <Link href={l.href} className="text-[15px] text-white/75 hover:text-white">
-                    {l.label}
-                  </Link>
-                </li>
-              ))}
+          {/* Services */}
+          <div>
+            <h4 className="mb-5 border-b border-red/40 pb-2 text-lg font-bold text-white">Our Services</h4>
+            <ul className="space-y-3">
+              <li><a href="/services" className="footer-link"><i className="fa-solid fa-chevron-right text-xs text-red"></i>Vehicle Breakdown Recovery</a></li>
+              <li><a href="/services" className="footer-link"><i className="fa-solid fa-chevron-right text-xs text-red"></i>Roadside Assistance</a></li>
+              <li><a href="/services" className="footer-link"><i className="fa-solid fa-chevron-right text-xs text-red"></i>Jumpstart Services</a></li>
+              <li><a href="/services" className="footer-link"><i className="fa-solid fa-chevron-right text-xs text-red"></i>Accident Recovery</a></li>
+              <li><a href="/services" className="footer-link"><i className="fa-solid fa-chevron-right text-xs text-red"></i>Vehicle Transporting</a></li>
             </ul>
           </div>
         </div>
-      </div>
 
-      <div className="bg-red py-4">
-        <p className="text-center text-[13px] text-white">
-          {`© ${new Date().getFullYear()} FSR Recovery Groups All Rights Reserved. | Designed & Developed by Dedesign Solutions`}
-        </p>
+        {/* Bottom Bar */}
+        <div className="flex flex-col items-center justify-between gap-3 border-t border-white/10 pt-6 text-sm text-slate-500 sm:flex-row">
+          <p>{`© ${new Date().getFullYear()} FSR Recovery Groups — Roadside Recovery & Towing Services. All rights reserved.`}</p>
+          <div className="flex gap-5">
+            <a href="#" className="transition hover:text-red">Privacy Policy</a>
+            <a href="#" className="transition hover:text-red">Terms</a>
+          </div>
+        </div>
       </div>
     </footer>
   );

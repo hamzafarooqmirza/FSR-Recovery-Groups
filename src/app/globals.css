@@ -5,14 +5,21 @@
   --color-navy-light: #12335f;
   --color-red: #e81a33;
   --color-red-dark: #c30f27;
+  --color-whatsapp: #25d366;
   --font-heading: var(--font-poppins);
   --font-sans: var(--font-inter);
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: #ffffff;
   color: var(--color-navy);
   font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+  padding-bottom: env(safe-area-inset-bottom, 0);
 }
 
 h1,
@@ -21,4 +28,242 @@ h3,
 h4,
 .font-heading {
   font-family: var(--font-poppins), var(--font-inter), Arial, sans-serif;
+}
+
+.container-site {
+  width: min(100% - 2rem, 1200px);
+  margin-inline: auto;
+}
+
+/* ── Buttons ── */
+.btn-glow:hover {
+  box-shadow: 0 0 18px rgba(232, 26, 51, 0.5);
+}
+
+/* ── Fade-up scroll animation ── */
+.fade-up {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.fade-up.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Hero background ── */
+.hero-bg {
+  background: linear-gradient(90deg, rgba(11, 34, 65, 0.95), rgba(11, 34, 65, 0.8)),
+    url("/images/service-roadside.jpg") center/cover no-repeat;
+}
+
+/* ── CTA background (no fixed on mobile — Android/iOS don't support it) ── */
+.cta-parallax-bg {
+  background: linear-gradient(rgba(11, 34, 65, 0.85), rgba(11, 34, 65, 0.85)),
+    url("/images/gallery-2.jpg") center/cover no-repeat;
+}
+@media (min-width: 768px) and (hover: hover) {
+  .cta-parallax-bg {
+    background-attachment: fixed;
+  }
+}
+
+/* ── Service cards (white, light) ── */
+.service-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.18);
+  border-color: rgba(232, 26, 51, 0.5);
+}
+
+/* ── Dark service cards ── */
+.dark-service-card {
+  background: #0f2a4d;
+  border: 1px solid rgba(232, 26, 51, 0.2);
+  transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+  border-radius: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+.dark-service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, transparent 50%, rgba(232, 26, 51, 0.18) 50%);
+}
+.dark-service-card:hover {
+  transform: translateY(-12px);
+  background: #0b2241;
+  border-color: rgba(232, 26, 51, 0.5);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+}
+
+/* ── Feature icon cards ── */
+.feature-icon-card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(232, 26, 51, 0.2);
+  border-radius: 1.25rem;
+  transition: all 0.3s ease;
+  text-align: center;
+  padding: 1.5rem 1rem;
+}
+.feature-icon-card:hover {
+  background: rgba(232, 26, 51, 0.12);
+  border-color: rgba(232, 26, 51, 0.4);
+  transform: translateY(-6px);
+}
+
+/* ── Dark feature cards (Why Choose) ── */
+.dark-feature-card {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(232, 26, 51, 0.2);
+  border-radius: 1.5rem;
+  transition: all 0.3s ease;
+}
+.dark-feature-card:hover {
+  background: rgba(232, 26, 51, 0.12);
+  border-color: rgba(232, 26, 51, 0.4);
+  transform: translateY(-8px);
+}
+
+/* ── Reviews slider ── */
+.reviews-track {
+  display: flex;
+  animation: reviewsScroll 32s linear infinite;
+  width: max-content;
+}
+@keyframes reviewsScroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ── Marquee ── */
+.marquee-container {
+  background: linear-gradient(90deg, #0b2241, #12335f, #0b2241);
+  overflow: hidden;
+}
+.marquee-content {
+  display: flex;
+  animation: marquee 28s linear infinite;
+  white-space: nowrap;
+}
+.marquee-content:hover {
+  animation-play-state: paused;
+}
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ── Animated phone / contact pulse ── */
+.animated-contact {
+  animation: pulseGlow 2s ease-in-out infinite;
+}
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(232, 26, 51, 0.4); }
+  50% { box-shadow: 0 0 0 8px rgba(232, 26, 51, 0); }
+}
+
+/* ── Hero form glass card ── */
+.hero-form-card {
+  background: rgba(11, 34, 65, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 1.5rem;
+}
+@supports (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px)) {
+  .hero-form-card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+  }
+}
+
+/* ── Floating buttons ── */
+.float-help {
+  animation: pulseHelp 1.8s infinite;
+}
+@keyframes pulseHelp {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(232, 26, 51, 0.45);
+  }
+  70% {
+    transform: scale(1.04);
+    box-shadow: 0 0 0 12px rgba(232, 26, 51, 0);
+  }
+}
+
+/* ── Footer links ── */
+.footer-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #cbd5e1;
+  transition: color 0.2s ease, padding-left 0.2s ease;
+}
+.footer-link:hover {
+  color: var(--color-red);
+  padding-left: 4px;
+}
+
+/* ── Social icon circles ── */
+.social-icon {
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  border: 1px solid rgba(232, 26, 51, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #cbd5e1;
+  transition: all 0.3s ease;
+}
+.social-icon:hover {
+  background: var(--color-red);
+  border-color: var(--color-red);
+  color: white;
+}
+
+/* ── Contact info items ── */
+.contact-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.625rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  color: #cbd5e1;
+  transition: color 0.2s ease;
+}
+.contact-info-item:hover {
+  color: white;
+}
+.contact-info-item:last-child {
+  border-bottom: none;
+}
+
+/* ── Nav arrow prefix (desktop only) ── */
+@media (min-width: 1024px) {
+  .nav-arrow::before {
+    content: '→ ';
+    color: var(--color-red);
+  }
+}
+
+/* ── Testimonial card ── */
+.testimonial-card {
+  border: 1px solid rgba(232, 26, 51, 0.15);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  background: white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.testimonial-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.1);
 }
