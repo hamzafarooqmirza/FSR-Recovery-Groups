@@ -37,7 +37,7 @@ export default function RootLayout({
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         />
       </head>
-      <body className="antialiased">
+      <body className="pb-14 antialiased sm:pb-0">
         <ScrollAnimations />
         <FloatingButtons />
         {children}
