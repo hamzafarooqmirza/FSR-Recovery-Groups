@@ -19,31 +19,10 @@ export function Header({ activePath = "/" }: { activePath?: string }) {
     <>
       {/* Top Bar */}
       <div className="border-b border-red/20 bg-navy py-2 text-white/70">
-        <div className="container-site flex flex-wrap items-center justify-center gap-3 text-xs md:justify-between md:text-sm">
-          <div className="flex flex-wrap items-center justify-center gap-3">
-            <a href="tel:+447888502989" className="transition hover:text-white">
-              <i className="fas fa-phone-alt mr-1"></i>+44 7888 502989
-            </a>
-            <span className="hidden text-white/25 md:inline">|</span>
-            <a href="mailto:Fsrbreakdownrecovery@gmail.com" className="transition hover:text-white">
-              <i className="fas fa-envelope mr-1"></i>Fsrbreakdownrecovery@gmail.com
-            </a>
-            <span className="hidden text-white/25 md:inline">|</span>
-            <span>
-              <i className="fas fa-triangle-exclamation mr-1"></i>24/7 Emergency Towing &amp; Recovery – Fast Response, Call Now
-            </span>
-          </div>
-          <div className="flex gap-4 text-base">
-            <a href="https://wa.me/447888502989" target="_blank" rel="noopener noreferrer" className="transition hover:text-white">
-              <i className="fab fa-whatsapp"></i>
-            </a>
-            <a href="#" className="transition hover:text-white">
-              <i className="fab fa-facebook-f"></i>
-            </a>
-            <a href="#" className="transition hover:text-white">
-              <i className="fab fa-instagram"></i>
-            </a>
-          </div>
+        <div className="container-site flex items-center justify-center text-xs md:text-sm">
+          <span>
+            <i className="fas fa-triangle-exclamation mr-1"></i>24/7 Emergency Towing &amp; Recovery – Fast Response, Call Now
+          </span>
         </div>
       </div>
 
