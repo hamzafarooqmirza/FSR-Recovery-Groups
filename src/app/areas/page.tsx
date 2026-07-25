@@ -1,0 +1,256 @@
+import type { Metadata } from "next";
+import Image from "next/image";
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
+
+export const metadata: Metadata = {
+  title: "Areas Covered",
+  description:
+    "FSR Recovery Groups covers motorways, city streets, rural roads and long-distance transport across the region. Call +44 7888 502989 for local roadside recovery.",
+};
+
+const areas = [
+  {
+    name: "Motorway Recovery",
+    desc: "Safe, fast response to breakdowns and accidents on motorways and dual carriageways, day or night.",
+    icon: "fa-solid fa-road",
+  },
+  {
+    name: "City Centre",
+    desc: "Quick roadside support in busy city streets, car parks and one-way systems.",
+    icon: "fa-solid fa-city",
+  },
+  {
+    name: "Residential Areas",
+    desc: "Recovery from driveways, side streets and housing estates across the region.",
+    icon: "fa-solid fa-house",
+  },
+  {
+    name: "Rural & Off-Road",
+    desc: "Winch-out and recovery support on country lanes, farm tracks and difficult ground.",
+    icon: "fa-solid fa-tree",
+  },
+  {
+    name: "Industrial Estates",
+    desc: "Support for fleet vehicles and commercial breakdowns at industrial and business parks.",
+    icon: "fa-solid fa-warehouse",
+  },
+  {
+    name: "Retail Parks",
+    desc: "Fast callouts to shopping centres, retail parks and public car parks.",
+    icon: "fa-solid fa-cart-shopping",
+  },
+  {
+    name: "Long Distance",
+    desc: "Planned vehicle transport across longer distances, for dealership transfers or personal moves.",
+    icon: "fa-solid fa-route",
+  },
+  {
+    name: "Out-of-Hours",
+    desc: "24/7 availability for nights, weekends and holidays — breakdowns don't keep office hours, so neither do we.",
+    icon: "fa-solid fa-clock",
+  },
+];
+
+const faqs = [
+  {
+    q: "Do you cover motorways?",
+    a: "Yes. We assist drivers broken down on motorways and major routes across the region. Safety is our priority when responding to motorway breakdowns.",
+  },
+  {
+    q: "Can you travel further afield?",
+    a: "For long-distance vehicle transport, yes. We can discuss planned moves or transfers further afield. Call us with the details and we will confirm availability and cost.",
+  },
+  {
+    q: "What if I am not sure whether you cover my area?",
+    a: "Just call or WhatsApp us with your location. We will confirm straight away whether we can reach you and give you an idea of response time.",
+  },
+  {
+    q: "Do you charge more for areas further away?",
+    a: "Distance is factored into pricing. Once we know your pickup location and destination we will give you a clear quote before proceeding.",
+  },
+];
+
+const GBP_MAP_SRC =
+  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2315.266181975819!2d-1.5612949233137332!3d54.528801885596664!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xeed77f7b9c8a489%3A0x3af9f4efbabca787!2sFSR%20Recovery%20Group!5e0!3m2!1sen!2s!4v1784967444093!5m2!1sen!2s";
+
+export default function AreasPage() {
+  return (
+    <>
+      <Header activePath="/areas" />
+
+      <main>
+        {/* Page Banner */}
+        <section className="hero-bg text-white">
+          <div className="container-site fade-up py-10 text-center sm:py-14 lg:py-20">
+            <p className="mb-4 inline-flex flex-wrap items-center gap-2 rounded-full border border-red/40 bg-red/15 px-3 py-1.5 text-xs font-semibold text-red-100 sm:mb-6 sm:px-4 sm:py-2 sm:text-sm">
+              <i className="fa-solid fa-map-location-dot flex-shrink-0"></i> Areas Covered
+            </p>
+            <h1 className="mb-3 text-3xl leading-tight font-extrabold sm:mb-5 sm:text-4xl lg:text-6xl">
+              Recovery Across the Region
+            </h1>
+            <p className="mx-auto mb-5 max-w-2xl text-base text-white/80 sm:mb-8 sm:text-lg">
+              We provide roadside recovery, towing and breakdown support across a wide regional coverage area — motorways, city streets and rural roads alike.
+            </p>
+            <div className="flex flex-col justify-center gap-3 sm:flex-row sm:gap-4">
+              <a href="tel:+447888502989" className="btn-glow rounded-full bg-red px-5 py-3.5 text-center text-sm font-bold text-white transition sm:px-7 sm:py-4 sm:text-base">
+                <i className="fa-solid fa-phone mr-2"></i>Call +44 7888 502989
+              </a>
+              <a
+                href="https://wa.me/447888502989"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-full bg-whatsapp px-5 py-3.5 text-center text-sm font-bold text-white transition hover:bg-green-600 sm:px-7 sm:py-4 sm:text-base"
+              >
+                <i className="fa-brands fa-whatsapp mr-2"></i>Message on WhatsApp
+              </a>
+            </div>
+          </div>
+        </section>
+
+        {/* Areas Grid */}
+        <section className="bg-slate-50 py-20">
+          <div className="container-site">
+            <div className="fade-up mx-auto mb-12 max-w-3xl text-center">
+              <p className="mb-3 font-bold text-red">Where We Operate</p>
+              <h2 className="mb-4 text-3xl font-extrabold text-navy lg:text-4xl">Situations We Cover</h2>
+              <p className="text-navy/70">
+                We regularly respond to calls across a wide range of locations and situations. Not sure if we can reach you? Just call us.
+              </p>
+            </div>
+            <div className="grid gap-7 md:grid-cols-2 lg:grid-cols-3">
+              {areas.map((area) => (
+                <div key={area.name} className="fade-up rounded-3xl border border-navy/10 bg-white p-7">
+                  <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-red/10">
+                    <i className={`${area.icon} text-xl text-red`}></i>
+                  </div>
+                  <h3 className="mb-2 text-xl font-bold text-navy">{area.name}</h3>
+                  <p className="text-sm leading-7 text-navy/70">{area.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Local Knowledge CTA */}
+        <section className="bg-navy py-20 text-white">
+          <div className="container-site grid items-center gap-12 lg:grid-cols-2">
+            <div className="fade-up">
+              <p className="mb-3 font-bold text-red">Local Knowledge</p>
+              <h2 className="mb-5 text-3xl font-extrabold lg:text-4xl">
+                We Know the Roads
+              </h2>
+              <p className="mb-6 leading-8 text-white/70">
+                Our fleet knows the quickest routes, the busiest junctions and the best approach for every
+                type of job — whether you are stuck on a motorway or on a back road out of town.
+              </p>
+              <ul className="space-y-4">
+                {[
+                  "Fast response across city centres and suburbs",
+                  "Motorway breakdown support around the clock",
+                  "Rural and off-road recovery available",
+                  "Long-distance transport by arrangement",
+                ].map((point) => (
+                  <li key={point} className="flex items-start gap-3 text-white/85">
+                    <i className="fa-solid fa-circle-check mt-1 flex-shrink-0 text-red"></i>
+                    <span>{point}</span>
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+                <a href="tel:+447888502989" className="btn-glow rounded-full bg-red px-7 py-4 text-center font-bold text-white transition">
+                  <i className="fa-solid fa-phone mr-2"></i>Call Now
+                </a>
+                <a
+                  href="https://wa.me/447888502989"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-full bg-whatsapp px-7 py-4 text-center font-bold text-white transition hover:bg-green-600"
+                >
+                  <i className="fa-brands fa-whatsapp mr-2"></i>WhatsApp Us
+                </a>
+              </div>
+            </div>
+            <div className="fade-up">
+              <Image
+                src="/images/gallery-3.jpg"
+                alt="FSR Recovery vehicle attending an incident"
+                width={2000}
+                height={1333}
+                className="min-h-[380px] w-full rounded-3xl object-cover shadow-2xl"
+              />
+            </div>
+          </div>
+        </section>
+
+        {/* Map */}
+        <section className="bg-slate-50 py-16">
+          <div className="container-site">
+            <div className="fade-up mx-auto mb-8 max-w-2xl text-center">
+              <p className="mb-3 font-bold text-red">Find Us</p>
+              <h2 className="text-3xl font-extrabold text-navy lg:text-4xl">FSR Recovery Group Location</h2>
+            </div>
+            <div className="fade-up w-full overflow-hidden rounded-3xl border border-navy/10 shadow-2xl" style={{ height: "420px" }}>
+              <iframe
+                src={GBP_MAP_SRC}
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="strict-origin-when-cross-origin"
+                title="FSR Recovery Group Location"
+              />
+            </div>
+          </div>
+        </section>
+
+        {/* FAQs */}
+        <section className="bg-white py-20">
+          <div className="container-site mx-auto max-w-3xl">
+            <div className="fade-up mb-12 text-center">
+              <p className="mb-3 font-bold text-red">Common Questions</p>
+              <h2 className="text-3xl font-extrabold text-navy lg:text-4xl">Coverage Questions</h2>
+            </div>
+            <div className="grid gap-5">
+              {faqs.map((faq) => (
+                <div key={faq.q} className="fade-up rounded-2xl border border-navy/10 p-6">
+                  <h3 className="mb-2 flex items-start gap-2 font-bold text-navy">
+                    <i className="fa-solid fa-circle-question mt-1 flex-shrink-0 text-red"></i>
+                    {faq.q}
+                  </h3>
+                  <p className="pl-7 text-navy/70">{faq.a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CTA */}
+        <section className="bg-red py-20 text-center text-white">
+          <div className="container-site fade-up">
+            <h2 className="mb-5 text-3xl font-extrabold lg:text-5xl">Not Sure If We Cover You?</h2>
+            <p className="mb-8 text-lg text-white/90">
+              Give us a call or send a WhatsApp with your location and we will confirm straight away.
+            </p>
+            <div className="flex flex-col justify-center gap-4 sm:flex-row">
+              <a href="tel:+447888502989" className="rounded-full bg-navy px-8 py-4 font-bold text-white transition hover:bg-navy-light">
+                <i className="fa-solid fa-phone mr-2"></i>Call Now
+              </a>
+              <a
+                href="https://wa.me/447888502989"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-full bg-whatsapp px-8 py-4 font-bold text-white transition hover:bg-green-600"
+              >
+                <i className="fa-brands fa-whatsapp mr-2"></i>WhatsApp Us
+              </a>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <Footer />
+    </>
+  );
+}

@@ -2,244 +2,276 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { RoadDivider } from "@/components/RoadDivider";
-import { TrackRecord } from "@/components/TrackRecord";
-import { Cta } from "@/components/Cta";
-import { Button } from "@/components/Button";
-import { WhatsAppIcon } from "@/components/icons";
 
 export const metadata: Metadata = {
-  title: "About Us | FSR Recovery Groups",
+  title: "About Us",
   description:
     "Learn about FSR Recovery Groups — 15+ years providing dependable 24/7 vehicle recovery, roadside assistance and transport across the region.",
 };
 
 const values = [
   {
-    title: "Always Available",
-    description:
-      "Breakdowns and accidents don't keep office hours, so neither do we. Our team is on call 24 hours a day, every day of the year.",
-    icon: (
-      <svg viewBox="0 0 40 40" fill="none" className="h-8 w-8" aria-hidden="true">
-        <circle cx="20" cy="20" r="16" stroke="currentColor" strokeWidth="2.5" />
-        <path d="M20 11v9l6 4" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
+    icon: "fa-solid fa-shield-halved",
+    title: "Fully Insured",
+    desc: "Every vehicle we handle is covered throughout the entire recovery process — from loading to final drop-off.",
   },
   {
-    title: "Fast Response",
-    description:
-      "A regional fleet of recovery vehicles means we're rarely far away, so help reaches you quickly wherever you've broken down.",
-    icon: (
-      <svg viewBox="0 0 40 40" fill="none" className="h-8 w-8" aria-hidden="true">
-        <path d="M6 24h5l3-9h12l3 9h5" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M6 24v4h28v-4" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-        <circle cx="13" cy="28" r="3" stroke="currentColor" strokeWidth="2.5" />
-        <circle cx="27" cy="28" r="3" stroke="currentColor" strokeWidth="2.5" />
-      </svg>
-    ),
+    icon: "fa-solid fa-clock",
+    title: "Prompt Response",
+    desc: "We treat every call as urgent. Our team moves quickly to reach you and get the situation under control.",
   },
   {
-    title: "Safety First",
-    description:
-      "Every technician is trained, insured, and equipped to handle your vehicle carefully, minimising the risk of any further damage.",
-    icon: (
-      <svg viewBox="0 0 40 40" fill="none" className="h-8 w-8" aria-hidden="true">
-        <path
-          d="M20 6 8 10v10c0 8 5 13.5 12 14 7-.5 12-6 12-14V10L20 6Z"
-          stroke="currentColor"
-          strokeWidth="2.5"
-          strokeLinejoin="round"
-        />
-        <path d="M15 20l4 4 8-8" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
+    icon: "fa-solid fa-handshake",
+    title: "Honest Communication",
+    desc: "No hidden costs, no confusing jargon. We tell you what we can do, what it costs, and what to expect.",
   },
   {
-    title: "Fair, Upfront Pricing",
-    description:
-      "No hidden fees or surprise call-outs. You'll always know the cost before we start, whatever the job.",
-    icon: (
-      <svg viewBox="0 0 40 40" fill="none" className="h-8 w-8" aria-hidden="true">
-        <path
-          d="M8 20 20 8l12 4 4 12-12 12-16-16Z"
-          stroke="currentColor"
-          strokeWidth="2.5"
-          strokeLinejoin="round"
-        />
-        <circle cx="24" cy="16" r="2.5" fill="currentColor" />
-      </svg>
-    ),
+    icon: "fa-solid fa-map-location-dot",
+    title: "Regional Knowledge",
+    desc: "Our fleet knows the roads across the region and can plan the quickest, safest route to you.",
+  },
+  {
+    icon: "fa-solid fa-car-side",
+    title: "Careful Handling",
+    desc: "We take the same care with your vehicle as we would with our own — proper strapping, secure loading and smooth transport.",
+  },
+  {
+    icon: "fa-solid fa-headset",
+    title: "Always Reachable",
+    desc: "Call or WhatsApp us any time. If we are already on a job we will respond as soon as we are free.",
   },
 ];
 
-const reasons = [
-  "Fully trained, licensed and insured recovery technicians",
-  "Modern fleet of flatbed trucks and recovery vehicles",
-  "24/7 availability, including nights, weekends and holidays",
-  "Transparent, upfront quotes with no hidden charges",
-  "Careful handling to avoid any further damage to your vehicle",
-  "Friendly, clear communication from call-out to drop-off",
+const areas = [
+  "Motorway Recovery",
+  "City Centre",
+  "Residential Areas",
+  "Rural & Off-Road",
+  "Industrial Estates",
+  "Retail Parks",
+  "Long Distance",
+  "Out-of-Hours",
 ];
 
-function CheckIcon() {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5 shrink-0 text-red" aria-hidden="true">
-      <circle cx="12" cy="12" r="11" stroke="currentColor" strokeWidth="2" />
-      <path d="m7.5 12.5 3 3 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  );
-}
+const faqs = [
+  {
+    q: "How long have you been operating?",
+    a: "FSR Recovery Groups has been providing roadside and recovery services for over 15 years. Our reputation is built on consistent, careful service.",
+  },
+  {
+    q: "What vehicles can you recover?",
+    a: "We recover cars, light vans, 4x4s and SUVs. If you are unsure whether we can handle your specific vehicle, give us a call and we will let you know.",
+  },
+  {
+    q: "Do you work with insurance companies?",
+    a: "Yes. We can liaise with your insurer or their recovery coordinator on request. Many customers contact us directly for a faster response, then inform their insurer afterwards.",
+  },
+  {
+    q: "Can you give me a price over the phone?",
+    a: "We can give you a clear idea of cost once we know your vehicle type, location and destination. Call or WhatsApp us with the details for an accurate quote.",
+  },
+];
 
 export default function AboutPage() {
   return (
     <>
-      <Header />
+      <Header activePath="/about" />
+
       <main>
-        <section className="relative overflow-hidden bg-navy pt-16 pb-2 lg:pt-20">
-          <div className="relative mx-auto max-w-[1400px] px-6 text-center lg:px-10">
-            <h1 className="font-heading text-[34px] font-extrabold text-white sm:text-[44px]">
-              About Us<span className="text-red">.</span>
-            </h1>
-            <p className="mt-3 text-[15px] text-white/70">
-              <span className="text-red">Home</span> / About Us
+        {/* Page Banner */}
+        <section className="hero-bg text-white">
+          <div className="container-site fade-up py-10 text-center sm:py-14 lg:py-20">
+            <p className="mb-4 inline-flex flex-wrap items-center gap-2 rounded-full border border-red/40 bg-red/15 px-3 py-1.5 text-xs font-semibold text-red-100 sm:mb-6 sm:px-4 sm:py-2 sm:text-sm">
+              <i className="fa-solid fa-users flex-shrink-0"></i> About Us
             </p>
-          </div>
-          <RoadDivider />
-        </section>
-
-        <section className="bg-white py-20 lg:py-28">
-          <div className="mx-auto grid max-w-[1400px] grid-cols-1 items-center gap-12 px-6 lg:grid-cols-2 lg:gap-16 lg:px-10">
-            <div>
-              <p className="font-heading text-2xl font-bold tracking-wide text-red">
-                OUR STORY
-              </p>
-              <h2 className="mt-1 font-heading text-3xl font-extrabold text-navy sm:text-4xl">
-                Built On the Roadside, Not in a Boardroom
-              </h2>
-              <div className="mt-6 space-y-5 text-[15px] leading-relaxed text-navy/70">
-                <p>
-                  FSR Recovery Groups started with a single truck and a
-                  simple promise: turn up fast, treat every vehicle like our
-                  own, and never leave a customer stranded. Fifteen years
-                  later, that promise hasn&rsquo;t changed, even as we&rsquo;ve
-                  grown into a full regional recovery operation.
-                </p>
-                <p>
-                  Today our team handles everything from routine roadside
-                  callouts to complex accident recoveries, working with
-                  private drivers, fleet operators, and insurance partners
-                  across the region. We&rsquo;ve invested in a modern fleet
-                  and ongoing training so that whatever the job, it&rsquo;s
-                  handled properly the first time.
-                </p>
-                <p>
-                  What hasn&rsquo;t changed is how we treat people. A
-                  breakdown or accident is stressful enough without dealing
-                  with a recovery company that&rsquo;s hard to reach or
-                  unclear about pricing. We answer the phone, we explain
-                  what&rsquo;s happening, and we get you moving again as
-                  quickly and safely as possible.
-                </p>
-              </div>
-              <div className="mt-8">
-                <Button href="/#contact" icon={<WhatsAppIcon className="h-4 w-4" />}>
-                  Get In Touch
-                </Button>
-              </div>
-            </div>
-
-            <div className="relative">
-              <div className="absolute -right-5 -bottom-5 h-[92%] w-[35%] bg-navy" />
-              <div className="relative overflow-hidden rounded-tr-[180px] shadow-xl">
-                <Image
-                  src="/images/service-transport.jpg"
-                  alt="FSR Recovery Groups vehicle transporter on the highway"
-                  width={1735}
-                  height={1080}
-                  priority
-                  className="h-auto w-full object-cover"
-                />
-              </div>
+            <h1 className="mb-3 text-3xl leading-tight font-extrabold sm:mb-5 sm:text-4xl lg:text-6xl">
+              Built On the Roadside, Not in a Boardroom
+            </h1>
+            <p className="mx-auto mb-5 max-w-2xl text-base text-white/80 sm:mb-8 sm:text-lg">
+              A straightforward, professional recovery service run by people who care about getting you back on the road safely.
+            </p>
+            <div className="flex flex-col justify-center gap-3 sm:flex-row sm:gap-4">
+              <a href="tel:+447888502989" className="btn-glow rounded-full bg-red px-5 py-3.5 text-center text-sm font-bold text-white transition sm:px-7 sm:py-4 sm:text-base">
+                <i className="fa-solid fa-phone mr-2"></i>Call +44 7888 502989
+              </a>
+              <a
+                href="https://wa.me/447888502989"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-full bg-whatsapp px-5 py-3.5 text-center text-sm font-bold text-white transition hover:bg-green-600 sm:px-7 sm:py-4 sm:text-base"
+              >
+                <i className="fa-brands fa-whatsapp mr-2"></i>Message on WhatsApp
+              </a>
             </div>
           </div>
         </section>
 
-        <section className="bg-white pb-20 lg:pb-28">
-          <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
-            <div className="text-center">
-              <h2 className="font-heading text-3xl font-extrabold text-navy sm:text-4xl">
-                What We Stand For<span className="text-red">.</span>
+        {/* Who We Are */}
+        <section className="bg-white py-20">
+          <div className="container-site grid items-center gap-12 lg:grid-cols-2">
+            <div className="fade-up">
+              <p className="mb-3 font-bold text-red">Our Story</p>
+              <h2 className="mb-5 text-3xl font-extrabold text-navy lg:text-4xl">
+                A Recovery Team You Can Rely On
               </h2>
-              <p className="mx-auto mt-4 max-w-2xl text-[15px] leading-relaxed text-navy/70">
-                Four principles guide every job we take on, from a quick
-                jumpstart to a multi-vehicle transport.
+              <p className="mb-4 leading-8 text-navy/70">
+                FSR Recovery Groups started with a single truck and a simple promise: turn up fast, treat
+                every vehicle like our own, and never leave a customer stranded. Fifteen years later, that
+                promise hasn&rsquo;t changed, even as we&rsquo;ve grown into a full regional recovery operation.
+              </p>
+              <p className="mb-4 leading-8 text-navy/70">
+                Today our team handles everything from routine roadside callouts to complex accident
+                recoveries, working with private drivers, fleet operators, and insurance partners across
+                the region. We&rsquo;ve invested in a modern fleet and ongoing training so that whatever
+                the job, it&rsquo;s handled properly the first time.
+              </p>
+              <p className="leading-8 text-navy/70">
+                We are fully insured, always reachable, and available to take calls when you need us. No
+                call centres, no automated responses — just a team that answers and gets on with it.
               </p>
             </div>
+            <div className="fade-up">
+              <Image
+                src="/images/service-transport.jpg"
+                alt="FSR Recovery Groups vehicle transporter on the highway"
+                width={1735}
+                height={1080}
+                priority
+                className="min-h-[380px] w-full rounded-3xl object-cover shadow-2xl"
+              />
+            </div>
+          </div>
+        </section>
 
-            <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {/* Our Values */}
+        <section className="bg-slate-50 py-20">
+          <div className="container-site">
+            <div className="fade-up mx-auto mb-12 max-w-3xl text-center">
+              <p className="mb-3 font-bold text-red">What Drives Us</p>
+              <h2 className="mb-4 text-3xl font-extrabold text-navy lg:text-4xl">Our Values</h2>
+              <p className="text-navy/70">The principles we apply to every job, regardless of size or complexity.</p>
+            </div>
+            <div className="grid gap-7 md:grid-cols-2 lg:grid-cols-3">
               {values.map((v) => (
-                <div
-                  key={v.title}
-                  className="rounded-2xl border border-navy/10 p-6 shadow-sm"
-                >
-                  <div className="flex h-14 w-14 items-center justify-center rounded-full bg-navy/5 text-red">
-                    {v.icon}
+                <div key={v.title} className="fade-up rounded-3xl border border-navy/10 bg-white p-7">
+                  <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-red/10">
+                    <i className={`${v.icon} text-xl text-red`}></i>
                   </div>
-                  <h3 className="mt-5 font-heading text-lg font-bold text-navy">
-                    {v.title}
-                  </h3>
-                  <p className="mt-2 text-[14px] leading-relaxed text-navy/70">
-                    {v.description}
-                  </p>
+                  <h3 className="mb-2 text-lg font-bold text-navy">{v.title}</h3>
+                  <p className="text-sm leading-7 text-navy/70">{v.desc}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        <TrackRecord />
-
-        <section className="bg-white py-20 lg:py-28">
-          <div className="mx-auto grid max-w-[1400px] grid-cols-1 items-center gap-12 px-6 lg:grid-cols-2 lg:gap-16 lg:px-10">
-            <div className="relative overflow-hidden rounded-2xl shadow-xl lg:order-2">
+        {/* Why Choose */}
+        <section className="bg-navy py-20 text-white">
+          <div className="container-site grid items-center gap-12 lg:grid-cols-2">
+            <div className="fade-up">
+              <p className="mb-3 font-bold text-red">Why Drivers Choose Us</p>
+              <h2 className="mb-5 text-3xl font-extrabold lg:text-4xl">
+                Trusted, Straightforward and Fast
+              </h2>
+              <p className="mb-6 leading-8 text-white/70">
+                We know that a breakdown or accident is already stressful. Our job is to take as much
+                pressure off you as possible — by responding quickly, communicating clearly and handling
+                your vehicle with care.
+              </p>
+              <ul className="space-y-4">
+                {[
+                  "Direct contact with our local team — no call centres",
+                  "Clear pricing with no hidden extras",
+                  "Fully insured loading, transport and drop-off",
+                  "Coverage across the whole region",
+                  "4x4 and long-distance transport available",
+                ].map((point) => (
+                  <li key={point} className="flex items-start gap-3 text-white/85">
+                    <i className="fa-solid fa-circle-check mt-1 flex-shrink-0 text-red"></i>
+                    <span>{point}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="fade-up">
               <Image
                 src="/images/gallery-2.jpg"
                 alt="FSR Recovery technician winching a vehicle free"
                 width={2000}
                 height={1333}
-                className="h-auto w-full object-cover"
+                className="min-h-[380px] w-full rounded-3xl object-cover shadow-2xl"
               />
-            </div>
-
-            <div className="lg:order-1">
-              <p className="font-heading text-2xl font-bold tracking-wide text-red">
-                WHY CHOOSE US
-              </p>
-              <h2 className="mt-1 font-heading text-3xl font-extrabold text-navy sm:text-4xl">
-                What Makes Us Different
-              </h2>
-              <p className="mt-4 text-[15px] leading-relaxed text-navy/70">
-                There&rsquo;s no shortage of recovery companies to call. Here&rsquo;s
-                why customers across the region choose FSR Recovery Groups
-                and stick with us.
-              </p>
-              <ul className="mt-6 space-y-4">
-                {reasons.map((r) => (
-                  <li key={r} className="flex items-start gap-3">
-                    <CheckIcon />
-                    <span className="text-[15px] leading-relaxed text-navy/80">
-                      {r}
-                    </span>
-                  </li>
-                ))}
-              </ul>
             </div>
           </div>
         </section>
 
-        <Cta />
+        {/* Areas Covered */}
+        <section className="bg-white py-20">
+          <div className="container-site">
+            <div className="fade-up mx-auto mb-12 max-w-3xl text-center">
+              <p className="mb-3 font-bold text-red">Where We Operate</p>
+              <h2 className="mb-4 text-3xl font-extrabold text-navy lg:text-4xl">Areas We Cover</h2>
+              <p className="text-navy/70">
+                We regularly assist drivers across the following situations and locations. Not sure if we
+                cover your location? Just call us.
+              </p>
+            </div>
+            <div className="fade-up flex flex-wrap justify-center gap-4">
+              {areas.map((area) => (
+                <div key={area} className="rounded-2xl border border-navy/10 bg-slate-50 px-6 py-4 text-center">
+                  <i className="fa-solid fa-location-dot mb-2 block text-red"></i>
+                  <span className="font-semibold text-navy">{area}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* FAQs */}
+        <section className="bg-slate-50 py-20">
+          <div className="container-site mx-auto max-w-3xl">
+            <div className="fade-up mb-12 text-center">
+              <p className="mb-3 font-bold text-red">Common Questions</p>
+              <h2 className="text-3xl font-extrabold text-navy lg:text-4xl">About FSR Recovery Groups</h2>
+            </div>
+            <div className="grid gap-5">
+              {faqs.map((faq) => (
+                <div key={faq.q} className="fade-up rounded-2xl border border-navy/10 bg-white p-6">
+                  <h3 className="mb-2 flex items-start gap-2 font-bold text-navy">
+                    <i className="fa-solid fa-circle-question mt-1 flex-shrink-0 text-red"></i>
+                    {faq.q}
+                  </h3>
+                  <p className="pl-7 text-navy/70">{faq.a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CTA */}
+        <section className="bg-red py-20 text-center text-white">
+          <div className="container-site fade-up">
+            <h2 className="mb-5 text-3xl font-extrabold lg:text-5xl">Need Recovery Assistance?</h2>
+            <p className="mb-8 text-lg text-white/90">
+              Call or WhatsApp us and our team will be with you as quickly as possible.
+            </p>
+            <div className="flex flex-col justify-center gap-4 sm:flex-row">
+              <a href="tel:+447888502989" className="rounded-full bg-navy px-8 py-4 font-bold text-white transition hover:bg-navy-light">
+                <i className="fa-solid fa-phone mr-2"></i>Call Now
+              </a>
+              <a
+                href="https://wa.me/447888502989"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-full bg-whatsapp px-8 py-4 font-bold text-white transition hover:bg-green-600"
+              >
+                <i className="fa-brands fa-whatsapp mr-2"></i>WhatsApp Us
+              </a>
+            </div>
+          </div>
+        </section>
       </main>
+
       <Footer />
     </>
   );
