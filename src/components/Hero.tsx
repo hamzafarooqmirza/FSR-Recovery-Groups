@@ -42,25 +42,25 @@ function DecorPlus({ className }: { className?: string }) {
 
 export function Hero() {
   return (
-    <section id="home" className="relative overflow-hidden bg-navy pt-14 pb-4 lg:pt-20">
+    <section id="home" className="relative overflow-hidden bg-navy pt-14 lg:pt-20">
       <DecorCircleArrow className="pointer-events-none absolute left-2 top-24 h-24 w-24 lg:left-10" />
       <DecorCloud className="pointer-events-none absolute left-[18%] top-14 h-14 w-24 lg:top-10" />
       <DecorCircleArrow className="pointer-events-none absolute right-[6%] top-32 h-20 w-20" />
       <DecorPlus className="pointer-events-none absolute right-[22%] top-16 h-5 w-5" />
       <DecorPlus className="pointer-events-none absolute left-[46%] bottom-24 h-4 w-4" />
 
-      <div className="relative mx-auto grid max-w-[1400px] grid-cols-1 items-center gap-10 px-6 lg:grid-cols-2 lg:gap-6 lg:px-10">
+      <div className="relative mx-auto grid max-w-[1440px] grid-cols-1 items-center gap-10 px-6 lg:grid-cols-[1.3fr_1fr] lg:gap-4 lg:px-10">
         <div className="relative z-10">
-          <h1 className="font-heading text-[32px] font-extrabold leading-[1.2] text-white sm:text-[38px] lg:text-[44px]">
+          <h1 className="font-heading text-[32px] font-extrabold leading-[1.25] text-white sm:text-[38px] lg:text-[32px] xl:text-[35px]">
             Why FSR Recovery Groups Stands Out as the Best Choice for Towing
             Services<span className="text-red">.</span>
           </h1>
           <p className="mt-5 max-w-xl text-[15px] leading-relaxed text-white/70">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec massa
-            erat, varius tempus tincidunt in, vehicula quis orci. Sed faucibus
-            ultrices velit vel bibendum. Proin magna velit, euismod eget urna
-            vitae, viverra semper quam. Pellentesque aliquet ornare lacus, sit
-            amet semper orci venenatis ac.
+            When you break down or get caught in an accident, every minute on
+            the roadside counts. Our fully trained recovery team and modern
+            fleet reach you fast, day or night, so you&rsquo;re never left
+            stranded for long. From a simple jumpstart to a full vehicle
+            transport, we get you and your car back on the road safely.
           </p>
           <div className="mt-8">
             <Button href="#contact" icon={<WhatsAppIcon className="h-4 w-4" />}>
@@ -79,7 +79,7 @@ export function Hero() {
             width={1100}
             height={387}
             priority
-            className="w-full max-w-[640px] object-contain lg:max-w-none"
+            className="w-full max-w-[640px] object-contain lg:max-w-none lg:scale-[1.3] lg:origin-bottom-right"
           />
         </div>
       </div>

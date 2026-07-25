@@ -4,11 +4,11 @@ import { Button } from "./Button";
 import { PhoneIcon, MailIcon } from "./icons";
 
 const quickLinks = [
-  { label: "Home", href: "#home" },
-  { label: "About Us", href: "#about" },
-  { label: "Our Services", href: "#services" },
-  { label: "Gallery", href: "#gallery" },
-  { label: "Contact Us", href: "#contact" },
+  { label: "Home", href: "/" },
+  { label: "About Us", href: "/about" },
+  { label: "Our Services", href: "/#services" },
+  { label: "Gallery", href: "/#gallery" },
+  { label: "Contact Us", href: "/#contact" },
 ];
 
 const helpLinks = [
@@ -28,7 +28,7 @@ export function Footer() {
               Us Handle The Rest!
             </p>
             <div className="mt-6">
-              <Button href="#contact">Get a Free Quote</Button>
+              <Button href="/#contact">Get a Free Quote</Button>
             </div>
           </div>
 

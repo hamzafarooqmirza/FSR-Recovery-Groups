@@ -46,8 +46,8 @@ function DecorWrenchCar({ className }: { className?: string }) {
 export function Cta() {
   return (
     <section id="contact" className="relative overflow-hidden bg-white py-24 lg:py-32">
-      <DecorTruck className="pointer-events-none absolute right-[6%] top-1/2 h-40 w-auto -translate-y-1/2 opacity-[0.06] lg:h-52" />
-      <DecorWrenchCar className="pointer-events-none absolute left-[6%] top-1/2 h-32 w-auto -translate-y-1/2 opacity-[0.08] lg:h-44" />
+      <DecorTruck className="pointer-events-none absolute -right-6 top-1/2 h-60 w-auto -translate-y-1/2 opacity-[0.08] lg:h-96" />
+      <DecorWrenchCar className="pointer-events-none absolute -left-6 top-1/2 h-52 w-auto -translate-y-1/2 opacity-[0.1] lg:h-80" />
 
       <div className="relative mx-auto max-w-3xl px-6 text-center">
         <h2 className="font-heading text-2xl font-extrabold leading-tight text-navy sm:text-3xl lg:text-[34px]">

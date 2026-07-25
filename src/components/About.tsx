@@ -3,7 +3,7 @@ import { Button } from "./Button";
 
 export function About() {
   return (
-    <section id="about" className="relative bg-white pb-20 pt-2 lg:pb-28">
+    <section id="about" className="relative overflow-hidden bg-white pb-20 pt-2 lg:pb-28">
       <div className="mx-auto grid max-w-[1400px] grid-cols-1 items-center gap-12 px-6 lg:grid-cols-2 lg:gap-16 lg:px-10">
         <div>
           <p className="font-heading text-2xl font-bold tracking-wide text-red">ABOUT</p>
@@ -27,46 +27,38 @@ export function About() {
 
           <div className="mt-6 space-y-5 text-[15px] leading-relaxed text-navy/70">
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
-              gravida ultrices sagittis. Donec rhoncus sapien lacus, sit amet
-              dignissim ipsum tristique ut. Integer egestas dignissim quam et
-              iaculis. In aliquet, tellus efficitur consequat scelerisque,
-              libero ex faucibus tortor, lacinia maximus elit sem ac libero.
-              Donec sodales finibus pellentesque. Nunc tellus diam, cursus et
-              rhoncus non, hendrerit eget leo. Nulla in porttitor nunc.
+              FSR Recovery Groups has been providing dependable vehicle
+              recovery and roadside assistance for over 15 years. What
+              started as a small local towing operation has grown into a
+              trusted name across the region, known for prompt response
+              times and honest, straightforward service.
             </p>
             <p>
-              Curabitur a ipsum non arcu viverra sodales quis id dolor.
-              Integer tempor sagittis lorem quis vulputate. Lorem ipsum dolor
-              sit amet, consectetur adipiscing elit. Quisque a elementum
-              nisi. Sed facilisis efficitur fermentum. Integer bibendum
-              facilisis quam nec placerat. Aenean blandit dolor nunc, non
-              malesuada ex cursus sed. Etiam ullamcorper ante nec lectus
-              molestie ultricies. Duis et tincidunt velit, eget scelerisque
-              mauris. Proin sed placerat est. Proin sit amet leo ipsum.
-              Mauris sagittis augue nec orci posuere, vel tincidunt quam
-              auctor.
+              Every member of our recovery team is fully trained, insured,
+              and equipped with the latest tools to handle everything from a
+              flat tyre to a full accident recovery. We invest in a modern
+              fleet of flatbed trucks and recovery vehicles so your car is
+              transported safely, without further damage.
             </p>
             <p>
-              Ut venenatis dui at ligula iaculis rhoncus eget a eros. Nulla
-              sodales sed purus sed facilisis. Phasellus dignissim iaculis
-              finibus. Proin feugiat neque vel posuere mattis. Nam id
-              bibendum sem. Curabitur lobortis pulvinar tellus a porta. Duis
-              quis leo quam. Sed purus quam, vulputate ac gravida id,
-              vulputate faucibus lorem. Sed et ante tortor tincidunt finibus.
+              Whether you&rsquo;ve broken down on the motorway, been involved
+              in a collision, or simply need your vehicle moved, our 24/7
+              team is ready to help. We pride ourselves on clear
+              communication, fair pricing, and getting you back on the road
+              as quickly and safely as possible.
             </p>
           </div>
 
           <div className="mt-8">
-            <Button href="#services" variant="solid">
+            <Button href="/about" variant="solid">
               Read more
             </Button>
           </div>
         </div>
 
         <div className="relative">
-          <div className="absolute -right-4 -bottom-6 h-[85%] w-[70%] rounded-tl-[110px] bg-navy" />
-          <div className="relative overflow-hidden rounded-tr-[110px] rounded-bl-[28px] rounded-br-[28px] rounded-tl-[28px] shadow-xl">
+          <div className="absolute -right-5 -bottom-5 h-[92%] w-[35%] bg-navy" />
+          <div className="relative overflow-hidden rounded-tr-[180px] shadow-xl">
             <Image
               src="/images/about-tow.jpg"
               alt="Tow truck loading a red car for recovery"
