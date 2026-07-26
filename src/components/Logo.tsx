@@ -1,9 +1,22 @@
 import Image from "next/image";
 
 const sizeMap = {
-  sm: { height: 32, className: "h-8" },
-  md: { height: 40, className: "h-10" },
-  lg: { height: 52, className: "h-13" },
+  sm: { className: "h-8" },
+  md: { className: "h-10" },
+  lg: { className: "h-13" },
+};
+
+const variantMap = {
+  light: {
+    src: "/images/fsr-recovery-group-logo.webp",
+    width: 756,
+    height: 221,
+  },
+  dark: {
+    src: "/images/FSR Recovery Groups logo design.webp",
+    width: 742,
+    height: 191,
+  },
 };
 
 export function Logo({
@@ -14,21 +27,16 @@ export function Logo({
   size?: "sm" | "md" | "lg";
 }) {
   const s = sizeMap[size];
+  const v = variantMap[variant];
 
   return (
-    <span
-      className={`inline-flex items-center rounded-lg px-2.5 py-1.5 ${
-        variant === "light" ? "bg-white" : ""
-      }`}
-    >
-      <Image
-        src="/images/FSR Recovery Groups logo design.webp"
-        alt="FSR Recovery Groups"
-        width={742}
-        height={191}
-        priority
-        className={`w-auto ${s.className}`}
-      />
-    </span>
+    <Image
+      src={v.src}
+      alt="FSR Recovery Groups"
+      width={v.width}
+      height={v.height}
+      priority
+      className={`w-auto ${s.className}`}
+    />
   );
 }
