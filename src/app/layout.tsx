@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Poppins, Inter } from "next/font/google";
 import "./globals.css";
+import { FloatingButtons } from "@/components/FloatingButtons";
+import { ScrollAnimations } from "@/components/ScrollAnimations";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -14,7 +16,10 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "FSR Recovery Groups | 24/7 Car Recovery & Towing Services",
+  title: {
+    template: "%s | FSR Recovery Groups",
+    default: "FSR Recovery Groups | 24/7 Car Recovery & Towing Services",
+  },
   description:
     "FSR Recovery Groups provides fast, reliable 24/7 vehicle breakdown recovery, roadside assistance, accident recovery and vehicle transporting services.",
 };
@@ -26,7 +31,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${poppins.variable} ${inter.variable}`}>
-      <body className="antialiased">{children}</body>
+      <head>
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        />
+      </head>
+      <body className="pb-14 antialiased sm:pb-0">
+        <ScrollAnimations />
+        <FloatingButtons />
+        {children}
+      </body>
     </html>
   );
 }

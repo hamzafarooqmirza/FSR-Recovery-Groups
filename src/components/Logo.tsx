@@ -1,7 +1,9 @@
+import Image from "next/image";
+
 const sizeMap = {
-  sm: { text: "text-2xl", sub: "text-[10px]", bars: "h-6" },
-  md: { text: "text-3xl", sub: "text-xs", bars: "h-7" },
-  lg: { text: "text-4xl", sub: "text-sm", bars: "h-9" },
+  sm: { height: 32, className: "h-8" },
+  md: { height: 40, className: "h-10" },
+  lg: { height: 52, className: "h-13" },
 };
 
 export function Logo({
@@ -12,25 +14,21 @@ export function Logo({
   size?: "sm" | "md" | "lg";
 }) {
   const s = sizeMap[size];
-  const wordColor = variant === "light" ? "text-white" : "text-navy";
 
   return (
-    <div className="flex items-center gap-2 leading-none select-none">
-      <span className={`flex items-end gap-[3px] ${s.bars}`}>
-        <span className="w-[3px] h-full bg-red rounded-sm" />
-        <span className="w-[3px] h-full bg-red rounded-sm" />
-      </span>
-      <span className={`font-heading font-extrabold ${s.text} ${wordColor} tracking-tight`}>
-        FSR
-      </span>
-      <span className="flex flex-col justify-center -space-y-1">
-        <span className={`font-heading font-semibold ${s.sub} ${wordColor} tracking-wide`}>
-          RECOVERY
-        </span>
-        <span className={`font-heading font-semibold ${s.sub} text-red tracking-wide`}>
-          GROUPS
-        </span>
-      </span>
-    </div>
+    <span
+      className={`inline-flex items-center rounded-lg px-2.5 py-1.5 ${
+        variant === "light" ? "bg-white" : ""
+      }`}
+    >
+      <Image
+        src="/images/FSR Recovery Groups logo design.webp"
+        alt="FSR Recovery Groups"
+        width={742}
+        height={191}
+        priority
+        className={`w-auto ${s.className}`}
+      />
+    </span>
   );
 }

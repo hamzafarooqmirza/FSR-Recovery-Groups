@@ -1,93 +1,118 @@
 "use client";
 
 import { useState } from "react";
-import { usePathname } from "next/navigation";
+import Link from "next/link";
 import { Logo } from "./Logo";
-import { Button } from "./Button";
-import { WhatsAppIcon, ChevronDownIcon, MenuIcon, CloseIcon } from "./icons";
 
 const navLinks = [
-  { label: "Home", href: "/" },
-  { label: "About Us", href: "/about" },
-  { label: "Services", href: "/#services", hasDropdown: true },
-  { label: "Gallery", href: "/#gallery" },
-  { label: "Contact Us", href: "/#contact" },
+  { href: "/", label: "Home" },
+  { href: "/services", label: "Services" },
+  { href: "/about", label: "About" },
+  { href: "/areas", label: "Areas" },
+  { href: "/contact", label: "Contact" },
 ];
 
-export function Header() {
-  const [open, setOpen] = useState(false);
-  const pathname = usePathname();
+export function Header({ activePath = "/" }: { activePath?: string }) {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-navy">
-      <div className="mx-auto flex max-w-[1400px] items-center justify-between gap-4 px-6 py-4 lg:px-10">
-        <Logo variant="light" size="md" />
-
-        <nav className="hidden items-center lg:flex">
-          {navLinks.map((link, i) => {
-            const isActive = pathname === link.href;
-            return (
-              <div key={link.label} className="flex items-center">
-                {i !== 0 && <span className="mx-4 h-4 w-px bg-white/25" aria-hidden="true" />}
-                <a
-                  href={link.href}
-                  className="relative flex items-center gap-1 py-2 text-[15px] font-medium text-white/90 transition-colors hover:text-white"
-                >
-                  {link.label}
-                  {link.hasDropdown && <ChevronDownIcon className="h-2.5 w-2.5 text-red" />}
-                  {isActive && (
-                    <span className="absolute -bottom-0.5 left-0 h-[3px] w-6 rounded-full bg-red" />
-                  )}
-                </a>
-              </div>
-            );
-          })}
-        </nav>
-
-        <div className="hidden items-center gap-3 lg:flex">
-          <Button href="tel:+447888502989" icon={<WhatsAppIcon className="h-4 w-4" />}>
-            Call Now
-          </Button>
-          <Button href="/#contact" variant="outline">
-            Get a Free Quote
-          </Button>
+    <>
+      {/* Top Bar */}
+      <div className="border-b border-red/20 bg-navy py-2 text-white/70">
+        <div className="container-site flex items-center justify-center text-xs md:text-sm">
+          <span>
+            <i className="fas fa-triangle-exclamation mr-1"></i>24/7 Emergency Towing &amp; Recovery – Fast Response, Call Now
+          </span>
         </div>
-
-        <button
-          type="button"
-          onClick={() => setOpen((v) => !v)}
-          className="text-white lg:hidden"
-          aria-label="Toggle menu"
-        >
-          {open ? <CloseIcon className="h-7 w-7" /> : <MenuIcon className="h-7 w-7" />}
-        </button>
       </div>
 
-      {open && (
-        <div className="border-t border-white/10 px-6 pb-6 lg:hidden">
-          <nav className="flex flex-col gap-1 pt-4">
+      {/* Header */}
+      <header className="sticky top-0 z-40 border-b border-white/10 bg-navy/95 shadow-md backdrop-blur">
+        <div className="container-site flex h-20 items-center justify-between">
+          <Link href="/" className="flex items-center gap-3">
+            <Logo variant="light" size="md" />
+          </Link>
+
+          <nav className="hidden items-center gap-7 text-sm font-semibold lg:flex">
             {navLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
-                onClick={() => setOpen(false)}
-                className="flex items-center gap-1 py-2.5 text-[15px] font-medium text-white/90"
+                className={
+                  link.href === activePath
+                    ? "nav-arrow text-red"
+                    : "nav-arrow text-white/85 transition hover:text-red"
+                }
               >
                 {link.label}
-                {link.hasDropdown && <ChevronDownIcon className="h-2.5 w-2.5 text-red" />}
               </a>
             ))}
           </nav>
-          <div className="mt-4 flex flex-col gap-3">
-            <Button href="tel:+447888502989" icon={<WhatsAppIcon className="h-4 w-4" />}>
-              Call Now
-            </Button>
-            <Button href="/#contact" variant="outline">
-              Get a Free Quote
-            </Button>
+
+          <div className="hidden items-center gap-3 lg:flex">
+            <a
+              href="tel:+447888502989"
+              className="animated-contact rounded-full bg-red px-5 py-3 text-sm font-bold text-white transition hover:bg-red-dark"
+            >
+              <i className="fa-solid fa-phone mr-2"></i>Call Now
+            </a>
+            <a
+              href="https://wa.me/447888502989"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full bg-whatsapp px-5 py-3 text-sm font-bold text-white transition hover:bg-green-600"
+            >
+              <i className="fab fa-whatsapp mr-2"></i>WhatsApp
+            </a>
           </div>
+
+          <button
+            className="h-11 w-11 rounded-xl bg-red text-white lg:hidden"
+            aria-label="Open mobile menu"
+            onClick={() => setIsMenuOpen((open) => !open)}
+          >
+            <i className={`fa-solid ${isMenuOpen ? "fa-xmark" : "fa-bars"}`}></i>
+          </button>
         </div>
-      )}
-    </header>
+
+        {isMenuOpen && (
+          <div className="border-t border-white/10 bg-navy lg:hidden">
+            <div className="container-site grid gap-3 py-4 font-semibold">
+              {navLinks.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  className={
+                    link.href === activePath
+                      ? "py-2 text-red"
+                      : "py-2 text-white/85 hover:text-red"
+                  }
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <i className="fa-solid fa-chevron-right mr-2 text-xs text-red"></i>
+                  {link.label}
+                </a>
+              ))}
+              <a
+                href="tel:+447888502989"
+                className="mt-2 rounded-xl bg-red px-5 py-3 text-center font-bold text-white"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                <i className="fa-solid fa-phone mr-2"></i>Call Now
+              </a>
+              <a
+                href="https://wa.me/447888502989"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-xl bg-whatsapp px-5 py-3 text-center font-bold text-white"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                <i className="fab fa-whatsapp mr-2"></i>WhatsApp Us
+              </a>
+            </div>
+          </div>
+        )}
+      </header>
+    </>
   );
 }
