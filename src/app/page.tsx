@@ -1,8 +1,26 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { QuoteForm } from "@/components/QuoteForm";
 import { ReviewsSlider } from "@/components/ReviewsSlider";
+
+export const metadata: Metadata = {
+  openGraph: {
+    images: [
+      {
+        url: "/images/fsr-open-graph.png",
+        width: 902,
+        height: 472,
+        alt: "FSR Recovery Groups | 24/7 Emergency Recovery Services",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/images/fsr-open-graph.png"],
+  },
+};
 
 const marqueeItems = [
   { icon: "fa-solid fa-truck-pickup", text: "24/7 Breakdown Recovery" },
