@@ -5,7 +5,7 @@ export type ServiceNavigationItem = {
   available: boolean;
 };
 
-const serviceNavigationItems: ServiceNavigationItem[] = [
+export const serviceNavigation: ServiceNavigationItem[] = [
   { key: "vehicle-breakdown-recovery", label: "24/7 Vehicle Breakdown Recovery", href: "/services/vehicle-breakdown-recovery", available: true },
   { key: "roadside-assistance", label: "Roadside Assistance", href: "/services/roadside-assistance", available: true },
   { key: "jumpstart-services", label: "Jumpstart Services", href: "/services#jumpstart-services", available: false },
@@ -16,14 +16,11 @@ const serviceNavigationItems: ServiceNavigationItem[] = [
   { key: "vehicle-transporting", label: "Vehicle Transporting", href: "/services#vehicle-transporting", available: false },
 ];
 
-const dedicatedServiceRoutes: Partial<Record<ServiceNavigationItem["key"], string>> = {
-  "jumpstart-services": "/services/jumpstart-services",
-};
-
-export const serviceNavigation: ServiceNavigationItem[] = serviceNavigationItems.map((service) => {
-  const dedicatedRoute = dedicatedServiceRoutes[service.key];
-  return dedicatedRoute ? { ...service, href: dedicatedRoute, available: true } : service;
-});
+const jumpstartNavigation = serviceNavigation.find((service) => service.key === "jumpstart-services");
+if (jumpstartNavigation) {
+  jumpstartNavigation.href = "/services/jumpstart-services";
+  jumpstartNavigation.available = true;
+}
 
 export function getServiceNavigation(key: string) {
   const service = serviceNavigation.find((item) => item.key === key);
