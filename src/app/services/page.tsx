@@ -10,25 +10,13 @@ export const metadata: Metadata = {
     "24/7 vehicle breakdown recovery, roadside assistance, jumpstarts, winch out, accident recovery, tyre changes, refueling and vehicle transporting across the region.",
 };
 
-type Service = {
-  icon: string;
-  img: string;
-  alt: string;
-  title: string;
-  desc: string;
-  features: string[];
-  href?: string;
-  linkLabel?: string;
-};
-
-const services: Service[] = [
+const services = [
   {
     icon: "fa-solid fa-truck-pickup",
     img: "/images/service-breakdown.jpg",
     alt: "24/7 Vehicle Breakdown Recovery",
     title: "24/7 Vehicle Breakdown Recovery",
     href: "/services/vehicle-breakdown-recovery",
-    linkLabel: "View Breakdown Recovery",
     desc: "Round-the-clock recovery for any breakdown, wherever you are on the road, day or night.",
     features: [
       "Available 24 hours a day, every day of the year",
@@ -42,7 +30,6 @@ const services: Service[] = [
     alt: "Roadside Assistance",
     title: "Roadside Assistance",
     href: "/services/roadside-assistance",
-    linkLabel: "View Roadside Assistance",
     desc: "On-the-spot help with minor faults so you can get back on your way without a full tow.",
     features: [
       "On-site assessment of the issue where possible",
@@ -170,19 +157,6 @@ const faqs = [
   },
 ];
 
-function ServiceDetailsLink({ service }: { service: Service }) {
-  if (!service.href || !service.linkLabel) return null;
-
-  return (
-    <Link
-      href={service.href}
-      className="mb-3 block rounded-full border border-red px-4 py-2.5 text-center text-sm font-bold text-red transition hover:bg-red hover:text-white"
-    >
-      {service.linkLabel}
-    </Link>
-  );
-}
-
 export default function ServicesPage() {
   return (
     <>
@@ -233,7 +207,9 @@ export default function ServicesPage() {
                     <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-red/10">
                       <i className={`${service.icon} text-xl text-red`}></i>
                     </div>
-                    <h3 className="mb-2 text-xl font-bold text-navy">{service.title}</h3>
+                    <h3 className="mb-2 text-xl font-bold text-navy">
+                      {service.href ? <Link href={service.href} className="transition hover:text-red">{service.title}</Link> : service.title}
+                    </h3>
                     <p className="mb-4 text-navy/70">{service.desc}</p>
                     <ul className="mb-6 flex-1 space-y-2">
                       {service.features.map((feature) => (
@@ -243,7 +219,6 @@ export default function ServicesPage() {
                         </li>
                       ))}
                     </ul>
-                    <ServiceDetailsLink service={service} />
                     <div className="mt-auto flex gap-3">
                       <a
                         href="tel:+447888502989"
