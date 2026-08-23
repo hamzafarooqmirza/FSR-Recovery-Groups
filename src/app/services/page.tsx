@@ -16,6 +16,7 @@ const services = [
     img: "/images/service-breakdown.jpg",
     alt: "24/7 Vehicle Breakdown Recovery",
     title: "24/7 Vehicle Breakdown Recovery",
+    href: "/services/vehicle-breakdown-recovery",
     desc: "Round-the-clock recovery for any breakdown, wherever you are on the road, day or night.",
     features: [
       "Available 24 hours a day, every day of the year",
@@ -28,6 +29,7 @@ const services = [
     img: "/images/service-roadside.jpg",
     alt: "Roadside Assistance",
     title: "Roadside Assistance",
+    href: "/services/roadside-assistance",
     desc: "On-the-spot help with minor faults so you can get back on your way without a full tow.",
     features: [
       "On-site assessment of the issue where possible",
@@ -205,7 +207,9 @@ export default function ServicesPage() {
                     <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-red/10">
                       <i className={`${service.icon} text-xl text-red`}></i>
                     </div>
-                    <h3 className="mb-2 text-xl font-bold text-navy">{service.title}</h3>
+                    <h3 className="mb-2 text-xl font-bold text-navy">
+                      {service.href ? <Link href={service.href} className="transition hover:text-red">{service.title}</Link> : service.title}
+                    </h3>
                     <p className="mb-4 text-navy/70">{service.desc}</p>
                     <ul className="mb-6 flex-1 space-y-2">
                       {service.features.map((feature) => (
