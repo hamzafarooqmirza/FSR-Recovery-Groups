@@ -39,7 +39,13 @@ export function Header({ activePath = "/" }: { activePath?: string }) {
           <nav className="hidden items-center gap-7 text-sm font-semibold lg:flex" aria-label="Main navigation">
             {navLinks.map((link) =>
               link.href === "/services" ? (
-                <div key={link.label} className="group relative">
+                <div
+                  key={link.label}
+                  className="group relative"
+                  onMouseEnter={() => setIsServicesOpen(true)}
+                  onMouseLeave={() => setIsServicesOpen(false)}
+                  onKeyDown={(event) => event.key === "Escape" && setIsServicesOpen(false)}
+                >
                   <button
                     type="button"
                     className={`nav-arrow flex items-center gap-1.5 py-7 transition hover:text-red focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-red ${
@@ -49,14 +55,13 @@ export function Header({ activePath = "/" }: { activePath?: string }) {
                     aria-controls="desktop-services-menu"
                     aria-haspopup="menu"
                     onClick={() => setIsServicesOpen((open) => !open)}
-                    onKeyDown={(event) => event.key === "Escape" && setIsServicesOpen(false)}
                   >
                     Services
                     <i className={`fa-solid fa-chevron-down text-[10px] transition ${isServicesOpen ? "rotate-180" : ""}`} />
                   </button>
                   <div
                     id="desktop-services-menu"
-                    className={`absolute left-1/2 top-full z-50 w-80 -translate-x-1/2 rounded-2xl border border-white/10 bg-navy p-2 shadow-2xl transition duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100 ${
+                    className={`absolute left-1/2 top-full z-50 w-80 -translate-x-1/2 rounded-2xl border border-white/10 bg-navy p-2 shadow-2xl transition duration-200 ${
                       isServicesOpen ? "visible translate-y-0 opacity-100" : "invisible -translate-y-2 opacity-0"
                     }`}
                   >
