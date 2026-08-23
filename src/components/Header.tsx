@@ -41,9 +41,7 @@ export function Header({ activePath = "/" }: { activePath?: string }) {
               link.href === "/services" ? (
                 <div
                   key={link.label}
-                  className="group relative"
-                  onMouseEnter={() => setIsServicesOpen(true)}
-                  onMouseLeave={() => setIsServicesOpen(false)}
+                  className="relative"
                   onKeyDown={(event) => event.key === "Escape" && setIsServicesOpen(false)}
                 >
                   <button
