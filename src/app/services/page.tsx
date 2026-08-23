@@ -10,7 +10,18 @@ export const metadata: Metadata = {
     "24/7 vehicle breakdown recovery, roadside assistance, jumpstarts, winch out, accident recovery, tyre changes, refueling and vehicle transporting across the region.",
 };
 
-const services = [
+type Service = {
+  icon: string;
+  img: string;
+  alt: string;
+  title: string;
+  desc: string;
+  features: string[];
+  href?: string;
+  linkLabel?: string;
+};
+
+const services: Service[] = [
   {
     icon: "fa-solid fa-truck-pickup",
     img: "/images/service-breakdown.jpg",
@@ -159,6 +170,19 @@ const faqs = [
   },
 ];
 
+function ServiceDetailsLink({ service }: { service: Service }) {
+  if (!service.href || !service.linkLabel) return null;
+
+  return (
+    <Link
+      href={service.href}
+      className="mb-3 block rounded-full border border-red px-4 py-2.5 text-center text-sm font-bold text-red transition hover:bg-red hover:text-white"
+    >
+      {service.linkLabel}
+    </Link>
+  );
+}
+
 export default function ServicesPage() {
   return (
     <>
@@ -219,11 +243,7 @@ export default function ServicesPage() {
                         </li>
                       ))}
                     </ul>
-                    {service.href && service.linkLabel && (
-                      <Link href={service.href} className="mb-3 block rounded-full border border-red px-4 py-2.5 text-center text-sm font-bold text-red transition hover:bg-red hover:text-white">
-                        {service.linkLabel}
-                      </Link>
-                    )}
+                    <ServiceDetailsLink service={service} />
                     <div className="mt-auto flex gap-3">
                       <a
                         href="tel:+447888502989"
