@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { getServiceNavigation } from "@/data/services";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -15,6 +17,7 @@ const services = [
     img: "/images/service-breakdown.jpg",
     alt: "24/7 Vehicle Breakdown Recovery",
     title: "24/7 Vehicle Breakdown Recovery",
+    ...getServiceNavigation("vehicle-breakdown-recovery"),
     desc: "Round-the-clock recovery for any breakdown, wherever you are on the road, day or night.",
     features: [
       "Available 24 hours a day, every day of the year",
@@ -27,6 +30,7 @@ const services = [
     img: "/images/service-roadside.jpg",
     alt: "Roadside Assistance",
     title: "Roadside Assistance",
+    ...getServiceNavigation("roadside-assistance"),
     desc: "On-the-spot help with minor faults so you can get back on your way without a full tow.",
     features: [
       "On-site assessment of the issue where possible",
@@ -39,6 +43,7 @@ const services = [
     img: "/images/service-jumpstart.jpg",
     alt: "Jumpstart Services",
     title: "Jumpstart Services",
+    ...getServiceNavigation("jumpstart-services"),
     desc: "Flat battery? We'll get your engine running again in minutes, anywhere you're parked.",
     features: [
       "Fast response for flat or failing batteries",
@@ -51,6 +56,7 @@ const services = [
     img: "/images/service-winch.jpg",
     alt: "Winch Out",
     title: "Winch Out",
+    ...getServiceNavigation("winch-out"),
     desc: "Stuck in mud, sand, or a ditch? Our winches pull your vehicle free without further damage.",
     features: [
       "Equipped for off-road and difficult-access recovery",
@@ -63,6 +69,7 @@ const services = [
     img: "/images/service-accident.jpg",
     alt: "Accident Emergency Assistance",
     title: "Accident Emergency Assistance",
+    ...getServiceNavigation("accident-emergency-assistance"),
     desc: "Fast, careful recovery from the scene of a collision, handled with care and full insurance.",
     features: [
       "Sensitive, professional handling at the scene",
@@ -75,6 +82,7 @@ const services = [
     img: "/images/service-tyre.jpg",
     alt: "Changing Spare Tyre",
     title: "Changing Spare Tyre",
+    ...getServiceNavigation("changing-spare-tyre"),
     desc: "Quick, safe roadside tyre changes so a puncture doesn't leave you waiting around.",
     features: [
       "Fast roadside tyre swaps for cars and light vans",
@@ -87,6 +95,7 @@ const services = [
     img: "/images/service-refuel.jpg",
     alt: "Refueling",
     title: "Refueling",
+    ...getServiceNavigation("refueling"),
     desc: "Run out of fuel? We'll bring enough to get you safely to the nearest station.",
     features: [
       "Enough fuel to reach the nearest station",
@@ -99,6 +108,7 @@ const services = [
     img: "/images/service-transport.jpg",
     alt: "Vehicle Transporting",
     title: "Vehicle Transporting",
+    ...getServiceNavigation("vehicle-transporting"),
     desc: "Safe, secure transport for vehicles that can't be driven, over any distance.",
     features: [
       "Suitable for dealership transfers and personal moves",
@@ -198,13 +208,15 @@ export default function ServicesPage() {
             </div>
             <div className="grid gap-7 md:grid-cols-2 lg:grid-cols-3">
               {services.map((service) => (
-                <article key={service.title} className="service-card fade-up flex flex-col overflow-hidden rounded-3xl border border-navy/10 bg-white">
+                <article id={service.key} key={service.title} className="service-card fade-up flex scroll-mt-28 flex-col overflow-hidden rounded-3xl border border-navy/10 bg-white">
                   <Image src={service.img} alt={service.alt} width={900} height={600} className="h-48 w-full object-cover" />
                   <div className="flex flex-1 flex-col p-6">
                     <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-red/10">
                       <i className={`${service.icon} text-xl text-red`}></i>
                     </div>
-                    <h3 className="mb-2 text-xl font-bold text-navy">{service.title}</h3>
+                    <h3 className="mb-2 text-xl font-bold text-navy">
+                      {service.available ? <Link href={service.href} className="transition hover:text-red">{service.title}</Link> : service.title}
+                    </h3>
                     <p className="mb-4 text-navy/70">{service.desc}</p>
                     <ul className="mb-6 flex-1 space-y-2">
                       {service.features.map((feature) => (

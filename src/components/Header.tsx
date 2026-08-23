@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Logo } from "./Logo";
+import { serviceNavigation } from "@/data/services";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -14,6 +15,8 @@ const navLinks = [
 
 export function Header({ activePath = "/" }: { activePath?: string }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
 
   return (
     <>
@@ -33,20 +36,63 @@ export function Header({ activePath = "/" }: { activePath?: string }) {
             <Logo variant="light" size="md" />
           </Link>
 
-          <nav className="hidden items-center gap-7 text-sm font-semibold lg:flex">
-            {navLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                className={
-                  link.href === activePath
-                    ? "nav-arrow text-red"
-                    : "nav-arrow text-white/85 transition hover:text-red"
-                }
-              >
-                {link.label}
-              </a>
-            ))}
+          <nav className="hidden items-center gap-7 text-sm font-semibold lg:flex" aria-label="Main navigation">
+            {navLinks.map((link) =>
+              link.href === "/services" ? (
+                <div key={link.label} className="group relative">
+                  <button
+                    type="button"
+                    className={`nav-arrow flex items-center gap-1.5 py-7 transition hover:text-red focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-red ${
+                      activePath.startsWith("/services") ? "text-red" : "text-white/85"
+                    }`}
+                    aria-expanded={isServicesOpen}
+                    aria-controls="desktop-services-menu"
+                    aria-haspopup="menu"
+                    onClick={() => setIsServicesOpen((open) => !open)}
+                    onKeyDown={(event) => event.key === "Escape" && setIsServicesOpen(false)}
+                  >
+                    Services
+                    <i className={`fa-solid fa-chevron-down text-[10px] transition ${isServicesOpen ? "rotate-180" : ""}`} />
+                  </button>
+                  <div
+                    id="desktop-services-menu"
+                    className={`absolute left-1/2 top-full z-50 w-80 -translate-x-1/2 rounded-2xl border border-white/10 bg-navy p-2 shadow-2xl transition duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100 ${
+                      isServicesOpen ? "visible translate-y-0 opacity-100" : "invisible -translate-y-2 opacity-0"
+                    }`}
+                  >
+                    <Link
+                      href="/services"
+                      className="block rounded-xl border-b border-white/10 px-4 py-3 text-white transition hover:bg-white/10 hover:text-red focus-visible:outline-2 focus-visible:outline-red"
+                      onClick={() => setIsServicesOpen(false)}
+                    >
+                      View All Services
+                    </Link>
+                    {serviceNavigation.map((service) => (
+                      <Link
+                        key={service.key}
+                        href={service.href}
+                        className="block rounded-xl px-4 py-2.5 text-white/80 transition hover:bg-white/10 hover:text-red focus-visible:outline-2 focus-visible:outline-red"
+                        onClick={() => setIsServicesOpen(false)}
+                      >
+                        {service.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              ) : (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  className={
+                    link.href === activePath
+                      ? "nav-arrow text-red"
+                      : "nav-arrow text-white/85 transition hover:text-red"
+                  }
+                >
+                  {link.label}
+                </a>
+              )
+            )}
           </nav>
 
           <div className="hidden items-center gap-3 lg:flex">
@@ -68,7 +114,9 @@ export function Header({ activePath = "/" }: { activePath?: string }) {
 
           <button
             className="h-11 w-11 rounded-xl bg-red text-white lg:hidden"
-            aria-label="Open mobile menu"
+            aria-label={isMenuOpen ? "Close mobile menu" : "Open mobile menu"}
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-navigation"
             onClick={() => setIsMenuOpen((open) => !open)}
           >
             <i className={`fa-solid ${isMenuOpen ? "fa-xmark" : "fa-bars"}`}></i>
@@ -76,23 +124,64 @@ export function Header({ activePath = "/" }: { activePath?: string }) {
         </div>
 
         {isMenuOpen && (
-          <div className="border-t border-white/10 bg-navy lg:hidden">
-            <div className="container-site grid gap-3 py-4 font-semibold">
-              {navLinks.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  className={
-                    link.href === activePath
-                      ? "py-2 text-red"
-                      : "py-2 text-white/85 hover:text-red"
-                  }
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  <i className="fa-solid fa-chevron-right mr-2 text-xs text-red"></i>
-                  {link.label}
-                </a>
-              ))}
+          <div id="mobile-navigation" className="border-t border-white/10 bg-navy lg:hidden">
+            <div className="container-site max-h-[calc(100dvh-7rem)] overflow-y-auto py-4 font-semibold">
+              {navLinks.map((link) =>
+                link.href === "/services" ? (
+                  <div key={link.label}>
+                    <button
+                      type="button"
+                      className={`flex w-full items-center justify-between rounded-lg py-3 text-left ${
+                        activePath.startsWith("/services") ? "text-red" : "text-white/85"
+                      }`}
+                      aria-expanded={isMobileServicesOpen}
+                      aria-controls="mobile-services-menu"
+                      onClick={() => setIsMobileServicesOpen((open) => !open)}
+                    >
+                      <span>
+                        <i className="fa-solid fa-chevron-right mr-2 text-xs text-red" />
+                        Services
+                      </span>
+                      <i className={`fa-solid fa-chevron-down mr-2 text-xs transition ${isMobileServicesOpen ? "rotate-180" : ""}`} />
+                    </button>
+                    {isMobileServicesOpen && (
+                      <div id="mobile-services-menu" className="ml-3 grid gap-1 border-l border-red/30 pb-2 pl-4">
+                        <Link
+                          href="/services"
+                          className="rounded-lg px-3 py-2.5 text-white hover:bg-white/5 hover:text-red"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          View All Services
+                        </Link>
+                        {serviceNavigation.map((service) => (
+                          <Link
+                            key={service.key}
+                            href={service.href}
+                            className="rounded-lg px-3 py-2.5 text-sm text-white/75 hover:bg-white/5 hover:text-red"
+                            onClick={() => setIsMenuOpen(false)}
+                          >
+                            {service.label}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                ) : (
+                  <a
+                    key={link.label}
+                    href={link.href}
+                    className={
+                      link.href === activePath
+                        ? "py-2 text-red"
+                        : "py-2 text-white/85 hover:text-red"
+                    }
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    <i className="fa-solid fa-chevron-right mr-2 text-xs text-red"></i>
+                    {link.label}
+                  </a>
+                )
+              )}
               <a
                 href="tel:+447888502989"
                 className="mt-2 rounded-xl bg-red px-5 py-3 text-center font-bold text-white"
