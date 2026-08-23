@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { getServiceNavigation } from "@/data/services";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -18,6 +19,7 @@ const services = [
     title: "24/7 Vehicle Breakdown Recovery",
     href: "/services/vehicle-breakdown-recovery",
     desc: "Round-the-clock recovery for any breakdown, wherever you are on the road, day or night.",
+    key: "vehicle-breakdown-recovery",
     features: [
       "Available 24 hours a day, every day of the year",
       "Modern fleet of flatbed and recovery vehicles",
@@ -31,6 +33,7 @@ const services = [
     title: "Roadside Assistance",
     href: "/services/roadside-assistance",
     desc: "On-the-spot help with minor faults so you can get back on your way without a full tow.",
+    key: "roadside-assistance",
     features: [
       "On-site assessment of the issue where possible",
       "Safe assistance on motorways, A-roads and residential streets",
@@ -42,6 +45,7 @@ const services = [
     img: "/images/service-jumpstart.jpg",
     alt: "Jumpstart Services",
     title: "Jumpstart Services",
+    ...getServiceNavigation("jumpstart-services"),
     desc: "Flat battery? We'll get your engine running again in minutes, anywhere you're parked.",
     features: [
       "Fast response for flat or failing batteries",
@@ -54,6 +58,7 @@ const services = [
     img: "/images/service-winch.jpg",
     alt: "Winch Out",
     title: "Winch Out",
+    ...getServiceNavigation("winch-out"),
     desc: "Stuck in mud, sand, or a ditch? Our winches pull your vehicle free without further damage.",
     features: [
       "Equipped for off-road and difficult-access recovery",
@@ -66,6 +71,7 @@ const services = [
     img: "/images/service-accident.jpg",
     alt: "Accident Emergency Assistance",
     title: "Accident Emergency Assistance",
+    ...getServiceNavigation("accident-emergency-assistance"),
     desc: "Fast, careful recovery from the scene of a collision, handled with care and full insurance.",
     features: [
       "Sensitive, professional handling at the scene",
@@ -78,6 +84,7 @@ const services = [
     img: "/images/service-tyre.jpg",
     alt: "Changing Spare Tyre",
     title: "Changing Spare Tyre",
+    ...getServiceNavigation("changing-spare-tyre"),
     desc: "Quick, safe roadside tyre changes so a puncture doesn't leave you waiting around.",
     features: [
       "Fast roadside tyre swaps for cars and light vans",
@@ -90,6 +97,7 @@ const services = [
     img: "/images/service-refuel.jpg",
     alt: "Refueling",
     title: "Refueling",
+    ...getServiceNavigation("refueling"),
     desc: "Run out of fuel? We'll bring enough to get you safely to the nearest station.",
     features: [
       "Enough fuel to reach the nearest station",
@@ -102,6 +110,7 @@ const services = [
     img: "/images/service-transport.jpg",
     alt: "Vehicle Transporting",
     title: "Vehicle Transporting",
+    ...getServiceNavigation("vehicle-transporting"),
     desc: "Safe, secure transport for vehicles that can't be driven, over any distance.",
     features: [
       "Suitable for dealership transfers and personal moves",
@@ -201,7 +210,7 @@ export default function ServicesPage() {
             </div>
             <div className="grid gap-7 md:grid-cols-2 lg:grid-cols-3">
               {services.map((service) => (
-                <article key={service.title} className="service-card fade-up flex flex-col overflow-hidden rounded-3xl border border-navy/10 bg-white">
+                <article id={service.key} key={service.title} className="service-card fade-up flex scroll-mt-28 flex-col overflow-hidden rounded-3xl border border-navy/10 bg-white">
                   <Image src={service.img} alt={service.alt} width={900} height={600} className="h-48 w-full object-cover" />
                   <div className="flex flex-1 flex-col p-6">
                     <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-red/10">
