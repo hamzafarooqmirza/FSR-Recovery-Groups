@@ -16,6 +16,8 @@ const services = [
     img: "/images/service-breakdown.jpg",
     alt: "24/7 Vehicle Breakdown Recovery",
     title: "24/7 Vehicle Breakdown Recovery",
+    href: "/services/vehicle-breakdown-recovery",
+    linkLabel: "View Breakdown Recovery",
     desc: "Round-the-clock recovery for any breakdown, wherever you are on the road, day or night.",
     features: [
       "Available 24 hours a day, every day of the year",
@@ -28,6 +30,8 @@ const services = [
     img: "/images/service-roadside.jpg",
     alt: "Roadside Assistance",
     title: "Roadside Assistance",
+    href: "/services/roadside-assistance",
+    linkLabel: "View Roadside Assistance",
     desc: "On-the-spot help with minor faults so you can get back on your way without a full tow.",
     features: [
       "On-site assessment of the issue where possible",
@@ -215,14 +219,9 @@ export default function ServicesPage() {
                         </li>
                       ))}
                     </ul>
-                    {service.title === "24/7 Vehicle Breakdown Recovery" && (
-                      <Link href="/services/vehicle-breakdown-recovery" className="mb-3 block rounded-full border border-red px-4 py-2.5 text-center text-sm font-bold text-red transition hover:bg-red hover:text-white">
-                        View Breakdown Recovery
-                      </Link>
-                    )}
-                    {service.title === "Roadside Assistance" && (
-                      <Link href="/services/roadside-assistance" className="mb-3 block rounded-full border border-red px-4 py-2.5 text-center text-sm font-bold text-red transition hover:bg-red hover:text-white">
-                        View Roadside Assistance
+                    {service.href && service.linkLabel && (
+                      <Link href={service.href} className="mb-3 block rounded-full border border-red px-4 py-2.5 text-center text-sm font-bold text-red transition hover:bg-red hover:text-white">
+                        {service.linkLabel}
                       </Link>
                     )}
                     <div className="mt-auto flex gap-3">
