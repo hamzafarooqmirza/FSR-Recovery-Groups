@@ -56,7 +56,7 @@ export const serviceNavigation: ServiceNavigationItem[] = [
   },
 ];
 
-export function getServiceNavigation(key: string): ServiceNavigationItem {
+export function getServiceNavigation(key: string) {
   const service = serviceNavigation.find((item) => item.key === key);
 
   if (!service) {
