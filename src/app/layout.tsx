@@ -16,6 +16,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://fsrrecoverygroups.co.uk"),
   title: {
     template: "%s | FSR Recovery Groups",
     default: "FSR Recovery Groups | 24/7 Car Recovery & Towing Services",
