@@ -17,8 +17,9 @@ const services = [
     img: "/images/service-breakdown.jpg",
     alt: "24/7 Vehicle Breakdown Recovery",
     title: "24/7 Vehicle Breakdown Recovery",
-    ...getServiceNavigation("vehicle-breakdown-recovery"),
+    href: "/services/vehicle-breakdown-recovery",
     desc: "Round-the-clock recovery for any breakdown, wherever you are on the road, day or night.",
+    key: "vehicle-breakdown-recovery",
     features: [
       "Available 24 hours a day, every day of the year",
       "Modern fleet of flatbed and recovery vehicles",
@@ -30,8 +31,9 @@ const services = [
     img: "/images/service-roadside.jpg",
     alt: "Roadside Assistance",
     title: "Roadside Assistance",
-    ...getServiceNavigation("roadside-assistance"),
+    href: "/services/roadside-assistance",
     desc: "On-the-spot help with minor faults so you can get back on your way without a full tow.",
+    key: "roadside-assistance",
     features: [
       "On-site assessment of the issue where possible",
       "Safe assistance on motorways, A-roads and residential streets",
