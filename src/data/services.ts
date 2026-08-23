@@ -56,12 +56,6 @@ export const serviceNavigation: ServiceNavigationItem[] = [
   },
 ];
 
-export function getServiceNavigation(key: string) {
-  const service = serviceNavigation.find((item) => item.key === key);
-
-  if (!service) {
-    throw new Error(`Unknown service navigation key: ${key}`);
-  }
-
-  return service;
-}
+export const serviceNavigationByKey = Object.fromEntries(
+  serviceNavigation.map((service) => [service.key, service]),
+) as Record<string, ServiceNavigationItem>;

@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { getServiceNavigation } from "@/data/services";
+import { serviceNavigationByKey } from "@/data/services";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -45,7 +45,7 @@ const services = [
     img: "/images/service-jumpstart.jpg",
     alt: "Jumpstart Services",
     title: "Jumpstart Services",
-    ...getServiceNavigation("jumpstart-services"),
+    ...serviceNavigationByKey["jumpstart-services"],
     desc: "Flat battery? We'll get your engine running again in minutes, anywhere you're parked.",
     features: [
       "Fast response for flat or failing batteries",
@@ -58,7 +58,7 @@ const services = [
     img: "/images/service-winch.jpg",
     alt: "Winch Out",
     title: "Winch Out",
-    ...getServiceNavigation("winch-out"),
+    ...serviceNavigationByKey["winch-out"],
     desc: "Stuck in mud, sand, or a ditch? Our winches pull your vehicle free without further damage.",
     features: [
       "Equipped for off-road and difficult-access recovery",
@@ -71,7 +71,7 @@ const services = [
     img: "/images/service-accident.jpg",
     alt: "Accident Emergency Assistance",
     title: "Accident Emergency Assistance",
-    ...getServiceNavigation("accident-emergency-assistance"),
+    ...serviceNavigationByKey["accident-emergency-assistance"],
     desc: "Fast, careful recovery from the scene of a collision, handled with care and full insurance.",
     features: [
       "Sensitive, professional handling at the scene",
@@ -84,7 +84,7 @@ const services = [
     img: "/images/service-tyre.jpg",
     alt: "Changing Spare Tyre",
     title: "Changing Spare Tyre",
-    ...getServiceNavigation("changing-spare-tyre"),
+    ...serviceNavigationByKey["changing-spare-tyre"],
     desc: "Quick, safe roadside tyre changes so a puncture doesn't leave you waiting around.",
     features: [
       "Fast roadside tyre swaps for cars and light vans",
@@ -97,7 +97,7 @@ const services = [
     img: "/images/service-refuel.jpg",
     alt: "Refueling",
     title: "Refueling",
-    ...getServiceNavigation("refueling"),
+    ...serviceNavigationByKey["refueling"],
     desc: "Run out of fuel? We'll bring enough to get you safely to the nearest station.",
     features: [
       "Enough fuel to reach the nearest station",
@@ -110,7 +110,7 @@ const services = [
     img: "/images/service-transport.jpg",
     alt: "Vehicle Transporting",
     title: "Vehicle Transporting",
-    ...getServiceNavigation("vehicle-transporting"),
+    ...serviceNavigationByKey["vehicle-transporting"],
     desc: "Safe, secure transport for vehicles that can't be driven, over any distance.",
     features: [
       "Suitable for dealership transfers and personal moves",
