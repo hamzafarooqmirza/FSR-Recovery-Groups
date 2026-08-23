@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 
@@ -214,6 +215,11 @@ export default function ServicesPage() {
                         </li>
                       ))}
                     </ul>
+                    {service.title === "24/7 Vehicle Breakdown Recovery" && (
+                      <Link href="/services/vehicle-breakdown-recovery" className="mb-3 block rounded-full border border-red px-4 py-2.5 text-center text-sm font-bold text-red transition hover:bg-red hover:text-white">
+                        View Breakdown Recovery
+                      </Link>
+                    )}
                     <div className="mt-auto flex gap-3">
                       <a
                         href="tel:+447888502989"
