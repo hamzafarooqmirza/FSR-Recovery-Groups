@@ -27,8 +27,8 @@ export const serviceNavigation: ServiceNavigationItem[] = [
   {
     key: "winch-out",
     label: "Winch Out",
-    href: "/services#winch-out",
-    available: false,
+    href: "/services/winch-out",
+    available: true,
   },
   {
     key: "accident-emergency-assistance",
