@@ -45,8 +45,8 @@ export const serviceNavigation: ServiceNavigationItem[] = [
   {
     key: "refueling",
     label: "Refueling",
-    href: "/services#refueling",
-    available: false,
+    href: "/services/refueling",
+    available: true,
   },
   {
     key: "vehicle-transporting",
