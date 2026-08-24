@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { business } from "@/data/business";
+import { cityAreas, roadAreas } from "@/data/areas";
 
 export const metadata: Metadata = {
   title: "Areas Covered",
@@ -128,6 +130,57 @@ export default function AreasPage() {
                   <p className="text-sm leading-7 text-navy/70">{area.desc}</p>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Cities & Towns / Main Roads */}
+        <section className="bg-white py-20">
+          <div className="container-site">
+            <div className="fade-up mx-auto mb-12 max-w-3xl text-center">
+              <p className="mb-3 font-bold text-red">Dedicated Local Pages</p>
+              <h2 className="mb-4 text-3xl font-extrabold text-navy lg:text-4xl">Find Recovery Near You</h2>
+              <p className="text-navy/70">
+                Explore dedicated recovery pages for the cities, towns and main roads we cover most often.
+              </p>
+            </div>
+
+            <div className="mb-14">
+              <h3 className="fade-up mb-6 flex items-center gap-3 text-xl font-bold text-navy">
+                <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-red/10 text-red"><i className="fa-solid fa-city" /></span>
+                Cities &amp; Towns
+              </h3>
+              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                {cityAreas.map((area) => (
+                  <Link
+                    key={area.key}
+                    href={area.href}
+                    className="fade-up flex items-center justify-between rounded-2xl border border-navy/10 bg-slate-50 px-6 py-4 font-bold text-navy transition hover:-translate-y-0.5 hover:border-red/40 hover:bg-white hover:shadow-md"
+                  >
+                    <span><i className="fa-solid fa-location-dot mr-3 text-red" />{area.label}</span>
+                    <i className="fa-solid fa-arrow-right text-red" />
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <h3 className="fade-up mb-6 flex items-center gap-3 text-xl font-bold text-navy">
+                <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-red/10 text-red"><i className="fa-solid fa-road" /></span>
+                Main Roads
+              </h3>
+              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                {roadAreas.map((area) => (
+                  <Link
+                    key={area.key}
+                    href={area.href}
+                    className="fade-up flex items-center justify-between rounded-2xl border border-navy/10 bg-slate-50 px-6 py-4 font-bold text-navy transition hover:-translate-y-0.5 hover:border-red/40 hover:bg-white hover:shadow-md"
+                  >
+                    <span><i className="fa-solid fa-road mr-3 text-red" />{area.label}</span>
+                    <i className="fa-solid fa-arrow-right text-red" />
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
         </section>
