@@ -39,8 +39,8 @@ export const serviceNavigation: ServiceNavigationItem[] = [
   {
     key: "changing-spare-tyre",
     label: "Changing Spare Tyre",
-    href: "/services#changing-spare-tyre",
-    available: false,
+    href: "/services/changing-spare-tyre",
+    available: true,
   },
   {
     key: "refueling",
