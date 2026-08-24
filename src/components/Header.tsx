@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { Logo } from "./Logo";
 import { serviceNavigation } from "@/data/services";
+import { cityAreas, roadAreas } from "@/data/areas";
 import { business } from "@/data/business";
 
 const navLinks = [
@@ -18,6 +19,8 @@ export function Header({ activePath = "/" }: { activePath?: string }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
+  const [isAreasOpen, setIsAreasOpen] = useState(false);
+  const [isMobileAreasOpen, setIsMobileAreasOpen] = useState(false);
 
   return (
     <>
@@ -81,6 +84,78 @@ export function Header({ activePath = "/" }: { activePath?: string }) {
                         {service.label}
                       </Link>
                     ))}
+                  </div>
+                </div>
+              ) : link.href === "/areas" ? (
+                <div
+                  key={link.label}
+                  className="relative"
+                  onMouseEnter={() => setIsAreasOpen(true)}
+                  onMouseLeave={() => setIsAreasOpen(false)}
+                  onKeyDown={(event) => event.key === "Escape" && setIsAreasOpen(false)}
+                >
+                  <button
+                    type="button"
+                    className={`nav-arrow flex items-center gap-1.5 py-7 transition hover:text-red focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-red ${
+                      activePath.startsWith("/areas") ? "text-red" : "text-white/85"
+                    }`}
+                    aria-expanded={isAreasOpen}
+                    aria-controls="desktop-areas-menu"
+                    aria-haspopup="menu"
+                    onClick={() => setIsAreasOpen((open) => !open)}
+                  >
+                    Areas
+                    <i className={`fa-solid fa-chevron-down text-[10px] transition ${isAreasOpen ? "rotate-180" : ""}`} />
+                  </button>
+                  <div
+                    id="desktop-areas-menu"
+                    role="menu"
+                    className={`absolute left-1/2 top-full z-50 w-[34rem] max-w-[90vw] -translate-x-1/2 rounded-2xl border border-white/10 bg-navy p-4 shadow-2xl transition duration-200 ${
+                      isAreasOpen ? "visible translate-y-0 opacity-100" : "invisible -translate-y-2 opacity-0"
+                    }`}
+                  >
+                    <div className="grid max-h-[70vh] gap-x-6 gap-y-5 overflow-y-auto sm:grid-cols-2">
+                      <div>
+                        <p className="mb-1.5 px-3 text-xs font-bold uppercase tracking-wider text-white/50">Cities &amp; Towns</p>
+                        <div className="grid gap-0.5">
+                          {cityAreas.map((area) => (
+                            <Link
+                              key={area.key}
+                              href={area.href}
+                              role="menuitem"
+                              className="block rounded-xl px-3 py-2 text-sm text-white/80 transition hover:bg-white/10 hover:text-red focus-visible:outline-2 focus-visible:outline-red"
+                              onClick={() => setIsAreasOpen(false)}
+                            >
+                              {area.label}
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                      <div>
+                        <p className="mb-1.5 px-3 text-xs font-bold uppercase tracking-wider text-white/50">Main Roads</p>
+                        <div className="grid gap-0.5">
+                          {roadAreas.map((area) => (
+                            <Link
+                              key={area.key}
+                              href={area.href}
+                              role="menuitem"
+                              className="block rounded-xl px-3 py-2 text-sm text-white/80 transition hover:bg-white/10 hover:text-red focus-visible:outline-2 focus-visible:outline-red"
+                              onClick={() => setIsAreasOpen(false)}
+                            >
+                              {area.label}
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                    <Link
+                      href="/areas"
+                      role="menuitem"
+                      className="mt-4 block rounded-xl border-t border-white/10 px-3 pt-4 text-center font-semibold text-red transition hover:text-red-dark focus-visible:outline-2 focus-visible:outline-red"
+                      onClick={() => setIsAreasOpen(false)}
+                    >
+                      View All Areas →
+                    </Link>
                   </div>
                 </div>
               ) : (
@@ -167,6 +242,65 @@ export function Header({ activePath = "/" }: { activePath?: string }) {
                             {service.label}
                           </Link>
                         ))}
+                      </div>
+                    )}
+                  </div>
+                ) : link.href === "/areas" ? (
+                  <div key={link.label}>
+                    <button
+                      type="button"
+                      className={`flex w-full items-center justify-between rounded-lg py-3 text-left ${
+                        activePath.startsWith("/areas") ? "text-red" : "text-white/85"
+                      }`}
+                      aria-expanded={isMobileAreasOpen}
+                      aria-controls="mobile-areas-menu"
+                      onClick={() => setIsMobileAreasOpen((open) => !open)}
+                    >
+                      <span>
+                        <i className="fa-solid fa-chevron-right mr-2 text-xs text-red" />
+                        Areas
+                      </span>
+                      <i className={`fa-solid fa-chevron-down mr-2 text-xs transition ${isMobileAreasOpen ? "rotate-180" : ""}`} />
+                    </button>
+                    {isMobileAreasOpen && (
+                      <div id="mobile-areas-menu" className="ml-3 grid gap-3 border-l border-red/30 pb-2 pl-4">
+                        <div>
+                          <p className="mb-1 px-3 text-xs font-bold uppercase tracking-wider text-white/40">Cities &amp; Towns</p>
+                          <div className="grid gap-1">
+                            {cityAreas.map((area) => (
+                              <Link
+                                key={area.key}
+                                href={area.href}
+                                className="rounded-lg px-3 py-2.5 text-sm text-white/75 hover:bg-white/5 hover:text-red"
+                                onClick={() => setIsMenuOpen(false)}
+                              >
+                                {area.label}
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
+                        <div>
+                          <p className="mb-1 px-3 text-xs font-bold uppercase tracking-wider text-white/40">Main Roads</p>
+                          <div className="grid gap-1">
+                            {roadAreas.map((area) => (
+                              <Link
+                                key={area.key}
+                                href={area.href}
+                                className="rounded-lg px-3 py-2.5 text-sm text-white/75 hover:bg-white/5 hover:text-red"
+                                onClick={() => setIsMenuOpen(false)}
+                              >
+                                {area.label}
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
+                        <Link
+                          href="/areas"
+                          className="rounded-lg px-3 py-2.5 font-semibold text-red hover:bg-white/5"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          View All Areas →
+                        </Link>
                       </div>
                     )}
                   </div>
