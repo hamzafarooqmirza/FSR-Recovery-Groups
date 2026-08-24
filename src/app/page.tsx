@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { QuoteForm } from "@/components/QuoteForm";
 import { ReviewsSlider } from "@/components/ReviewsSlider";
 import { business } from "@/data/business";
+import { getServiceNavigation } from "@/data/services";
 
 export const metadata: Metadata = {
   openGraph: {
@@ -45,36 +47,42 @@ const featureIcons = [
 
 const services = [
   {
+    key: "vehicle-breakdown-recovery",
     img: "/images/service-breakdown.jpg",
     alt: "24/7 Vehicle Breakdown Recovery",
     title: "24/7 Vehicle Breakdown Recovery",
     desc: "Round-the-clock recovery for any breakdown, wherever you are on the road, day or night.",
   },
   {
+    key: "roadside-assistance",
     img: "/images/service-roadside.jpg",
     alt: "Roadside Assistance",
     title: "Roadside Assistance",
     desc: "On-the-spot help with minor faults so you can get back on your way without a full tow.",
   },
   {
+    key: "jumpstart-services",
     img: "/images/service-jumpstart.jpg",
     alt: "Jumpstart Services",
     title: "Jumpstart Services",
     desc: "Flat battery? We'll get your engine running again in minutes, anywhere you're parked.",
   },
   {
+    key: "accident-emergency-assistance",
     img: "/images/service-accident.jpg",
     alt: "Accident Emergency Assistance",
     title: "Accident Emergency Assistance",
     desc: "Fast, careful recovery from the scene of a collision, handled with care and full insurance.",
   },
   {
+    key: "winch-out",
     img: "/images/service-winch.jpg",
     alt: "Winch Out",
     title: "Winch Out",
     desc: "Stuck in mud, sand, or a ditch? Our winches pull your vehicle free without further damage.",
   },
   {
+    key: "vehicle-transporting",
     img: "/images/service-transport.jpg",
     alt: "Vehicle Transporting",
     title: "Vehicle Transporting",
@@ -268,37 +276,47 @@ export default function Home() {
               </p>
             </div>
             <div className="grid gap-7 md:grid-cols-2 lg:grid-cols-3">
-              {services.map((service) => (
-                <article key={service.title} className="dark-service-card fade-up flex flex-col">
-                  <Image
-                    src={service.img}
-                    alt={service.alt}
-                    width={900}
-                    height={600}
-                    className="h-52 w-full rounded-t-3xl object-cover"
-                  />
-                  <div className="flex flex-1 flex-col p-6">
-                    <h3 className="mb-2 text-xl font-bold text-white">{service.title}</h3>
-                    <p className="mb-5 flex-1 text-slate-400">{service.desc}</p>
-                    <div className="mt-auto flex gap-3">
-                      <a
-                        href={business.tel}
-                        className="flex-1 rounded-full bg-red px-4 py-2.5 text-center text-sm font-bold text-white transition hover:bg-red-dark"
-                      >
-                        <i className="fa-solid fa-phone mr-1.5"></i>Call Now
-                      </a>
-                      <a
-                        href={business.whatsapp}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex-1 rounded-full bg-whatsapp px-4 py-2.5 text-center text-sm font-bold text-white transition hover:bg-green-600"
-                      >
-                        <i className="fa-brands fa-whatsapp mr-1.5"></i>WhatsApp
-                      </a>
+              {services.map((service) => {
+                const href = getServiceNavigation(service.key).href;
+                return (
+                  <article key={service.title} className="dark-service-card fade-up flex flex-col">
+                    <Link href={href}>
+                      <Image
+                        src={service.img}
+                        alt={service.alt}
+                        width={900}
+                        height={600}
+                        className="h-52 w-full rounded-t-3xl object-cover"
+                      />
+                    </Link>
+                    <div className="flex flex-1 flex-col p-6">
+                      <h3 className="mb-2 text-xl font-bold text-white">
+                        <Link href={href} className="transition hover:text-red">{service.title}</Link>
+                      </h3>
+                      <p className="mb-4 flex-1 text-slate-400">{service.desc}</p>
+                      <Link href={href} className="mb-5 inline-block text-sm font-bold text-red transition hover:text-red-dark">
+                        Learn More <i className="fa-solid fa-arrow-right ml-1" />
+                      </Link>
+                      <div className="mt-auto flex gap-3">
+                        <a
+                          href={business.tel}
+                          className="flex-1 rounded-full bg-red px-4 py-2.5 text-center text-sm font-bold text-white transition hover:bg-red-dark"
+                        >
+                          <i className="fa-solid fa-phone mr-1.5"></i>Call Now
+                        </a>
+                        <a
+                          href={business.whatsapp}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex-1 rounded-full bg-whatsapp px-4 py-2.5 text-center text-sm font-bold text-white transition hover:bg-green-600"
+                        >
+                          <i className="fa-brands fa-whatsapp mr-1.5"></i>WhatsApp
+                        </a>
+                      </div>
                     </div>
-                  </div>
-                </article>
-              ))}
+                  </article>
+                );
+              })}
             </div>
             <div className="fade-up mt-10 text-center">
               <a href="/services" className="inline-block rounded-full border-2 border-red px-8 py-4 font-bold text-red transition hover:bg-red hover:text-white">
