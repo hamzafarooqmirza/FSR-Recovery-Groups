@@ -43,7 +43,7 @@ export function Footer() {
               </div>
               <div className="contact-info-item">
                 <i className="fa-solid fa-location-dot mt-0.5 shrink-0 text-red"></i>
-                <span>Covering the region, 24/7</span>
+                <span>{business.addressFull}</span>
               </div>
               <div className="contact-info-item">
                 <i className="fa-solid fa-clock mt-0.5 shrink-0 text-red"></i>
