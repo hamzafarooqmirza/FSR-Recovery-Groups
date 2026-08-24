@@ -180,6 +180,15 @@ export default function ContactPage() {
                   </li>
                   <li className="flex items-start gap-4">
                     <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-white/10">
+                      <i className="fa-solid fa-location-dot text-red"></i>
+                    </div>
+                    <div>
+                      <p className="mb-1 text-sm text-white/60">Address</p>
+                      <p className="font-semibold">{business.addressFull}</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-4">
+                    <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-white/10">
                       <i className="fa-solid fa-clock text-red"></i>
                     </div>
                     <div>
