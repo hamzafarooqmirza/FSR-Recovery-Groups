@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { Logo } from "./Logo";
 import { serviceNavigation } from "@/data/services";
+import { business } from "@/data/business";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -100,13 +101,13 @@ export function Header({ activePath = "/" }: { activePath?: string }) {
 
           <div className="hidden items-center gap-3 lg:flex">
             <a
-              href="tel:+447888502989"
+              href={business.tel}
               className="animated-contact rounded-full bg-red px-5 py-3 text-sm font-bold text-white transition hover:bg-red-dark"
             >
               <i className="fa-solid fa-phone mr-2"></i>Call Now
             </a>
             <a
-              href="https://wa.me/447888502989"
+              href={business.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-full bg-whatsapp px-5 py-3 text-sm font-bold text-white transition hover:bg-green-600"
@@ -186,14 +187,14 @@ export function Header({ activePath = "/" }: { activePath?: string }) {
                 )
               )}
               <a
-                href="tel:+447888502989"
+                href={business.tel}
                 className="mt-2 rounded-xl bg-red px-5 py-3 text-center font-bold text-white"
                 onClick={() => setIsMenuOpen(false)}
               >
                 <i className="fa-solid fa-phone mr-2"></i>Call Now
               </a>
               <a
-                href="https://wa.me/447888502989"
+                href={business.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="rounded-xl bg-whatsapp px-5 py-3 text-center font-bold text-white"

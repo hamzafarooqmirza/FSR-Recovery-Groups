@@ -1,8 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
-
-const WHATSAPP_NUMBER = "447888502989";
+import { business } from "@/data/business";
 
 type QuoteFormProps = {
   variant?: "hero" | "light";
@@ -31,7 +30,7 @@ export function QuoteForm({ variant = "light" }: QuoteFormProps) {
     }
     setError(false);
 
-    let text = "Hello FSR Recovery Groups,\n\nI would like a quotation for the following:\n";
+    let text = `Hello ${business.name},\n\nI would like a quotation for the following:\n`;
     if (service) text += `Service: ${service}\n`;
     if (name) text += `Name: ${name}\n`;
     if (vehicle) text += `Vehicle: ${vehicle}\n`;
@@ -40,7 +39,7 @@ export function QuoteForm({ variant = "light" }: QuoteFormProps) {
     if (message) text += `\nAdditional details: ${message}`;
     text += "\n\nPlease send me a quote at your earliest convenience.";
 
-    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`, "_blank");
+    window.open(`${business.whatsapp}?text=${encodeURIComponent(text)}`, "_blank");
   };
 
   const isHero = variant === "hero";
@@ -108,8 +107,8 @@ export function QuoteForm({ variant = "light" }: QuoteFormProps) {
       {isHero && (
         <p className="mt-4 text-center text-xs text-white/60">
           Or call us directly:{" "}
-          <a href="tel:+447888502989" className="font-bold text-red transition hover:text-white">
-            +44 7888 502989
+          <a href={business.tel} className="font-bold text-red transition hover:text-white">
+            {business.phoneDisplay}
           </a>
         </p>
       )}

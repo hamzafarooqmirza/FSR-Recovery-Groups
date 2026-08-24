@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { business } from "@/data/business";
 
 export const metadata: Metadata = {
   title: "About Us",
-  description:
-    "Learn about FSR Recovery Groups — 15+ years providing dependable 24/7 vehicle recovery, roadside assistance and transport across the region.",
+  description: `Learn about ${business.name} — 15+ years providing dependable 24/7 vehicle recovery, roadside assistance and transport across the region.`,
 };
 
 const values = [
@@ -56,7 +56,7 @@ const areas = [
 const faqs = [
   {
     q: "How long have you been operating?",
-    a: "FSR Recovery Groups has been providing roadside and recovery services for over 15 years. Our reputation is built on consistent, careful service.",
+    a: "FSR Recovery Group has been providing roadside and recovery services for over 15 years. Our reputation is built on consistent, careful service.",
   },
   {
     q: "What vehicles can you recover?",
@@ -91,11 +91,11 @@ export default function AboutPage() {
               A straightforward, professional recovery service run by people who care about getting you back on the road safely.
             </p>
             <div className="flex flex-col justify-center gap-3 sm:flex-row sm:gap-4">
-              <a href="tel:+447888502989" className="btn-glow rounded-full bg-red px-5 py-3.5 text-center text-sm font-bold text-white transition sm:px-7 sm:py-4 sm:text-base">
-                <i className="fa-solid fa-phone mr-2"></i>Call +44 7888 502989
+              <a href={business.tel} className="btn-glow rounded-full bg-red px-5 py-3.5 text-center text-sm font-bold text-white transition sm:px-7 sm:py-4 sm:text-base">
+                <i className="fa-solid fa-phone mr-2"></i>Call {business.phoneDisplay}
               </a>
               <a
-                href="https://wa.me/447888502989"
+                href={business.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="rounded-full bg-whatsapp px-5 py-3.5 text-center text-sm font-bold text-white transition hover:bg-green-600 sm:px-7 sm:py-4 sm:text-base"
@@ -115,7 +115,7 @@ export default function AboutPage() {
                 A Recovery Team You Can Rely On
               </h2>
               <p className="mb-4 leading-8 text-navy/70">
-                FSR Recovery Groups started with a single truck and a simple promise: turn up fast, treat
+                FSR Recovery Group started with a single truck and a simple promise: turn up fast, treat
                 every vehicle like our own, and never leave a customer stranded. Fifteen years later, that
                 promise hasn&rsquo;t changed, even as we&rsquo;ve grown into a full regional recovery operation.
               </p>
@@ -133,7 +133,7 @@ export default function AboutPage() {
             <div className="fade-up">
               <Image
                 src="/images/service-transport.jpg"
-                alt="FSR Recovery Groups vehicle transporter on the highway"
+                alt="FSR Recovery Group vehicle transporter on the highway"
                 width={1735}
                 height={1080}
                 priority
@@ -232,7 +232,7 @@ export default function AboutPage() {
           <div className="container-site mx-auto max-w-3xl">
             <div className="fade-up mb-12 text-center">
               <p className="mb-3 font-bold text-red">Common Questions</p>
-              <h2 className="text-3xl font-extrabold text-navy lg:text-4xl">About FSR Recovery Groups</h2>
+              <h2 className="text-3xl font-extrabold text-navy lg:text-4xl">About {business.name}</h2>
             </div>
             <div className="grid gap-5">
               {faqs.map((faq) => (
@@ -256,11 +256,11 @@ export default function AboutPage() {
               Call or WhatsApp us and our team will be with you as quickly as possible.
             </p>
             <div className="flex flex-col justify-center gap-4 sm:flex-row">
-              <a href="tel:+447888502989" className="rounded-full bg-navy px-8 py-4 font-bold text-white transition hover:bg-navy-light">
+              <a href={business.tel} className="rounded-full bg-navy px-8 py-4 font-bold text-white transition hover:bg-navy-light">
                 <i className="fa-solid fa-phone mr-2"></i>Call Now
               </a>
               <a
-                href="https://wa.me/447888502989"
+                href={business.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="rounded-full bg-whatsapp px-8 py-4 font-bold text-white transition hover:bg-green-600"

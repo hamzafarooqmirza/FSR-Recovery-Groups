@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { getServiceNavigation } from "@/data/services";
+import { business } from "@/data/business";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -183,11 +184,11 @@ export default function ServicesPage() {
               Practical, professional support for breakdowns, accidents and roadside emergencies across the region.
             </p>
             <div className="flex flex-col justify-center gap-3 sm:flex-row sm:gap-4">
-              <a href="tel:+447888502989" className="btn-glow rounded-full bg-red px-5 py-3.5 text-center text-sm font-bold text-white transition sm:px-7 sm:py-4 sm:text-base">
-                <i className="fa-solid fa-phone mr-2"></i>Call +44 7888 502989
+              <a href={business.tel} className="btn-glow rounded-full bg-red px-5 py-3.5 text-center text-sm font-bold text-white transition sm:px-7 sm:py-4 sm:text-base">
+                <i className="fa-solid fa-phone mr-2"></i>Call {business.phoneDisplay}
               </a>
               <a
-                href="https://wa.me/447888502989"
+                href={business.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="rounded-full bg-whatsapp px-5 py-3.5 text-center text-sm font-bold text-white transition hover:bg-green-600 sm:px-7 sm:py-4 sm:text-base"
@@ -228,13 +229,13 @@ export default function ServicesPage() {
                     </ul>
                     <div className="mt-auto flex gap-3">
                       <a
-                        href="tel:+447888502989"
+                        href={business.tel}
                         className="flex-1 rounded-full bg-navy px-4 py-2.5 text-center text-sm font-bold text-white transition hover:bg-navy-light"
                       >
                         <i className="fa-solid fa-phone mr-1.5"></i>Call Now
                       </a>
                       <a
-                        href="https://wa.me/447888502989"
+                        href={business.whatsapp}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex-1 rounded-full bg-whatsapp px-4 py-2.5 text-center text-sm font-bold text-white transition hover:bg-green-600"
@@ -297,11 +298,11 @@ export default function ServicesPage() {
             <h2 className="mb-5 text-3xl font-extrabold lg:text-5xl">Need a Service Not Listed?</h2>
             <p className="mb-8 text-lg text-white/90">Get in touch and we will let you know how we can help with your specific situation.</p>
             <div className="flex flex-col justify-center gap-4 sm:flex-row">
-              <a href="tel:+447888502989" className="rounded-full bg-navy px-8 py-4 font-bold text-white transition hover:bg-navy-light">
+              <a href={business.tel} className="rounded-full bg-navy px-8 py-4 font-bold text-white transition hover:bg-navy-light">
                 <i className="fa-solid fa-phone mr-2"></i>Call Now
               </a>
               <a
-                href="https://wa.me/447888502989"
+                href={business.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="rounded-full bg-whatsapp px-8 py-4 font-bold text-white transition hover:bg-green-600"
