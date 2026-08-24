@@ -66,7 +66,7 @@ export default function AccidentEmergencyAssistancePage() {
       <Image src="/images/about-tow.jpg" alt="Professional vehicle recovery after a road accident" fill preload sizes="100vw" className="-z-20 object-cover" />
       <div className="absolute inset-0 -z-10 bg-gradient-to-r from-navy via-navy/90 to-navy/30" />
       <div className="container-site flex min-h-[680px] items-center py-20"><div className="fade-up max-w-3xl">
-        <Eyebrow>24/7 Accident Support</Eyebrow><h1 className="text-4xl font-extrabold leading-[1.08] sm:text-5xl lg:text-7xl">Accident Emergency Assistance When You Need It Most</h1>
+        <Eyebrow>24/7 Accident Support</Eyebrow><h1 className="text-4xl font-extrabold leading-[1.08] sm:text-5xl lg:text-7xl">Accident Recovery &amp; Emergency Assistance</h1>
         <p className="my-6 max-w-2xl text-lg leading-8 text-white/80">A road traffic accident can leave you shaken, stranded and unsure what to do next. FSR Recovery Group provides professional 24/7 accident emergency assistance, helping with vehicle recovery and safe transportation when your car or van cannot continue after a collision.</p>
         <ContactButtons dark callLabel="Call +44 7888 502989" whatsappLabel="WhatsApp for Accident Assistance" />
         <div className="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-sm font-bold">{["Available 24/7", "Accident Vehicle Recovery", "Cars & Suitable Vans"].map(x=><span key={x}><i className="fa-solid fa-circle-check mr-2 text-red" />{x}</span>)}</div>
