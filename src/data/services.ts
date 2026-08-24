@@ -33,8 +33,8 @@ export const serviceNavigation: ServiceNavigationItem[] = [
   {
     key: "accident-emergency-assistance",
     label: "Accident Emergency Assistance",
-    href: "/services#accident-emergency-assistance",
-    available: false,
+    href: "/services/accident-emergency-assistance",
+    available: true,
   },
   {
     key: "changing-spare-tyre",
