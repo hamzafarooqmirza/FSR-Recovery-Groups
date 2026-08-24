@@ -66,7 +66,7 @@ export default function VehicleTransportingPage() {
       <Image src="/images/service-transport.jpg" alt="Professional vehicle transport service" fill preload sizes="100vw" className="-z-20 object-cover" />
       <div className="absolute inset-0 -z-10 bg-gradient-to-r from-navy via-navy/90 to-navy/30" />
       <div className="container-site flex min-h-[680px] items-center py-20"><div className="fade-up max-w-3xl">
-        <Eyebrow>Professional Vehicle Transport</Eyebrow><h1 className="text-4xl font-extrabold leading-[1.08] sm:text-5xl lg:text-7xl">Safe Vehicle Transport From Collection to Delivery</h1>
+        <Eyebrow>Professional Vehicle Transport</Eyebrow><h1 className="text-4xl font-extrabold leading-[1.08] sm:text-5xl lg:text-7xl">Professional Vehicle Transport You Can Rely On</h1>
         <p className="my-6 max-w-2xl text-lg leading-8 text-white/80">Need a car or suitable van moved without driving it yourself? FSR Recovery Group provides professional vehicle transport for planned collections, deliveries and relocations, moving vehicles safely between agreed locations.</p>
         <ContactButtons dark callLabel="Call +44 7888 502989" whatsappLabel="WhatsApp for a Transport Quote" />
         <div className="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-sm font-bold">{["Professional Vehicle Transport", "Cars & Suitable Vans", "Collection & Delivery"].map(x=><span key={x}><i className="fa-solid fa-circle-check mr-2 text-red" />{x}</span>)}</div>
