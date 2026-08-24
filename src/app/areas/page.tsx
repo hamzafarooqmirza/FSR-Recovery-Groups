@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { business } from "@/data/business";
 
 export const metadata: Metadata = {
   title: "Areas Covered",
-  description:
-    "FSR Recovery Groups covers motorways, city streets, rural roads and long-distance transport across the region. Call +44 7888 502989 for local roadside recovery.",
+  description: `${business.name} covers motorways, city streets, rural roads and long-distance transport across the region. Call ${business.phoneDisplay} for local roadside recovery.`,
 };
 
 const areas = [
@@ -93,11 +93,11 @@ export default function AreasPage() {
               We provide roadside recovery, towing and breakdown support across a wide regional coverage area — motorways, city streets and rural roads alike.
             </p>
             <div className="flex flex-col justify-center gap-3 sm:flex-row sm:gap-4">
-              <a href="tel:+447888502989" className="btn-glow rounded-full bg-red px-5 py-3.5 text-center text-sm font-bold text-white transition sm:px-7 sm:py-4 sm:text-base">
-                <i className="fa-solid fa-phone mr-2"></i>Call +44 7888 502989
+              <a href={business.tel} className="btn-glow rounded-full bg-red px-5 py-3.5 text-center text-sm font-bold text-white transition sm:px-7 sm:py-4 sm:text-base">
+                <i className="fa-solid fa-phone mr-2"></i>Call {business.phoneDisplay}
               </a>
               <a
-                href="https://wa.me/447888502989"
+                href={business.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="rounded-full bg-whatsapp px-5 py-3.5 text-center text-sm font-bold text-white transition hover:bg-green-600 sm:px-7 sm:py-4 sm:text-base"
@@ -158,11 +158,11 @@ export default function AreasPage() {
                 ))}
               </ul>
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-                <a href="tel:+447888502989" className="btn-glow rounded-full bg-red px-7 py-4 text-center font-bold text-white transition">
+                <a href={business.tel} className="btn-glow rounded-full bg-red px-7 py-4 text-center font-bold text-white transition">
                   <i className="fa-solid fa-phone mr-2"></i>Call Now
                 </a>
                 <a
-                  href="https://wa.me/447888502989"
+                  href={business.whatsapp}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="rounded-full bg-whatsapp px-7 py-4 text-center font-bold text-white transition hover:bg-green-600"
@@ -188,7 +188,7 @@ export default function AreasPage() {
           <div className="container-site">
             <div className="fade-up mx-auto mb-8 max-w-2xl text-center">
               <p className="mb-3 font-bold text-red">Find Us</p>
-              <h2 className="text-3xl font-extrabold text-navy lg:text-4xl">FSR Recovery Group Location</h2>
+              <h2 className="text-3xl font-extrabold text-navy lg:text-4xl">{business.name} Location</h2>
             </div>
             <div className="fade-up w-full overflow-hidden rounded-3xl border border-navy/10 shadow-2xl" style={{ height: "420px" }}>
               <iframe
@@ -199,7 +199,7 @@ export default function AreasPage() {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="strict-origin-when-cross-origin"
-                title="FSR Recovery Group Location"
+                title={`${business.name} Location`}
               />
             </div>
           </div>
@@ -234,11 +234,11 @@ export default function AreasPage() {
               Give us a call or send a WhatsApp with your location and we will confirm straight away.
             </p>
             <div className="flex flex-col justify-center gap-4 sm:flex-row">
-              <a href="tel:+447888502989" className="rounded-full bg-navy px-8 py-4 font-bold text-white transition hover:bg-navy-light">
+              <a href={business.tel} className="rounded-full bg-navy px-8 py-4 font-bold text-white transition hover:bg-navy-light">
                 <i className="fa-solid fa-phone mr-2"></i>Call Now
               </a>
               <a
-                href="https://wa.me/447888502989"
+                href={business.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="rounded-full bg-whatsapp px-8 py-4 font-bold text-white transition hover:bg-green-600"

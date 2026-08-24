@@ -4,6 +4,7 @@ import { GoogleTagManager } from "@next/third-parties/google";
 import "./globals.css";
 import { FloatingButtons } from "@/components/FloatingButtons";
 import { ScrollAnimations } from "@/components/ScrollAnimations";
+import { business } from "@/data/business";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -18,11 +19,10 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | FSR Recovery Groups",
-    default: "FSR Recovery Groups | 24/7 Car Recovery & Towing Services",
+    template: `%s | ${business.name}`,
+    default: `${business.name} | 24/7 Car Recovery & Towing Services`,
   },
-  description:
-    "FSR Recovery Groups provides fast, reliable 24/7 vehicle breakdown recovery, roadside assistance, accident recovery and vehicle transporting services.",
+  description: `${business.name} provides fast, reliable 24/7 vehicle breakdown recovery, roadside assistance, accident recovery and vehicle transporting services.`,
 };
 
 export default function RootLayout({

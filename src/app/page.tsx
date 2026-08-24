@@ -4,6 +4,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { QuoteForm } from "@/components/QuoteForm";
 import { ReviewsSlider } from "@/components/ReviewsSlider";
+import { business } from "@/data/business";
 
 export const metadata: Metadata = {
   openGraph: {
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
         url: "/images/fsr-open-graph.png",
         width: 902,
         height: 472,
-        alt: "FSR Recovery Groups | 24/7 Emergency Recovery Services",
+        alt: "FSR Recovery Group | 24/7 Emergency Recovery Services",
       },
     ],
   },
@@ -122,7 +123,7 @@ export default function Home() {
                 <span>Available for urgent roadside enquiries</span>
               </p>
               <h1 className="mb-4 text-3xl leading-tight font-extrabold sm:mb-6 sm:text-4xl lg:text-6xl">
-                FSR Recovery Groups <span className="block text-red">24/7 Breakdown &amp; Towing</span>
+                {business.name} <span className="block text-red">24/7 Breakdown &amp; Towing</span>
               </h1>
               <p className="mb-6 text-base text-white/80 sm:mb-8 sm:text-lg">
                 Need help at the roadside? We provide fast, reliable vehicle recovery, towing,
@@ -130,13 +131,13 @@ export default function Home() {
               </p>
               <div className="mb-7 flex flex-col gap-3 sm:mb-10 sm:flex-row sm:gap-4">
                 <a
-                  href="tel:+447888502989"
+                  href={business.tel}
                   className="btn-glow flex min-h-[52px] w-full items-center justify-center rounded-full bg-red px-6 py-4 text-center text-sm font-bold text-white transition sm:w-auto sm:px-7 sm:text-base"
                 >
-                  <i className="fa-solid fa-phone mr-2"></i>Call +44 7888 502989
+                  <i className="fa-solid fa-phone mr-2"></i>Call {business.phoneDisplay}
                 </a>
                 <a
-                  href="https://wa.me/447888502989"
+                  href={business.whatsapp}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex min-h-[52px] w-full items-center justify-center rounded-full bg-whatsapp px-6 py-4 text-center text-sm font-bold text-white transition hover:bg-green-600 sm:w-auto sm:px-7 sm:text-base"
@@ -201,7 +202,7 @@ export default function Home() {
             <div className="fade-up order-2 lg:order-1">
               <Image
                 src="/images/about-tow.jpg"
-                alt="FSR Recovery Groups tow truck loading a vehicle"
+                alt="FSR Recovery Group tow truck loading a vehicle"
                 width={1615}
                 height={1080}
                 className="min-h-[360px] w-full rounded-3xl object-cover shadow-2xl"
@@ -210,7 +211,7 @@ export default function Home() {
             <div className="fade-up order-1 lg:order-2">
               <p className="mb-3 font-bold text-red">15+ Years of Roadside Support</p>
               <h2 className="mb-5 text-3xl font-extrabold text-navy lg:text-4xl">
-                FSR Recovery Groups — Here When You Need Us
+                {business.name} — Here When You Need Us
               </h2>
               <p className="mb-6 leading-8 text-navy/70">
                 We help drivers who need quick roadside support, safe vehicle transport or recovery
@@ -244,7 +245,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="flex flex-col gap-3 sm:flex-row">
-                <a href="tel:+447888502989" className="rounded-full bg-navy px-7 py-4 text-center font-bold text-white transition hover:bg-navy-light">
+                <a href={business.tel} className="rounded-full bg-navy px-7 py-4 text-center font-bold text-white transition hover:bg-navy-light">
                   <i className="fa-solid fa-phone mr-2"></i>Call Us Now
                 </a>
                 <a href="/about" className="rounded-full border-2 border-navy px-7 py-4 text-center font-bold text-navy transition hover:bg-navy hover:text-white">
@@ -281,13 +282,13 @@ export default function Home() {
                     <p className="mb-5 flex-1 text-slate-400">{service.desc}</p>
                     <div className="mt-auto flex gap-3">
                       <a
-                        href="tel:+447888502989"
+                        href={business.tel}
                         className="flex-1 rounded-full bg-red px-4 py-2.5 text-center text-sm font-bold text-white transition hover:bg-red-dark"
                       >
                         <i className="fa-solid fa-phone mr-1.5"></i>Call Now
                       </a>
                       <a
-                        href="https://wa.me/447888502989"
+                        href={business.whatsapp}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex-1 rounded-full bg-whatsapp px-4 py-2.5 text-center text-sm font-bold text-white transition hover:bg-green-600"
@@ -379,7 +380,7 @@ export default function Home() {
           <div className="container-site">
             <div className="fade-up mx-auto mb-8 max-w-2xl text-center">
               <p className="mb-3 font-bold text-red">Find Us</p>
-              <h2 className="text-3xl font-extrabold text-navy lg:text-4xl">FSR Recovery Group Location</h2>
+              <h2 className="text-3xl font-extrabold text-navy lg:text-4xl">{business.name} Location</h2>
             </div>
             <div className="fade-up w-full overflow-hidden rounded-3xl border border-navy/10 shadow-2xl" style={{ height: "420px" }}>
               <iframe
@@ -390,7 +391,7 @@ export default function Home() {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="strict-origin-when-cross-origin"
-                title="FSR Recovery Group Location"
+                title={`${business.name} Location`}
               />
             </div>
           </div>
@@ -404,14 +405,14 @@ export default function Home() {
             </p>
             <h2 className="mb-5 text-3xl font-extrabold lg:text-5xl">We Are Ready to Help</h2>
             <p className="mx-auto mb-8 max-w-2xl text-lg text-white/80">
-              Call FSR Recovery Groups or message us on WhatsApp for immediate roadside assistance across the region.
+              Call {business.name} or message us on WhatsApp for immediate roadside assistance across the region.
             </p>
             <div className="flex flex-col justify-center gap-4 sm:flex-row">
-              <a href="tel:+447888502989" className="btn-glow rounded-full bg-red px-8 py-4 font-bold text-white transition">
-                <i className="fa-solid fa-phone mr-2"></i>Call +44 7888 502989
+              <a href={business.tel} className="btn-glow rounded-full bg-red px-8 py-4 font-bold text-white transition">
+                <i className="fa-solid fa-phone mr-2"></i>Call {business.phoneDisplay}
               </a>
               <a
-                href="https://wa.me/447888502989"
+                href={business.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="rounded-full bg-whatsapp px-8 py-4 font-bold text-white transition hover:bg-green-600"

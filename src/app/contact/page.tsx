@@ -2,38 +2,38 @@ import type { Metadata } from "next";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { QuoteForm } from "@/components/QuoteForm";
+import { business } from "@/data/business";
 
 export const metadata: Metadata = {
   title: "Contact Us",
-  description:
-    "Contact FSR Recovery Groups by phone or WhatsApp for roadside help, towing, breakdown recovery and more across the region. Call +44 7888 502989.",
+  description: `Contact ${business.name} by phone or WhatsApp for roadside help, towing, breakdown recovery and more across the region. Call ${business.phoneDisplay}.`,
 };
 
 const contactMethods = [
   {
     icon: "fa-solid fa-phone",
     title: "Call Us",
-    detail: "+44 7888 502989",
+    detail: business.phoneDisplay,
     desc: "Speak directly to our team. Best for urgent roadside situations.",
-    href: "tel:+447888502989",
+    href: business.tel,
     cta: "Call Now",
     external: false,
   },
   {
     icon: "fa-brands fa-whatsapp",
     title: "WhatsApp",
-    detail: "+44 7888 502989",
+    detail: business.phoneDisplay,
     desc: "Send your location, vehicle details and a brief description and we will respond as quickly as possible.",
-    href: "https://wa.me/447888502989",
+    href: business.whatsapp,
     cta: "Message Us",
     external: true,
   },
   {
     icon: "fa-solid fa-envelope",
     title: "Email",
-    detail: "Fsrbreakdownrecovery@gmail.com",
+    detail: business.email,
     desc: "For non-urgent enquiries, quotes or general questions about our services.",
-    href: "mailto:Fsrbreakdownrecovery@gmail.com",
+    href: `mailto:${business.email}`,
     cta: "Send Email",
     external: false,
   },
@@ -77,11 +77,11 @@ export default function ContactPage() {
               Need roadside help or want to ask a question? Call or WhatsApp us and a member of our team will be in touch.
             </p>
             <div className="flex flex-col justify-center gap-3 sm:flex-row sm:gap-4">
-              <a href="tel:+447888502989" className="btn-glow rounded-full bg-red px-5 py-3.5 text-center text-sm font-bold text-white transition sm:px-7 sm:py-4 sm:text-base">
-                <i className="fa-solid fa-phone mr-2"></i>Call +44 7888 502989
+              <a href={business.tel} className="btn-glow rounded-full bg-red px-5 py-3.5 text-center text-sm font-bold text-white transition sm:px-7 sm:py-4 sm:text-base">
+                <i className="fa-solid fa-phone mr-2"></i>Call {business.phoneDisplay}
               </a>
               <a
-                href="https://wa.me/447888502989"
+                href={business.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="rounded-full bg-whatsapp px-5 py-3.5 text-center text-sm font-bold text-white transition hover:bg-green-600 sm:px-7 sm:py-4 sm:text-base"
@@ -148,7 +148,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <p className="mb-1 text-sm text-white/60">Phone</p>
-                      <a href="tel:+447888502989" className="font-semibold transition hover:text-red">+44 7888 502989</a>
+                      <a href={business.tel} className="font-semibold transition hover:text-red">{business.phoneDisplay}</a>
                     </div>
                   </li>
                   <li className="flex items-start gap-4">
@@ -158,12 +158,12 @@ export default function ContactPage() {
                     <div>
                       <p className="mb-1 text-sm text-white/60">WhatsApp</p>
                       <a
-                        href="https://wa.me/447888502989"
+                        href={business.whatsapp}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="font-semibold transition hover:text-red"
                       >
-                        +44 7888 502989
+                        {business.phoneDisplay}
                       </a>
                     </div>
                   </li>
@@ -173,8 +173,8 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <p className="mb-1 text-sm text-white/60">Email</p>
-                      <a href="mailto:Fsrbreakdownrecovery@gmail.com" className="font-semibold break-all transition hover:text-red">
-                        Fsrbreakdownrecovery@gmail.com
+                      <a href={`mailto:${business.email}`} className="font-semibold break-all transition hover:text-red">
+                        {business.email}
                       </a>
                     </div>
                   </li>
@@ -236,11 +236,11 @@ export default function ContactPage() {
               Call or WhatsApp us now and our team will respond as quickly as possible.
             </p>
             <div className="flex flex-col justify-center gap-4 sm:flex-row">
-              <a href="tel:+447888502989" className="rounded-full bg-navy px-8 py-4 font-bold text-white transition hover:bg-navy-light">
+              <a href={business.tel} className="rounded-full bg-navy px-8 py-4 font-bold text-white transition hover:bg-navy-light">
                 <i className="fa-solid fa-phone mr-2"></i>Call Now
               </a>
               <a
-                href="https://wa.me/447888502989"
+                href={business.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="rounded-full bg-whatsapp px-8 py-4 font-bold text-white transition hover:bg-green-600"
