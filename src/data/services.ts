@@ -51,8 +51,8 @@ export const serviceNavigation: ServiceNavigationItem[] = [
   {
     key: "vehicle-transporting",
     label: "Vehicle Transporting",
-    href: "/services#vehicle-transporting",
-    available: false,
+    href: "/services/vehicle-transporting",
+    available: true,
   },
 ];
 
