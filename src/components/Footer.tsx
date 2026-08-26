@@ -67,11 +67,14 @@ export function Footer() {
           <div>
             <h4 className="mb-5 border-b border-red/40 pb-2 text-lg font-bold text-white">Our Services</h4>
             <ul className="space-y-3">
-              <li><a href="/services" className="footer-link"><i className="fa-solid fa-chevron-right text-xs text-red"></i>Vehicle Breakdown Recovery</a></li>
-              <li><a href="/services" className="footer-link"><i className="fa-solid fa-chevron-right text-xs text-red"></i>Roadside Assistance</a></li>
-              <li><a href="/services" className="footer-link"><i className="fa-solid fa-chevron-right text-xs text-red"></i>Jumpstart Services</a></li>
-              <li><a href="/services" className="footer-link"><i className="fa-solid fa-chevron-right text-xs text-red"></i>Accident Recovery</a></li>
-              <li><a href="/services" className="footer-link"><i className="fa-solid fa-chevron-right text-xs text-red"></i>Vehicle Transporting</a></li>
+              <li><Link href="/services/vehicle-breakdown-recovery" className="footer-link"><i className="fa-solid fa-chevron-right text-xs text-red"></i>24/7 Vehicle Breakdown Recovery</Link></li>
+              <li><Link href="/services/roadside-assistance" className="footer-link"><i className="fa-solid fa-chevron-right text-xs text-red"></i>Roadside Assistance</Link></li>
+              <li><Link href="/services/jumpstart-services" className="footer-link"><i className="fa-solid fa-chevron-right text-xs text-red"></i>Jumpstart Services</Link></li>
+              <li><Link href="/services/winch-out" className="footer-link"><i className="fa-solid fa-chevron-right text-xs text-red"></i>Winch Out</Link></li>
+              <li><Link href="/services/accident-emergency-assistance" className="footer-link"><i className="fa-solid fa-chevron-right text-xs text-red"></i>Accident Emergency Assistance</Link></li>
+              <li><Link href="/services/changing-spare-tyre" className="footer-link"><i className="fa-solid fa-chevron-right text-xs text-red"></i>Changing Spare Tyre</Link></li>
+              <li><Link href="/services/refueling" className="footer-link"><i className="fa-solid fa-chevron-right text-xs text-red"></i>Refueling</Link></li>
+              <li><Link href="/services/vehicle-transporting" className="footer-link"><i className="fa-solid fa-chevron-right text-xs text-red"></i>Vehicle Transporting</Link></li>
             </ul>
           </div>
         </div>
@@ -80,8 +83,8 @@ export function Footer() {
         <div className="flex flex-col items-center justify-between gap-3 border-t border-white/10 pt-6 text-sm text-slate-500 sm:flex-row">
           <p>{`© ${new Date().getFullYear()} FSR Recovery Groups — Roadside Recovery & Towing Services. All rights reserved.`}</p>
           <div className="flex gap-5">
-            <a href="#" className="transition hover:text-red">Privacy Policy</a>
-            <a href="#" className="transition hover:text-red">Terms</a>
+            <Link href="/privacy-policy" className="transition hover:text-red">Privacy Policy</Link>
+            <Link href="/terms-and-conditions" className="transition hover:text-red">Terms &amp; Conditions</Link>
           </div>
         </div>
       </div>

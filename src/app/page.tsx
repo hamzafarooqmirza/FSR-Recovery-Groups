@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { QuoteForm } from "@/components/QuoteForm";
@@ -47,37 +48,57 @@ const services = [
     img: "/images/service-breakdown.jpg",
     alt: "24/7 Vehicle Breakdown Recovery",
     title: "24/7 Vehicle Breakdown Recovery",
-    desc: "Round-the-clock recovery for any breakdown, wherever you are on the road, day or night.",
+    href: "/services/vehicle-breakdown-recovery",
+    desc: "Professional recovery when a vehicle cannot safely continue after a breakdown.",
   },
   {
     img: "/images/service-roadside.jpg",
     alt: "Roadside Assistance",
     title: "Roadside Assistance",
-    desc: "On-the-spot help with minor faults so you can get back on your way without a full tow.",
+    href: "/services/roadside-assistance",
+    desc: "Practical help for suitable vehicle problems at your current location.",
   },
   {
     img: "/images/service-jumpstart.jpg",
     alt: "Jumpstart Services",
     title: "Jumpstart Services",
-    desc: "Flat battery? We'll get your engine running again in minutes, anywhere you're parked.",
-  },
-  {
-    img: "/images/service-accident.jpg",
-    alt: "Accident Emergency Assistance",
-    title: "Accident Emergency Assistance",
-    desc: "Fast, careful recovery from the scene of a collision, handled with care and full insurance.",
+    href: "/services/jumpstart-services",
+    desc: "Battery-starting assistance for suitable cars and light vans that will not start.",
   },
   {
     img: "/images/service-winch.jpg",
     alt: "Winch Out",
     title: "Winch Out",
-    desc: "Stuck in mud, sand, or a ditch? Our winches pull your vehicle free without further damage.",
+    href: "/services/winch-out",
+    desc: "Controlled vehicle extraction for suitable vehicles stuck on difficult ground.",
+  },
+  {
+    img: "/images/service-accident.jpg",
+    alt: "Accident Emergency Assistance",
+    title: "Accident Emergency Assistance",
+    href: "/services/accident-emergency-assistance",
+    desc: "Vehicle recovery support following a collision or road traffic incident.",
+  },
+  {
+    img: "/images/service-tyre.jpg",
+    alt: "Changing Spare Tyre",
+    title: "Changing Spare Tyre",
+    href: "/services/changing-spare-tyre",
+    desc: "Roadside help fitting an available suitable spare tyre when you cannot continue.",
+  },
+  {
+    img: "/images/service-refuel.jpg",
+    alt: "Refueling",
+    title: "Refueling",
+    href: "/services/refueling",
+    desc: "Roadside assistance when your vehicle has unexpectedly run out of fuel.",
   },
   {
     img: "/images/service-transport.jpg",
     alt: "Vehicle Transporting",
     title: "Vehicle Transporting",
-    desc: "Safe, secure transport for vehicles that can't be driven, over any distance.",
+    href: "/services/vehicle-transporting",
+    desc: "Careful vehicle transportation between suitable agreed collection and delivery points.",
   },
 ];
 
@@ -266,18 +287,20 @@ export default function Home() {
                 situation you might face on the road.
               </p>
             </div>
-            <div className="grid gap-7 md:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-7 md:grid-cols-2 lg:grid-cols-4">
               {services.map((service) => (
                 <article key={service.title} className="dark-service-card fade-up flex flex-col">
-                  <Image
-                    src={service.img}
-                    alt={service.alt}
-                    width={900}
-                    height={600}
-                    className="h-52 w-full rounded-t-3xl object-cover"
-                  />
+                  <Link href={service.href} aria-label={`View ${service.title}`}>
+                    <Image
+                      src={service.img}
+                      alt={service.alt}
+                      width={900}
+                      height={600}
+                      className="h-52 w-full rounded-t-3xl object-cover"
+                    />
+                  </Link>
                   <div className="flex flex-1 flex-col p-6">
-                    <h3 className="mb-2 text-xl font-bold text-white">{service.title}</h3>
+                    <h3 className="mb-2 text-xl font-bold text-white"><Link href={service.href} className="transition hover:text-red">{service.title}</Link></h3>
                     <p className="mb-5 flex-1 text-slate-400">{service.desc}</p>
                     <div className="mt-auto flex gap-3">
                       <a
