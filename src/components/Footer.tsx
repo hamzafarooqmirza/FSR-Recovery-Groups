@@ -84,8 +84,8 @@ export function Footer() {
         <div className="flex flex-col items-center justify-between gap-3 border-t border-white/10 pt-6 text-sm text-slate-500 sm:flex-row">
           <p>{`© ${new Date().getFullYear()} ${business.name} — Roadside Recovery & Towing Services. All rights reserved.`}</p>
           <div className="flex gap-5">
-            <a href="#" className="transition hover:text-red">Privacy Policy</a>
-            <a href="#" className="transition hover:text-red">Terms</a>
+            <Link href="/privacy-policy" className="transition hover:text-red">Privacy Policy</Link>
+            <Link href="/terms-and-conditions" className="transition hover:text-red">Terms &amp; Conditions</Link>
           </div>
         </div>
       </div>
