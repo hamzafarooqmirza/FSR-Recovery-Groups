@@ -293,38 +293,42 @@ export default function Home() {
               {services.map((service) => {
                 const href = getServiceNavigation(service.key).href;
                 return (
-                <article key={service.title} className="dark-service-card fade-up flex flex-col">
-                  <Link href={href} aria-label={`View ${service.title}`}>
-                    <Image
-                      src={service.img}
-                      alt={service.alt}
-                      width={900}
-                      height={600}
-                      className="h-52 w-full rounded-t-3xl object-cover"
-                    />
-                  </Link>
-                  <div className="flex flex-1 flex-col p-6">
-                    <h3 className="mb-2 text-xl font-bold text-white"><Link href={href} className="transition hover:text-red">{service.title}</Link></h3>
-                    <p className="mb-4 flex-1 text-slate-400">{service.desc}</p>
-                    <Link href={href} className="mb-5 inline-block text-sm font-bold text-red transition hover:text-red-dark">Learn More <i className="fa-solid fa-arrow-right ml-1" /></Link>
-                    <div className="mt-auto flex gap-3">
-                      <a
-                        href={business.tel}
-                        className="flex-1 rounded-full bg-red px-4 py-2.5 text-center text-sm font-bold text-white transition hover:bg-red-dark"
-                      >
-                        <i className="fa-solid fa-phone mr-1.5"></i>Call Now
-                      </a>
-                      <a
-                        href={business.whatsapp}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex-1 rounded-full bg-whatsapp px-4 py-2.5 text-center text-sm font-bold text-white transition hover:bg-green-600"
-                      >
-                        <i className="fa-brands fa-whatsapp mr-1.5"></i>WhatsApp
-                      </a>
+                  <article key={service.title} className="dark-service-card fade-up flex flex-col">
+                    <Link href={href} aria-label={`View ${service.title}`}>
+                      <Image
+                        src={service.img}
+                        alt={service.alt}
+                        width={900}
+                        height={600}
+                        className="h-52 w-full rounded-t-3xl object-cover"
+                      />
+                    </Link>
+                    <div className="flex flex-1 flex-col p-6">
+                      <h3 className="mb-2 text-xl font-bold text-white">
+                        <Link href={href} className="transition hover:text-red">{service.title}</Link>
+                      </h3>
+                      <p className="mb-4 flex-1 text-slate-400">{service.desc}</p>
+                      <Link href={href} className="mb-5 inline-block text-sm font-bold text-red transition hover:text-red-dark">
+                        Learn More <i className="fa-solid fa-arrow-right ml-1" />
+                      </Link>
+                      <div className="mt-auto flex gap-3">
+                        <a
+                          href={business.tel}
+                          className="flex-1 rounded-full bg-red px-4 py-2.5 text-center text-sm font-bold text-white transition hover:bg-red-dark"
+                        >
+                          <i className="fa-solid fa-phone mr-1.5"></i>Call Now
+                        </a>
+                        <a
+                          href={business.whatsapp}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex-1 rounded-full bg-whatsapp px-4 py-2.5 text-center text-sm font-bold text-white transition hover:bg-green-600"
+                        >
+                          <i className="fa-brands fa-whatsapp mr-1.5"></i>WhatsApp
+                        </a>
+                      </div>
                     </div>
-                  </div>
-                </article>
+                  </article>
                 );
               })}
             </div>
