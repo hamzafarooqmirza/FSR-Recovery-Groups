@@ -5,6 +5,8 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { QuoteForm } from "@/components/QuoteForm";
 import { ReviewsSlider } from "@/components/ReviewsSlider";
+import { business } from "@/data/business";
+import { getServiceNavigation } from "@/data/services";
 
 export const metadata: Metadata = {
   openGraph: {
@@ -45,59 +47,59 @@ const featureIcons = [
 
 const services = [
   {
+    key: "vehicle-breakdown-recovery",
     img: "/images/service-breakdown.jpg",
     alt: "24/7 Vehicle Breakdown Recovery",
     title: "24/7 Vehicle Breakdown Recovery",
-    href: "/services/vehicle-breakdown-recovery",
     desc: "Professional recovery when a vehicle cannot safely continue after a breakdown.",
   },
   {
+    key: "roadside-assistance",
     img: "/images/service-roadside.jpg",
     alt: "Roadside Assistance",
     title: "Roadside Assistance",
-    href: "/services/roadside-assistance",
     desc: "Practical help for suitable vehicle problems at your current location.",
   },
   {
+    key: "jumpstart-services",
     img: "/images/service-jumpstart.jpg",
     alt: "Jumpstart Services",
     title: "Jumpstart Services",
-    href: "/services/jumpstart-services",
     desc: "Battery-starting assistance for suitable cars and light vans that will not start.",
   },
   {
+    key: "winch-out",
     img: "/images/service-winch.jpg",
     alt: "Winch Out",
     title: "Winch Out",
-    href: "/services/winch-out",
     desc: "Controlled vehicle extraction for suitable vehicles stuck on difficult ground.",
   },
   {
+    key: "accident-emergency-assistance",
     img: "/images/service-accident.jpg",
     alt: "Accident Emergency Assistance",
     title: "Accident Emergency Assistance",
-    href: "/services/accident-emergency-assistance",
     desc: "Vehicle recovery support following a collision or road traffic incident.",
   },
   {
+    key: "changing-spare-tyre",
     img: "/images/service-tyre.jpg",
     alt: "Changing Spare Tyre",
     title: "Changing Spare Tyre",
-    href: "/services/changing-spare-tyre",
     desc: "Roadside help fitting an available suitable spare tyre when you cannot continue.",
   },
   {
+    key: "refueling",
     img: "/images/service-refuel.jpg",
     alt: "Refueling",
     title: "Refueling",
-    href: "/services/refueling",
     desc: "Roadside assistance when your vehicle has unexpectedly run out of fuel.",
   },
   {
+    key: "vehicle-transporting",
     img: "/images/service-transport.jpg",
     alt: "Vehicle Transporting",
     title: "Vehicle Transporting",
-    href: "/services/vehicle-transporting",
     desc: "Careful vehicle transportation between suitable agreed collection and delivery points.",
   },
 ];
@@ -288,9 +290,11 @@ export default function Home() {
               </p>
             </div>
             <div className="grid gap-7 md:grid-cols-2 lg:grid-cols-4">
-              {services.map((service) => (
+              {services.map((service) => {
+                const href = getServiceNavigation(service.key).href;
+                return (
                 <article key={service.title} className="dark-service-card fade-up flex flex-col">
-                  <Link href={service.href} aria-label={`View ${service.title}`}>
+                  <Link href={href} aria-label={`View ${service.title}`}>
                     <Image
                       src={service.img}
                       alt={service.alt}
@@ -300,17 +304,18 @@ export default function Home() {
                     />
                   </Link>
                   <div className="flex flex-1 flex-col p-6">
-                    <h3 className="mb-2 text-xl font-bold text-white"><Link href={service.href} className="transition hover:text-red">{service.title}</Link></h3>
-                    <p className="mb-5 flex-1 text-slate-400">{service.desc}</p>
+                    <h3 className="mb-2 text-xl font-bold text-white"><Link href={href} className="transition hover:text-red">{service.title}</Link></h3>
+                    <p className="mb-4 flex-1 text-slate-400">{service.desc}</p>
+                    <Link href={href} className="mb-5 inline-block text-sm font-bold text-red transition hover:text-red-dark">Learn More <i className="fa-solid fa-arrow-right ml-1" /></Link>
                     <div className="mt-auto flex gap-3">
                       <a
-                        href="tel:+447888502989"
+                        href={business.tel}
                         className="flex-1 rounded-full bg-red px-4 py-2.5 text-center text-sm font-bold text-white transition hover:bg-red-dark"
                       >
                         <i className="fa-solid fa-phone mr-1.5"></i>Call Now
                       </a>
                       <a
-                        href="https://wa.me/447888502989"
+                        href={business.whatsapp}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex-1 rounded-full bg-whatsapp px-4 py-2.5 text-center text-sm font-bold text-white transition hover:bg-green-600"
@@ -320,7 +325,8 @@ export default function Home() {
                     </div>
                   </div>
                 </article>
-              ))}
+                );
+              })}
             </div>
             <div className="fade-up mt-10 text-center">
               <a href="/services" className="inline-block rounded-full border-2 border-red px-8 py-4 font-bold text-red transition hover:bg-red hover:text-white">
