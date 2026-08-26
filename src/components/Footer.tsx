@@ -68,11 +68,14 @@ export function Footer() {
           <div>
             <h4 className="mb-5 border-b border-red/40 pb-2 text-lg font-bold text-white">Our Services</h4>
             <ul className="space-y-3">
-              <li><a href="/services" className="footer-link"><i className="fa-solid fa-chevron-right text-xs text-red"></i>Vehicle Breakdown Recovery</a></li>
-              <li><a href="/services" className="footer-link"><i className="fa-solid fa-chevron-right text-xs text-red"></i>Roadside Assistance</a></li>
-              <li><a href="/services" className="footer-link"><i className="fa-solid fa-chevron-right text-xs text-red"></i>Jumpstart Services</a></li>
-              <li><a href="/services" className="footer-link"><i className="fa-solid fa-chevron-right text-xs text-red"></i>Accident Recovery</a></li>
-              <li><a href="/services" className="footer-link"><i className="fa-solid fa-chevron-right text-xs text-red"></i>Vehicle Transporting</a></li>
+              <li><Link href="/services/vehicle-breakdown-recovery" className="footer-link"><i className="fa-solid fa-chevron-right text-xs text-red"></i>24/7 Vehicle Breakdown Recovery</Link></li>
+              <li><Link href="/services/roadside-assistance" className="footer-link"><i className="fa-solid fa-chevron-right text-xs text-red"></i>Roadside Assistance</Link></li>
+              <li><Link href="/services/jumpstart-services" className="footer-link"><i className="fa-solid fa-chevron-right text-xs text-red"></i>Jumpstart Services</Link></li>
+              <li><Link href="/services/winch-out" className="footer-link"><i className="fa-solid fa-chevron-right text-xs text-red"></i>Winch Out</Link></li>
+              <li><Link href="/services/accident-emergency-assistance" className="footer-link"><i className="fa-solid fa-chevron-right text-xs text-red"></i>Accident Emergency Assistance</Link></li>
+              <li><Link href="/services/changing-spare-tyre" className="footer-link"><i className="fa-solid fa-chevron-right text-xs text-red"></i>Changing Spare Tyre</Link></li>
+              <li><Link href="/services/refueling" className="footer-link"><i className="fa-solid fa-chevron-right text-xs text-red"></i>Refueling</Link></li>
+              <li><Link href="/services/vehicle-transporting" className="footer-link"><i className="fa-solid fa-chevron-right text-xs text-red"></i>Vehicle Transporting</Link></li>
             </ul>
           </div>
         </div>
