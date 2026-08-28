@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { business } from "@/data/business";
@@ -123,7 +124,9 @@ export default function AboutPage() {
                 Today our team handles everything from routine roadside callouts to complex accident
                 recoveries, working with private drivers, fleet operators, and insurance partners across
                 the region. We&rsquo;ve invested in a modern fleet and ongoing training so that whatever
-                the job, it&rsquo;s handled properly the first time.
+                the job, it&rsquo;s handled properly the first time. See our full{" "}
+                <Link href="/services" className="font-semibold text-red">range of recovery services</Link>{" "}
+                to find the right option for your situation.
               </p>
               <p className="leading-8 text-navy/70">
                 We are fully insured, always reachable, and available to take calls when you need us. No
@@ -223,6 +226,11 @@ export default function AboutPage() {
                   <span className="font-semibold text-navy">{area}</span>
                 </div>
               ))}
+            </div>
+            <div className="fade-up mt-8 text-center">
+              <Link href="/areas" className="inline-block font-bold text-red">
+                See our full coverage area <i className="fa-solid fa-arrow-right ml-1" />
+              </Link>
             </div>
           </div>
         </section>

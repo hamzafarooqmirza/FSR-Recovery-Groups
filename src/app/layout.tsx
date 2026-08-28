@@ -4,6 +4,7 @@ import { GoogleTagManager } from "@next/third-parties/google";
 import "./globals.css";
 import { FloatingButtons } from "@/components/FloatingButtons";
 import { ScrollAnimations } from "@/components/ScrollAnimations";
+import { IconFontLoader } from "@/components/IconFontLoader";
 import { business } from "@/data/business";
 
 const poppins = Poppins({
@@ -34,10 +35,12 @@ export default function RootLayout({
     <html lang="en" className={`${poppins.variable} ${inter.variable}`}>
       <GoogleTagManager gtmId="GTM-MQ4STV94" />
       <head>
-        <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-        />
+        <noscript>
+          <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+          />
+        </noscript>
       </head>
       <body className="pb-14 antialiased sm:pb-0">
         <noscript>
@@ -48,6 +51,7 @@ export default function RootLayout({
             style={{ display: "none", visibility: "hidden" }}
           />
         </noscript>
+        <IconFontLoader />
         <ScrollAnimations />
         <FloatingButtons />
         {children}
