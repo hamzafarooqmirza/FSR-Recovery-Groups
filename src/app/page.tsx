@@ -51,28 +51,28 @@ const services = [
     img: "/images/service-breakdown.jpg",
     alt: "24/7 Vehicle Breakdown Recovery",
     title: "24/7 Vehicle Breakdown Recovery",
-    desc: "Round-the-clock recovery for any breakdown, wherever you are on the road, day or night.",
+    desc: "Professional recovery when a vehicle cannot safely continue after a breakdown.",
   },
   {
     key: "roadside-assistance",
     img: "/images/service-roadside.jpg",
     alt: "Roadside Assistance",
     title: "Roadside Assistance",
-    desc: "On-the-spot help with minor faults so you can get back on your way without a full tow.",
+    desc: "Practical help for suitable vehicle problems at your current location.",
   },
   {
     key: "jumpstart-services",
     img: "/images/service-jumpstart.jpg",
     alt: "Jumpstart Services",
     title: "Jumpstart Services",
-    desc: "Flat battery? We'll get your engine running again in minutes, anywhere you're parked.",
+    desc: "Battery-starting assistance for suitable cars and light vans that will not start.",
   },
   {
     key: "accident-emergency-assistance",
     img: "/images/service-accident.jpg",
     alt: "Accident Emergency Assistance",
     title: "Accident Emergency Assistance",
-    desc: "Fast, careful recovery from the scene of a collision, handled with care and full insurance.",
+    desc: "Vehicle recovery support following a collision or road traffic incident.",
   },
   {
     key: "winch-out",
@@ -86,9 +86,28 @@ const services = [
     img: "/images/service-transport.jpg",
     alt: "Vehicle Transporting",
     title: "Vehicle Transporting",
-    desc: "Safe, secure transport for vehicles that can't be driven, over any distance.",
+    desc: "Careful vehicle transportation between suitable agreed collection and delivery points.",
   },
 ];
+
+const additionalServices = [
+  {
+    key: "changing-spare-tyre",
+    img: "/images/service-tyre.jpg",
+    alt: "Changing Spare Tyre",
+    title: "Changing Spare Tyre",
+    desc: "Roadside help fitting an available suitable spare tyre when you cannot continue.",
+  },
+  {
+    key: "refueling",
+    img: "/images/service-refuel.jpg",
+    alt: "Refueling",
+    title: "Refueling",
+    desc: "Roadside assistance when your vehicle has unexpectedly run out of fuel.",
+  },
+];
+
+const homepageServices = [...services, ...additionalServices];
 
 const whyChoose = [
   {
@@ -276,7 +295,7 @@ export default function Home() {
               </p>
             </div>
             <div className="grid gap-7 md:grid-cols-2 lg:grid-cols-3">
-              {services.map((service) => {
+              {homepageServices.map((service) => {
                 const href = getServiceNavigation(service.key).href;
                 return (
                   <article key={service.title} className="dark-service-card fade-up flex flex-col">

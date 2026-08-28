@@ -11,49 +11,6 @@ export const metadata: Metadata = {
   description: `${business.name} covers motorways, city streets, rural roads and long-distance transport across the region. Call ${business.phoneDisplay} for local roadside recovery.`,
 };
 
-const areas = [
-  {
-    name: "Motorway Recovery",
-    desc: "Safe, fast response to breakdowns and accidents on motorways and dual carriageways, day or night.",
-    icon: "fa-solid fa-road",
-  },
-  {
-    name: "City Centre",
-    desc: "Quick roadside support in busy city streets, car parks and one-way systems.",
-    icon: "fa-solid fa-city",
-  },
-  {
-    name: "Residential Areas",
-    desc: "Recovery from driveways, side streets and housing estates across the region.",
-    icon: "fa-solid fa-house",
-  },
-  {
-    name: "Rural & Off-Road",
-    desc: "Winch-out and recovery support on country lanes, farm tracks and difficult ground.",
-    icon: "fa-solid fa-tree",
-  },
-  {
-    name: "Industrial Estates",
-    desc: "Support for fleet vehicles and commercial breakdowns at industrial and business parks.",
-    icon: "fa-solid fa-warehouse",
-  },
-  {
-    name: "Retail Parks",
-    desc: "Fast callouts to shopping centres, retail parks and public car parks.",
-    icon: "fa-solid fa-cart-shopping",
-  },
-  {
-    name: "Long Distance",
-    desc: "Planned vehicle transport across longer distances, for dealership transfers or personal moves.",
-    icon: "fa-solid fa-route",
-  },
-  {
-    name: "Out-of-Hours",
-    desc: "24/7 availability for nights, weekends and holidays — breakdowns don't keep office hours, so neither do we.",
-    icon: "fa-solid fa-clock",
-  },
-];
-
 const faqs = [
   {
     q: "Do you cover motorways?",
@@ -65,7 +22,7 @@ const faqs = [
   },
   {
     q: "What if I am not sure whether you cover my area?",
-    a: "Just call or WhatsApp us with your location. We will confirm straight away whether we can reach you and give you an idea of response time.",
+    a: "Call or WhatsApp us with your location and vehicle details. We will confirm whether assistance is available for your location and circumstances.",
   },
   {
     q: "Do you charge more for areas further away?",
@@ -89,10 +46,10 @@ export default function AreasPage() {
               <i className="fa-solid fa-map-location-dot flex-shrink-0"></i> Areas Covered
             </p>
             <h1 className="mb-3 text-3xl leading-tight font-extrabold sm:mb-5 sm:text-4xl lg:text-6xl">
-              Recovery Across the Region
+              Recovery Areas from Our Darlington Base
             </h1>
             <p className="mx-auto mb-5 max-w-2xl text-base text-white/80 sm:mb-8 sm:text-lg">
-              We provide roadside recovery, towing and breakdown support across a wide regional coverage area — motorways, city streets and rural roads alike.
+              Explore our car recovery, breakdown recovery, vehicle recovery and roadside assistance coverage across nearby cities, towns and main roads.
             </p>
             <div className="flex flex-col justify-center gap-3 sm:flex-row sm:gap-4">
               <a href={business.tel} className="btn-glow rounded-full bg-red px-5 py-3.5 text-center text-sm font-bold text-white transition sm:px-7 sm:py-4 sm:text-base">
@@ -106,30 +63,6 @@ export default function AreasPage() {
               >
                 <i className="fa-brands fa-whatsapp mr-2"></i>Message on WhatsApp
               </a>
-            </div>
-          </div>
-        </section>
-
-        {/* Areas Grid */}
-        <section className="bg-slate-50 py-20">
-          <div className="container-site">
-            <div className="fade-up mx-auto mb-12 max-w-3xl text-center">
-              <p className="mb-3 font-bold text-red">Where We Operate</p>
-              <h2 className="mb-4 text-3xl font-extrabold text-navy lg:text-4xl">Situations We Cover</h2>
-              <p className="text-navy/70">
-                We regularly respond to calls across a wide range of locations and situations. Not sure if we can reach you? Just call us.
-              </p>
-            </div>
-            <div className="grid gap-7 md:grid-cols-2 lg:grid-cols-3">
-              {areas.map((area) => (
-                <div key={area.name} className="fade-up rounded-3xl border border-navy/10 bg-white p-7">
-                  <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-red/10">
-                    <i className={`${area.icon} text-xl text-red`}></i>
-                  </div>
-                  <h3 className="mb-2 text-xl font-bold text-navy">{area.name}</h3>
-                  <p className="text-sm leading-7 text-navy/70">{area.desc}</p>
-                </div>
-              ))}
             </div>
           </div>
         </section>
@@ -284,7 +217,7 @@ export default function AreasPage() {
           <div className="container-site fade-up">
             <h2 className="mb-5 text-3xl font-extrabold lg:text-5xl">Not Sure If We Cover You?</h2>
             <p className="mb-8 text-lg text-white/90">
-              Give us a call or send a WhatsApp with your location and we will confirm straight away.
+              Call or send a WhatsApp with your location and vehicle details so we can confirm whether assistance is available.
             </p>
             <div className="flex flex-col justify-center gap-4 sm:flex-row">
               <a href={business.tel} className="rounded-full bg-navy px-8 py-4 font-bold text-white transition hover:bg-navy-light">
