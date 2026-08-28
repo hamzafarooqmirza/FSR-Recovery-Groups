@@ -4,8 +4,8 @@ import { Footer } from "@/components/Footer";
 import { AreaPageLayout, type AreaPageContent } from "@/components/AreaPage";
 import { business } from "@/data/business";
 
-const title = "Car Recovery Darlington | 24/7 Local Breakdown Recovery | FSR Recovery Group";
-const description = "FSR Recovery Group is based in Darlington, providing 24/7 local vehicle recovery, roadside assistance and accident recovery across the town. Call now for fast help.";
+const title = "Car Recovery Darlington | 24/7 Emergency Vehicle Recovery & Towing | FSR Recovery Group";
+const description = "FSR Recovery Group is a Darlington-based car recovery, breakdown recovery and roadside assistance company. 24 hour car recovery Darlington-wide. Call +44 7888 502989.";
 const path = "/areas/darlington";
 
 export const metadata: Metadata = {
@@ -18,26 +18,26 @@ export const metadata: Metadata = {
 const content: AreaPageContent = {
   category: "city",
   eyebrow: "Darlington",
-  h1: "Local Vehicle Recovery in Darlington",
-  heroIntro: "FSR Recovery Group is based right here in Darlington, giving us some of the fastest response times anywhere in our coverage area for breakdowns, accidents and roadside emergencies.",
+  h1: "24/7 Emergency Car Recovery Darlington",
+  heroIntro: "Need car recovery in Darlington right now? FSR Recovery Group is genuinely based in the town, on Gladstone Street, providing 24/7 emergency vehicle recovery, breakdown recovery, roadside assistance and towing service to drivers across Darlington.",
   heroImage: "/images/gallery-3.jpg",
   heroImageAlt: "FSR Recovery Group vehicle attending a breakdown in Darlington",
-  badges: ["Local Darlington Base", "Available 24/7", "Cars & Vans"],
-  introHeading: "Darlington's Local Recovery Specialist",
+  badges: ["Based in Darlington", "Available 24/7", "Cars & Vans"],
+  introHeading: "A Recovery Company Genuinely Based in Darlington",
   introParagraphs: [
-    "Being based at 135 Gladstone St in Darlington means we know the town well — from the pedestrianised town centre and Cornmill shopping area to the retail parks along Yarm Road and the residential streets around Cockerton, Harrowgate Hill and Eastbourne.",
-    "We also cover the A1(M) and A66 junctions that serve Darlington, along with the roads connecting to Middleton St George, Hurworth and the surrounding villages, so wherever in the Darlington area your vehicle has broken down, help isn't far away.",
-    "Because our base is in Darlington itself, we're often able to respond faster here than in areas further from our depot — call us with your location and vehicle details and we'll confirm how quickly we can be with you.",
+    "Unlike recovery operators dispatching from further afield, FSR Recovery Group is based at 135 Gladstone St, right here in Darlington. We know the town well — from the pedestrianised town centre and Cornmill shopping area to the retail parks along Yarm Road and the residential streets around Cockerton, Harrowgate Hill, Haughton-le-Skerne and Eastbourne.",
+    "Our local base also means we're familiar with the villages that surround Darlington, including Middleton St George and Hurworth, and with the main roads that carry traffic into and out of the town. Wherever you've broken down in the Darlington area, tell us your exact location and vehicle details and we'll confirm how we can help.",
+    "Because vehicle recovery and towing service in Darlington is what we do every day, you're calling a team that actually operates from the town — not a call centre routing your job to whichever driver happens to be nearest.",
   ],
-  localHighlightsTitle: "Darlington Coverage Highlights",
+  localHighlightsTitle: "Darlington Areas We Cover",
   localHighlights: [
     "Darlington town centre and the Cornmill area",
-    "A1(M) and A66 junctions serving Darlington",
-    "Cockerton, Harrowgate Hill and Eastbourne",
-    "Middleton St George, Hurworth and surrounding villages",
+    "Cockerton and Harrowgate Hill",
+    "Haughton-le-Skerne and Eastbourne",
+    "Middleton St George and Hurworth",
   ],
-  situationsTitle: "Breakdown Situations We Handle Across Darlington",
-  situationsIntro: "As our home town, Darlington is where we respond to the widest range of everyday breakdown and recovery situations.",
+  situationsTitle: "Breakdown & Recovery Situations We Handle in Darlington",
+  situationsIntro: "As our home town, Darlington is where we respond to the widest range of everyday breakdown, accident and recovery situations.",
   situations: [
     { icon: "fa-solid fa-gears", title: "Mechanical Failure", text: "Engine or mechanical faults anywhere in Darlington are recovered promptly given our local base." },
     { icon: "fa-solid fa-car-battery", title: "Flat Battery & Jumpstarts", text: "A flat battery in a Darlington car park or driveway is one of our most common local callouts." },
@@ -46,23 +46,41 @@ const content: AreaPageContent = {
     { icon: "fa-solid fa-car-burst", title: "Accident Recovery", text: "Following a collision anywhere in Darlington, we provide fast, careful vehicle recovery." },
     { icon: "fa-solid fa-truck-monster", title: "Winch Out", text: "Stuck on soft ground or in a ditch near Darlington's rural edges? We can winch your vehicle free." },
   ],
-  faqs: [
-    { question: "Are you actually based in Darlington?", answer: "Yes. FSR Recovery Group is based at 135 Gladstone St, Darlington DL3 6LB, which allows us to respond quickly to breakdowns across the town." },
-    { question: "How quickly can you reach me in Darlington?", answer: "Because our base is in Darlington, response times here are typically among the fastest in our coverage area. Call us with your location for an accurate estimate." },
-    { question: "Do you cover villages just outside Darlington?", answer: "Yes, including Middleton St George, Hurworth and other surrounding villages — call us to confirm coverage for your specific location." },
-    { question: "Can you recover my car from a Darlington retail park?", answer: "Yes, we regularly assist drivers whose vehicles have broken down at retail parks and car parks around Darlington." },
-    { question: "Do you provide recovery on the A1(M) and A66 near Darlington?", answer: "Yes, we cover both the A1(M) and A66 as they pass Darlington, in addition to town centre and residential callouts." },
-    { question: "Is your Darlington service available on weekends and at night?", answer: "Yes, we operate 24/7 in Darlington, including overnight, weekends and public holidays." },
-    { question: "Can I visit your Darlington address for a recovery?", answer: "We operate as a mobile recovery service — call or WhatsApp us with your location and vehicle details rather than visiting in person." },
-    { question: "Do you recover vans as well as cars in Darlington?", answer: "Yes, we can recover suitable light vans in addition to cars — tell us your vehicle details when you contact us." },
+  roadsIntro: "Darlington sits at the crossing point of several major routes. We provide car recovery and breakdown recovery on all of the following roads in addition to the town itself.",
+  majorRoads: [
+    { label: "A1(M)", href: "/areas/a1m", text: "The A1(M) passes close to Darlington, linking the town to Scotch Corner, Catterick and Durham. We recover vehicles from the carriageway and hard shoulder near Darlington's junctions." },
+    { label: "A66", href: "/areas/a66", text: "The A66 runs from Darlington toward Barnard Castle and on across the Pennines. We're familiar with this route's exposed sections and respond to breakdowns along it." },
+    { label: "A68", href: "/areas/a68", text: "Heading toward Bishop Auckland and the Durham Dales, the A68 is another route we cover for drivers travelling to and from Darlington." },
+    { label: "A167", href: "/areas/a167", text: "The old Great North Road runs through Darlington itself on its way to Durham, making it one of our most regular recovery routes." },
   ],
-  ctaHeading: "Local Recovery, Right Here in Darlington",
-  ctaText: "As a Darlington-based recovery service, we're ready to respond quickly. Call or WhatsApp us now with your location.",
+  whatWeNeedIntro: "Calling us with a few key details helps us get to you faster and arrive prepared for the job.",
+  whatWeNeed: [
+    "Your exact location in or around Darlington",
+    "Your vehicle's make, model and registration",
+    "A brief description of the problem",
+    "Whether the vehicle is safe to approach and can be moved",
+    "Your preferred destination — home, a garage, or another address",
+    "How many passengers are with you and any specific requirements",
+  ],
+  servicesHeading: "Recovery Services in Darlington",
+  servicesIntro: "From breakdown recovery to vehicle transport, every service below is available to drivers across Darlington. Select a service to find out more.",
+  faqs: [
+    { question: "Is FSR Recovery Group actually based in Darlington?", answer: "Yes. We're based at 135 Gladstone St, Darlington DL3 6LB — not a call centre or a depot in another town — which is why we know the local roads and areas well." },
+    { question: "Do you offer 24 hour car recovery in Darlington?", answer: "Yes. FSR Recovery Group provides 24/7 emergency car recovery in Darlington, including nights, weekends and public holidays." },
+    { question: "What's the difference between roadside assistance and car recovery?", answer: "Roadside assistance covers problems that can often be resolved at your location, such as a flat battery or spare tyre. Car recovery means towing or transporting your vehicle when it can't be fixed at the roadside. We provide both across Darlington." },
+    { question: "Do you cover Cockerton, Harrowgate Hill and Haughton-le-Skerne?", answer: "Yes. These are all areas of Darlington we cover regularly, along with Eastbourne, Middleton St George and Hurworth." },
+    { question: "Can you tow my car to a garage in Darlington?", answer: "Yes. Once your vehicle is recovered we can take it to an agreed garage in Darlington, your home address, or another suitable destination." },
+    { question: "Do you provide car recovery on the A1(M), A66, A68 or A167 near Darlington?", answer: "Yes. We regularly recover vehicles from all four of these routes as they pass through or near Darlington." },
+    { question: "How much does car recovery cost in Darlington?", answer: "Cost depends on your location, vehicle and what's needed. Call or WhatsApp us with the details and we'll confirm a clear quote before we start." },
+    { question: "Can I visit your Darlington address for a recovery?", answer: "We operate as a mobile recovery service — call or WhatsApp us with your location and vehicle details rather than visiting in person." },
+  ],
+  ctaHeading: "24/7 Car Recovery in Darlington, When You Need It",
+  ctaText: "As a Darlington-based recovery service, we're ready to respond across the town and surrounding villages. Call or WhatsApp us now with your location.",
   nearbyAreas: [
     { label: "Durham", href: "/areas/durham" },
+    { label: "Bishop Auckland", href: "/areas/bishop-auckland" },
     { label: "Catterick", href: "/areas/catterick" },
-    { label: "Barnard Castle", href: "/areas/barnard-castle" },
-    { label: "A1(M) Recovery", href: "/areas/a1m" },
+    { label: "Northallerton", href: "/areas/northallerton" },
   ],
 };
 

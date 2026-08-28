@@ -13,6 +13,7 @@ import {
 } from "@/components/ServicePage";
 
 export type NearbyLink = { label: string; href: string };
+export type RoadLink = { label: string; href: string; text: string };
 
 export type AreaPageContent = {
   category: "city" | "road";
@@ -29,6 +30,17 @@ export type AreaPageContent = {
   situationsTitle: string;
   situationsIntro: string;
   situations: ServiceCard[];
+  /** Optional "Major Roads Around X" section with links to dedicated road pages. Omit to skip the section. */
+  roadsTitle?: string;
+  roadsIntro?: string;
+  majorRoads?: RoadLink[];
+  /** Optional "What We Need When You Call" checklist section. Omit to skip the section. */
+  whatWeNeedTitle?: string;
+  whatWeNeedIntro?: string;
+  whatWeNeed?: string[];
+  /** Overrides for the shared services grid heading/intro; falls back to generic copy if omitted. */
+  servicesHeading?: string;
+  servicesIntro?: string;
   faqs: ServiceFaq[];
   ctaHeading: string;
   ctaText: string;
@@ -156,14 +168,58 @@ export function AreaPageLayout({ content, path }: { content: AreaPageContent; pa
         </div>
       </section>
 
+      {/* Major roads */}
+      {content.majorRoads && content.majorRoads.length > 0 && (
+        <section className="bg-slate-50 py-16 sm:py-24">
+          <div className="container-site">
+            <SectionHeading
+              eyebrow="Key Routes"
+              title={content.roadsTitle ?? `Major Roads Around ${content.eyebrow}`}
+              intro={content.roadsIntro}
+            />
+            <div className="grid gap-5 md:grid-cols-2">
+              {content.majorRoads.map((road) => (
+                <Link key={road.href} href={road.href} className="fade-up flex flex-col rounded-3xl border border-navy/10 bg-white p-6 transition hover:-translate-y-1 hover:border-red/40 hover:shadow-lg">
+                  <span className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-red/10 text-xl text-red"><i className="fa-solid fa-road" /></span>
+                  <h3 className="mb-2 text-xl font-bold text-navy">{road.label}</h3>
+                  <p className="leading-7 text-navy/70">{road.text}</p>
+                  <span className="mt-5 inline-block text-sm font-bold text-red">{road.label} recovery <i className="fa-solid fa-arrow-right ml-1" /></span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* What we need when you call */}
+      {content.whatWeNeed && content.whatWeNeed.length > 0 && (
+        <section className="py-16 sm:py-24">
+          <div className="container-site">
+            <SectionHeading
+              eyebrow="Before You Call"
+              title={content.whatWeNeedTitle ?? "What We Need When You Call"}
+              intro={content.whatWeNeedIntro}
+            />
+            <div className="mx-auto grid max-w-4xl gap-4 sm:grid-cols-2">
+              {content.whatWeNeed.map((item, i) => (
+                <div key={item} className="fade-up flex items-start gap-4 rounded-2xl border border-navy/10 bg-slate-50 p-5">
+                  <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-red/10 text-sm font-extrabold text-red">{i + 1}</span>
+                  <span className="pt-1 leading-7 text-navy/75">{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Services grid */}
       <section className="bg-navy py-16 text-white sm:py-24">
         <div className="container-site">
           <div className="[&_h2]:!text-white [&_p:last-child]:!text-white/70">
             <SectionHeading
               eyebrow="Full Range of Support"
-              title="Recovery Services Available in This Area"
-              intro="Every service below is available to drivers in this area. Select a service to find out more."
+              title={content.servicesHeading ?? "Recovery Services Available in This Area"}
+              intro={content.servicesIntro ?? "Every service below is available to drivers in this area. Select a service to find out more."}
             />
           </div>
           <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
