@@ -4,7 +4,6 @@ import { GoogleTagManager } from "@next/third-parties/google";
 import "./globals.css";
 import { FloatingButtons } from "@/components/FloatingButtons";
 import { ScrollAnimations } from "@/components/ScrollAnimations";
-import { IconFontLoader } from "@/components/IconFontLoader";
 import { business } from "@/data/business";
 
 const poppins = Poppins({
@@ -35,12 +34,11 @@ export default function RootLayout({
     <html lang="en" className={`${poppins.variable} ${inter.variable}`}>
       <GoogleTagManager gtmId="GTM-MQ4STV94" />
       <head>
-        <noscript>
-          <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-          />
-        </noscript>
+        <link rel="preload" as="image" href="/images/service-roadside.webp" />
+        {/* Self-hosted icon font (solid + brands only) — same-origin to avoid the
+            extra DNS/TLS round trip a CDN link adds on slow connections. */}
+        {/* eslint-disable-next-line @next/next/no-css-tags */}
+        <link rel="stylesheet" href="/fonts/fontawesome/fontawesome.min.css" />
       </head>
       <body className="pb-14 antialiased sm:pb-0">
         <noscript>
@@ -51,7 +49,6 @@ export default function RootLayout({
             style={{ display: "none", visibility: "hidden" }}
           />
         </noscript>
-        <IconFontLoader />
         <ScrollAnimations />
         <FloatingButtons />
         {children}
