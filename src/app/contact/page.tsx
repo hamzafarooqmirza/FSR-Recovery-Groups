@@ -211,6 +211,10 @@ export default function ContactPage() {
                 <a href="/areas" className="mt-4 inline-block text-sm font-bold text-red">
                   See full coverage area →
                 </a>
+                <br />
+                <a href="/services" className="mt-2 inline-block text-sm font-bold text-red">
+                  Browse our recovery services →
+                </a>
               </div>
             </div>
           </div>
