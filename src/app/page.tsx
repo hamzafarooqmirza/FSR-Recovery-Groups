@@ -68,19 +68,29 @@ const services = [
     desc: "Battery-starting assistance for suitable cars and light vans that will not start.",
   },
   {
-    key: "winch-out",
-    img: "/images/service-winch.jpg",
-    alt: "Winch Out",
-    title: "Winch Out",
-    desc: "Controlled vehicle extraction for suitable vehicles stuck on difficult ground.",
-  },
-  {
     key: "accident-emergency-assistance",
     img: "/images/service-accident.jpg",
     alt: "Accident Emergency Assistance",
     title: "Accident Emergency Assistance",
     desc: "Vehicle recovery support following a collision or road traffic incident.",
   },
+  {
+    key: "winch-out",
+    img: "/images/service-winch.jpg",
+    alt: "Winch Out",
+    title: "Winch Out",
+    desc: "Stuck in mud, sand, or a ditch? Our winches pull your vehicle free without further damage.",
+  },
+  {
+    key: "vehicle-transporting",
+    img: "/images/service-transport.jpg",
+    alt: "Vehicle Transporting",
+    title: "Vehicle Transporting",
+    desc: "Careful vehicle transportation between suitable agreed collection and delivery points.",
+  },
+];
+
+const additionalServices = [
   {
     key: "changing-spare-tyre",
     img: "/images/service-tyre.jpg",
@@ -95,14 +105,9 @@ const services = [
     title: "Refueling",
     desc: "Roadside assistance when your vehicle has unexpectedly run out of fuel.",
   },
-  {
-    key: "vehicle-transporting",
-    img: "/images/service-transport.jpg",
-    alt: "Vehicle Transporting",
-    title: "Vehicle Transporting",
-    desc: "Careful vehicle transportation between suitable agreed collection and delivery points.",
-  },
 ];
+
+const homepageServices = [...services, ...additionalServices];
 
 const whyChoose = [
   {
@@ -289,12 +294,12 @@ export default function Home() {
                 situation you might face on the road.
               </p>
             </div>
-            <div className="grid gap-7 md:grid-cols-2 lg:grid-cols-4">
-              {services.map((service) => {
+            <div className="grid gap-7 md:grid-cols-2 lg:grid-cols-3">
+              {homepageServices.map((service) => {
                 const href = getServiceNavigation(service.key).href;
                 return (
                   <article key={service.title} className="dark-service-card fade-up flex flex-col">
-                    <Link href={href} aria-label={`View ${service.title}`}>
+                    <Link href={href}>
                       <Image
                         src={service.img}
                         alt={service.alt}
