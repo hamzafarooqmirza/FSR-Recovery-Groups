@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Logo } from "./Logo";
+import { business } from "@/data/business";
 
 export function Footer() {
   return (
@@ -14,7 +15,7 @@ export function Footer() {
               24 hours a day, every day of the year.
             </p>
             <div className="flex gap-3">
-              <a href="https://wa.me/447888502989" target="_blank" rel="noopener noreferrer" className="social-icon">
+              <a href={business.whatsapp} target="_blank" rel="noopener noreferrer" className="social-icon">
                 <i className="fab fa-whatsapp"></i>
               </a>
               <a href="#" className="social-icon">
@@ -32,17 +33,17 @@ export function Footer() {
             <div className="space-y-1">
               <div className="contact-info-item">
                 <i className="fa-solid fa-phone mt-0.5 shrink-0 text-red"></i>
-                <a href="tel:+447888502989" className="transition hover:text-white">+44 7888 502989</a>
+                <a href={business.tel} className="transition hover:text-white">{business.phoneDisplay}</a>
               </div>
               <div className="contact-info-item">
                 <i className="fa-solid fa-envelope mt-0.5 shrink-0 text-red"></i>
-                <a href="mailto:Fsrbreakdownrecovery@gmail.com" className="break-all text-sm transition hover:text-white">
-                  Fsrbreakdownrecovery@gmail.com
+                <a href={`mailto:${business.email}`} className="break-all text-sm transition hover:text-white">
+                  {business.email}
                 </a>
               </div>
               <div className="contact-info-item">
                 <i className="fa-solid fa-location-dot mt-0.5 shrink-0 text-red"></i>
-                <span>Covering the region, 24/7</span>
+                <span>{business.addressFull}</span>
               </div>
               <div className="contact-info-item">
                 <i className="fa-solid fa-clock mt-0.5 shrink-0 text-red"></i>
@@ -81,7 +82,7 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className="flex flex-col items-center justify-between gap-3 border-t border-white/10 pt-6 text-sm text-slate-500 sm:flex-row">
-          <p>{`© ${new Date().getFullYear()} FSR Recovery Groups — Roadside Recovery & Towing Services. All rights reserved.`}</p>
+          <p>{`© ${new Date().getFullYear()} ${business.name} — Roadside Recovery & Towing Services. All rights reserved.`}</p>
           <div className="flex gap-5">
             <Link href="/privacy-policy" className="transition hover:text-red">Privacy Policy</Link>
             <Link href="/terms-and-conditions" className="transition hover:text-red">Terms &amp; Conditions</Link>
