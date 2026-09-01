@@ -4,8 +4,8 @@ import { Footer } from "@/components/Footer";
 import { AreaPageLayout, type AreaPageContent } from "@/components/AreaPage";
 import { business } from "@/data/business";
 
-const title = "Vehicle Recovery Catterick | 24/7 Breakdown Recovery | FSR Recovery Group";
-const description = "FSR Recovery Group provides 24/7 vehicle recovery and roadside assistance in Catterick and Catterick Garrison, including the A1(M). Call now for fast help.";
+const title = "Reliable Car Recovery in Catterick for Quick Help";
+const description = "Get back on the road fast with our Catterick car recovery services. Quick response and reliable support!";
 const path = "/areas/catterick";
 
 export const metadata: Metadata = {

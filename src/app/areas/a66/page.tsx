@@ -4,8 +4,8 @@ import { Footer } from "@/components/Footer";
 import { AreaPageLayout, type AreaPageContent } from "@/components/AreaPage";
 import { business } from "@/data/business";
 
-const title = "A66 Breakdown Recovery | 24/7 Trans-Pennine Recovery | FSR Recovery Group";
-const description = "FSR Recovery Group provides 24/7 breakdown recovery on the A66 between Middlesbrough, Darlington, Barnard Castle and the Cumbrian border. Call now for fast help.";
+const title = "Need A66 Car Recovery? We're Here to Help!";
+const description = "Experience top-notch A66 car recovery with our expert team. Reach out today for immediate support!";
 const path = "/areas/a66";
 
 export const metadata: Metadata = {

@@ -4,8 +4,8 @@ import { Footer } from "@/components/Footer";
 import { AreaPageLayout, type AreaPageContent } from "@/components/AreaPage";
 import { business } from "@/data/business";
 
-const title = "A167 Breakdown Recovery | 24/7 Recovery Darlington to Newcastle | FSR Recovery Group";
-const description = "FSR Recovery Group provides 24/7 breakdown recovery on the A167 between Darlington, Durham, Chester-le-Street and Newcastle. Call now for fast roadside recovery.";
+const title = "Experience Quick A167 Breakdown Recovery Solutions Today";
+const description = "Quick A167 breakdown recovery service for peace of mind. Contact us now for immediate assistance!";
 const path = "/areas/a167";
 
 export const metadata: Metadata = {

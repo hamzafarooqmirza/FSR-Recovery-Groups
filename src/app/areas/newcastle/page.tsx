@@ -4,8 +4,8 @@ import { Footer } from "@/components/Footer";
 import { AreaPageLayout, type AreaPageContent } from "@/components/AreaPage";
 import { business } from "@/data/business";
 
-const title = "Car & Vehicle Recovery Newcastle | 24/7 Breakdown Recovery | FSR Recovery Group";
-const description = "Need vehicle recovery in Newcastle? FSR Recovery Group provides 24/7 breakdown recovery, roadside assistance and accident recovery across Newcastle upon Tyne. Call now.";
+const title = "Swift Newcastle Vehicle Recovery at Your Service";
+const description = "Experience peace of mind with our professional vehicle recovery in Newcastle. Call us for immediate support!";
 const path = "/areas/newcastle";
 
 export const metadata: Metadata = {

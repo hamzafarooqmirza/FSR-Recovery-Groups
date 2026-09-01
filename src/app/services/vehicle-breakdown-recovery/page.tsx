@@ -7,8 +7,8 @@ import { CardGrid, ContactButtons, Eyebrow, FaqAccordion, RelatedCard, SectionHe
 import { getServiceNavigation } from "@/data/services";
 import { business } from "@/data/business";
 
-const title = "24/7 Vehicle Breakdown Recovery | FSR Recovery Group";
-const description = "Need 24/7 vehicle breakdown recovery? FSR Recovery Group provides professional car and van recovery in Darlington and surrounding areas. Call now.";
+const title = "Facing a Breakdown? We Provide Quick Recovery Solutions";
+const description = "Get back on the road faster with our reliable vehicle breakdown recovery. Reach out for support today!";
 const path = "/services/vehicle-breakdown-recovery";
 
 export const metadata: Metadata = {

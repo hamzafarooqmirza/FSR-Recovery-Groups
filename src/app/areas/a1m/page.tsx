@@ -4,8 +4,8 @@ import { Footer } from "@/components/Footer";
 import { AreaPageLayout, type AreaPageContent } from "@/components/AreaPage";
 import { business } from "@/data/business";
 
-const title = "A1(M) Breakdown Recovery | 24/7 Motorway Recovery | FSR Recovery Group";
-const description = "FSR Recovery Group provides 24/7 breakdown recovery on the A1(M) through County Durham and North Yorkshire, from Scotch Corner to Durham. Call now for fast help.";
+const title = "A1(M) Breakdown Recovery Services Available Now";
+const description = "Need speedy A1(M) breakdown recovery? Our experts can help you get back on the road quickly. Contact us!";
 const path = "/areas/a1m";
 
 export const metadata: Metadata = {

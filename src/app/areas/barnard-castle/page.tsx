@@ -4,8 +4,8 @@ import { Footer } from "@/components/Footer";
 import { AreaPageLayout, type AreaPageContent } from "@/components/AreaPage";
 import { business } from "@/data/business";
 
-const title = "Vehicle Recovery Barnard Castle | 24/7 Breakdown Recovery | FSR Recovery Group";
-const description = "FSR Recovery Group provides 24/7 vehicle recovery and roadside assistance in Barnard Castle and Teesdale, including the A67 and A66. Call now for fast help.";
+const title = "Fast Breakdown Recovery Services Barnard Castle";
+const description = "Need quick breakdown recovery in Barnard Castle? We're here to help you get back on the road fast!";
 const path = "/areas/barnard-castle";
 
 export const metadata: Metadata = {

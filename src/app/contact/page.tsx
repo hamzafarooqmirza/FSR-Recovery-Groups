@@ -5,8 +5,8 @@ import { QuoteForm } from "@/components/QuoteForm";
 import { business } from "@/data/business";
 
 export const metadata: Metadata = {
-  title: "Contact Us",
-  description: `Contact ${business.name} by phone or WhatsApp for roadside help, towing, breakdown recovery and more across the region. Call ${business.phoneDisplay}.`,
+  title: { absolute: "Need Assistance? Contact FSR Recovery Group Now" },
+  description: "Looking for recovery assistance? FSR Recovery Group is ready to help. Contact us today for guidance.",
 };
 
 const contactMethods = [

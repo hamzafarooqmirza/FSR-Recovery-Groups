@@ -4,8 +4,8 @@ import { Footer } from "@/components/Footer";
 import { AreaPageLayout, type AreaPageContent } from "@/components/AreaPage";
 import { business } from "@/data/business";
 
-const title = "Vehicle Recovery Northallerton | 24/7 Breakdown Recovery | FSR Recovery Group";
-const description = "FSR Recovery Group provides 24/7 breakdown recovery and roadside assistance across Northallerton and the surrounding area, including the A167 and A684. Call now.";
+const title = "Quick Car Recovery in Northallerton – Call Us Today!";
+const description = "Experience hassle-free car recovery in Northallerton. We're ready to help—call for immediate assistance!";
 const path = "/areas/northallerton";
 
 export const metadata: Metadata = {

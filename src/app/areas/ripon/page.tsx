@@ -4,8 +4,8 @@ import { Footer } from "@/components/Footer";
 import { AreaPageLayout, type AreaPageContent } from "@/components/AreaPage";
 import { business } from "@/data/business";
 
-const title = "Car Recovery Ripon | 24/7 Breakdown Recovery | FSR Recovery Group";
-const description = "FSR Recovery Group provides 24/7 vehicle recovery and roadside assistance in Ripon and the surrounding North Yorkshire area, including the A61 and A1(M). Call now.";
+const title = "Ripon's Trusted Car Recovery Service - Get Help Now";
+const description = "Experience trustworthy car recovery in Ripon. We’re ready to assist you anytime, anywhere. Reach out today!";
 const path = "/areas/ripon";
 
 export const metadata: Metadata = {

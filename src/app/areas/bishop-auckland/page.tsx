@@ -4,8 +4,8 @@ import { Footer } from "@/components/Footer";
 import { AreaPageLayout, type AreaPageContent } from "@/components/AreaPage";
 import { business } from "@/data/business";
 
-const title = "Vehicle Recovery Bishop Auckland | 24/7 Breakdown Recovery | FSR Recovery Group";
-const description = "FSR Recovery Group provides 24/7 vehicle recovery and roadside assistance in Bishop Auckland and the surrounding area, including the A688 and A68. Call now.";
+const title = "Fast Vehicle Recovery in Bishop Auckland – Call Now!";
+const description = "Choose our dependable vehicle recovery in Bishop Auckland for stress-free assistance. Reach out today!";
 const path = "/areas/bishop-auckland";
 
 export const metadata: Metadata = {

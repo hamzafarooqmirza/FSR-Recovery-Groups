@@ -4,8 +4,8 @@ import { Footer } from "@/components/Footer";
 import { AreaPageLayout, type AreaPageContent } from "@/components/AreaPage";
 import { business } from "@/data/business";
 
-const title = "A19 Breakdown Recovery | 24/7 Motorway-Standard Recovery | FSR Recovery Group";
-const description = "FSR Recovery Group provides 24/7 breakdown recovery on the A19 between Teesside, Sunderland, Peterlee and Thirsk. Call now for fast, reliable roadside recovery.";
+const title = "Need A19 Breakdown Recovery? We’re Here to Help!";
+const description = "Need A19 breakdown recovery? Our experts are ready to assist you anytime, anywhere. Contact us today!";
 const path = "/areas/a19";
 
 export const metadata: Metadata = {

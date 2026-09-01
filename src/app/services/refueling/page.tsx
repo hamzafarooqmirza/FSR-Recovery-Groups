@@ -7,8 +7,8 @@ import { CardGrid, ContactButtons, Eyebrow, FaqAccordion, RelatedCard, SectionHe
 import { getServiceNavigation } from "@/data/services";
 import { business } from "@/data/business";
 
-const title = "Emergency Refueling Service | FSR Recovery Group";
-const description = "Run out of fuel? FSR Recovery Group provides 24/7 emergency refueling and roadside fuel assistance in Darlington and surrounding areas. Call now.";
+const title = "Need Fuel? Emergency Delivery to Your Location!";
+const description = "Stay fueled and safe—request emergency fuel delivery for immediate assistance. We’re here to help!";
 const path = "/services/refueling";
 
 export const metadata: Metadata = {

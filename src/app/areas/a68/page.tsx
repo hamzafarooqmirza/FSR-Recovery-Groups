@@ -4,8 +4,8 @@ import { Footer } from "@/components/Footer";
 import { AreaPageLayout, type AreaPageContent } from "@/components/AreaPage";
 import { business } from "@/data/business";
 
-const title = "A68 Breakdown Recovery | 24/7 Recovery Bishop Auckland to the Pennines | FSR Recovery Group";
-const description = "FSR Recovery Group provides 24/7 breakdown recovery on the A68 through Bishop Auckland and the County Durham Pennine fringe. Call now for fast roadside recovery.";
+const title = "A68 Breakdown Recovery Services Available 24/7";
+const description = "Fast and reliable A68 breakdown recovery services at your fingertips. Contact us for immediate assistance!";
 const path = "/areas/a68";
 
 export const metadata: Metadata = {
