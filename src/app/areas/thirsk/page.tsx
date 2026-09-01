@@ -4,8 +4,8 @@ import { Footer } from "@/components/Footer";
 import { AreaPageLayout, type AreaPageContent } from "@/components/AreaPage";
 import { business } from "@/data/business";
 
-const title = "Car Recovery Thirsk | 24/7 Breakdown Recovery North Yorkshire | FSR Recovery Group";
-const description = "FSR Recovery Group provides 24/7 vehicle recovery and roadside assistance in Thirsk and the surrounding North Yorkshire area, including the A19 and A61. Call now.";
+const title = "Need Car Recovery in Thirsk? We've Got You Covered";
+const description = "Experience fast car recovery in Thirsk. Get back on the road quickly! Call us now for immediate assistance.";
 const path = "/areas/thirsk";
 
 export const metadata: Metadata = {

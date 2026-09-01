@@ -4,8 +4,8 @@ import { Footer } from "@/components/Footer";
 import { AreaPageLayout, type AreaPageContent } from "@/components/AreaPage";
 import { business } from "@/data/business";
 
-const title = "Vehicle Recovery Middlesbrough | 24/7 Breakdown Recovery | FSR Recovery Group";
-const description = "FSR Recovery Group provides 24/7 breakdown recovery, roadside assistance and accident recovery across Middlesbrough and Teesside, including the A66 and A19. Call now.";
+const title = "Middlesbrough Car Recovery Services Available 24/7";
+const description = "Experience quick car recovery in Middlesbrough anytime! Contact us for reliable assistance on the road.";
 const path = "/areas/middlesbrough";
 
 export const metadata: Metadata = {

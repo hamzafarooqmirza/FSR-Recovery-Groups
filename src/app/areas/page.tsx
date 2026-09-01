@@ -7,8 +7,8 @@ import { business } from "@/data/business";
 import { cityAreas, roadAreas } from "@/data/areas";
 
 export const metadata: Metadata = {
-  title: "Areas Covered",
-  description: `${business.name} covers motorways, city streets, rural roads and long-distance transport across the region. Call ${business.phoneDisplay} for local roadside recovery.`,
+  title: { absolute: "Explore Our Vehicle Recovery Service Areas Today" },
+  description: "Get quick and efficient vehicle recovery services nearby. Reach out to us and get back on the road!",
 };
 
 const faqs = [

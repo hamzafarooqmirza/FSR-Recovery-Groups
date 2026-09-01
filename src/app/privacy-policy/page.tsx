@@ -5,8 +5,8 @@ import { Footer } from "@/components/Footer";
 import { business } from "@/data/business";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy",
-  description: "Read the FSR Recovery Group privacy policy, including how we collect, use and protect personal information when providing recovery services.",
+  title: { absolute: "Understand Our Privacy Policy Today" },
+  description: "Your privacy matters. Learn how FSR Recovery Group safeguards your information and data practices.",
   alternates: { canonical: "/privacy-policy" },
 };
 

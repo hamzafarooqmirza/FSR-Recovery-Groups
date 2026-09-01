@@ -7,9 +7,8 @@ import { getServiceNavigation } from "@/data/services";
 import { business } from "@/data/business";
 
 export const metadata: Metadata = {
-  title: "Services",
-  description:
-    "24/7 vehicle breakdown recovery, roadside assistance, jumpstarts, winch out, accident recovery, tyre changes, refueling and vehicle transporting across the region.",
+  title: { absolute: "Expert Vehicle Recovery Services You Can Trust" },
+  description: "Need fast help? Our professional vehicle recovery services are just a call away. Get assistance today!",
 };
 
 const services = [

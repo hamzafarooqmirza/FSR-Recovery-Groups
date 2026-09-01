@@ -7,8 +7,8 @@ import { CardGrid, ContactButtons, Eyebrow, FaqAccordion, RelatedCard, SectionHe
 import { getServiceNavigation } from "@/data/services";
 import { business } from "@/data/business";
 
-const title = "Vehicle Transport Service | FSR Recovery Group";
-const description = "Need a vehicle moved safely? FSR Recovery Group provides professional car and vehicle transport services in Darlington and surrounding areas. Call now.";
+const title = "Reliable Transport Services for Your Vehicle Needs";
+const description = "Wondering how to ship your vehicle? Our transportation solutions make the process seamless and easy.";
 const path = "/services/vehicle-transporting";
 
 export const metadata: Metadata = {

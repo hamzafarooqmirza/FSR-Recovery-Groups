@@ -7,8 +7,8 @@ import { CardGrid, ContactButtons, Eyebrow, FaqAccordion, RelatedCard, SectionHe
 import { getServiceNavigation } from "@/data/services";
 import { business } from "@/data/business";
 
-const title = "24/7 Roadside Assistance | FSR Recovery Group";
-const description = "Need roadside assistance? FSR Recovery Group provides 24/7 roadside help for common vehicle problems in Darlington and surrounding areas. Call now.";
+const title = "Reliable Roadside Assistance When You Need It";
+const description = "Don’t let car troubles ruin your day. Reach out for immediate roadside assistance and get back on track!";
 const path = "/services/roadside-assistance";
 
 export const metadata: Metadata = {

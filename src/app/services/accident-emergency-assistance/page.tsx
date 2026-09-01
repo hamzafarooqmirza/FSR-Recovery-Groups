@@ -7,8 +7,8 @@ import { CardGrid, ContactButtons, Eyebrow, FaqAccordion, RelatedCard, SectionHe
 import { getServiceNavigation } from "@/data/services";
 import { business } from "@/data/business";
 
-const title = "Accident Emergency Assistance | FSR Recovery Group";
-const description = "Need help after a road accident? FSR Recovery Group provides 24/7 accident emergency assistance and vehicle recovery in Darlington and surrounding areas.";
+const title = "Accident Recovery Service for Quick Support";
+const description = "Get immediate assistance with our accident recovery service. We’re here to help you every step of the way!";
 const path = "/services/accident-emergency-assistance";
 
 export const metadata: Metadata = {

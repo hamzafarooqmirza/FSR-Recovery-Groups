@@ -7,8 +7,8 @@ import { CardGrid, ContactButtons, Eyebrow, FaqAccordion, RelatedCard, SectionHe
 import { getServiceNavigation } from "@/data/services";
 import { business } from "@/data/business";
 
-const title = "Spare Tyre Change Service | FSR Recovery Group";
-const description = "Flat tyre? FSR Recovery Group provides 24/7 spare tyre change assistance for drivers in Darlington and surrounding areas. Call for roadside help.";
+const title = "Fast Roadside Tyre Change Assistance Available";
+const description = "Stuck with a flat tyre? Our roadside assistance offers quick tyre changes wherever you are. Call now!";
 const path = "/services/changing-spare-tyre";
 
 export const metadata: Metadata = {

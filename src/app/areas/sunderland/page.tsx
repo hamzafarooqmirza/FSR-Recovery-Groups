@@ -4,8 +4,8 @@ import { Footer } from "@/components/Footer";
 import { AreaPageLayout, type AreaPageContent } from "@/components/AreaPage";
 import { business } from "@/data/business";
 
-const title = "Vehicle Recovery Sunderland | 24/7 Breakdown Recovery | FSR Recovery Group";
-const description = "FSR Recovery Group provides 24/7 breakdown recovery and roadside assistance across Sunderland and Wearside, including the A19 and A1231. Call now for fast help.";
+const title = "Sunderland Car Recovery Services You Can Trust";
+const description = "Stranded? Our Sunderland car recovery team provides fast, reliable assistance anytime. Contact us now!";
 const path = "/areas/sunderland";
 
 export const metadata: Metadata = {

@@ -4,8 +4,8 @@ import { Footer } from "@/components/Footer";
 import { AreaPageLayout, type AreaPageContent } from "@/components/AreaPage";
 import { business } from "@/data/business";
 
-const title = "Breakdown Recovery Peterlee | 24/7 Vehicle Recovery | FSR Recovery Group";
-const description = "FSR Recovery Group provides 24/7 vehicle breakdown recovery and roadside assistance across Peterlee and East Durham, including the A19 and A182. Call now.";
+const title = "Reliable Car Recovery in Peterlee, Anytime, Anywhere";
+const description = "Experiencing vehicle trouble in Peterlee? Trust our expert recovery team for quick and reliable support.";
 const path = "/areas/peterlee";
 
 export const metadata: Metadata = {

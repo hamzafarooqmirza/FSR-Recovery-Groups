@@ -5,8 +5,8 @@ import { Footer } from "@/components/Footer";
 import { business } from "@/data/business";
 
 export const metadata: Metadata = {
-  title: "Terms & Conditions",
-  description: "Read the terms and conditions that apply when requesting roadside assistance, vehicle recovery or transport from FSR Recovery Group.",
+  title: { absolute: "FSR Recovery Group: Terms & Conditions Guide" },
+  description: "Explore the terms and conditions of FSR Recovery Group. Get clarity on your agreement with us now.",
   alternates: { canonical: "/terms-and-conditions" },
 };
 

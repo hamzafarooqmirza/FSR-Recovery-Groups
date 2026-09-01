@@ -4,8 +4,8 @@ import { Footer } from "@/components/Footer";
 import { AreaPageLayout, type AreaPageContent } from "@/components/AreaPage";
 import { business } from "@/data/business";
 
-const title = "Vehicle Recovery Durham | 24/7 Breakdown & Roadside Assistance | FSR Recovery Group";
-const description = "FSR Recovery Group provides 24/7 car and vehicle recovery across Durham City and County Durham, including the A1(M) and A167. Call now for fast roadside assistance.";
+const title = "Reliable Car Recovery in Durham for Emergencies";
+const description = "Get back on the road with our trusted Durham car recovery services. Accessible help is just a call away!";
 const path = "/areas/durham";
 
 export const metadata: Metadata = {

@@ -7,8 +7,8 @@ import { CardGrid, ContactButtons, Eyebrow, FaqAccordion, RelatedCard, SectionHe
 import { getServiceNavigation } from "@/data/services";
 import { business } from "@/data/business";
 
-const title = "Vehicle Winch Out Service | FSR Recovery Group";
-const description = "Vehicle stuck in mud or difficult ground? FSR Recovery Group provides professional 24/7 winch-out and vehicle extraction assistance. Call now.";
+const title = "Vehicle Winch Recovery Solutions for Every Situation";
+const description = "Ensure safe and efficient vehicle recovery with expert-recommended winches. Find the right fit for you!";
 const path = "/services/winch-out";
 
 export const metadata: Metadata = {

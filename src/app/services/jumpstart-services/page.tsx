@@ -6,8 +6,8 @@ import { Footer } from "@/components/Footer";
 import { CardGrid, ContactButtons, Eyebrow, FaqAccordion, RelatedCard, SectionHeading, type ServiceCard, type ServiceFaq } from "@/components/ServicePage";
 import { business } from "@/data/business";
 
-const title = "24/7 Jumpstart Services | FSR Recovery Group";
-const description = "Car won't start? FSR Recovery Group provides 24/7 jumpstart and flat battery assistance for cars and suitable vans in Darlington and nearby areas.";
+const title = "Fast Car Jump Start Service Available Now";
+const description = "Stuck with a dead battery? Our professional jump start service is just a call away. Reach out for assistance!";
 const path = "/services/jumpstart-services";
 
 export const metadata: Metadata = {

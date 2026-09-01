@@ -4,8 +4,8 @@ import { Footer } from "@/components/Footer";
 import { AreaPageLayout, type AreaPageContent } from "@/components/AreaPage";
 import { business } from "@/data/business";
 
-const title = "Car Recovery Darlington | 24/7 Emergency Vehicle Recovery & Towing | FSR Recovery Group";
-const description = "FSR Recovery Group is a Darlington-based car recovery, breakdown recovery and roadside assistance company. 24 hour car recovery Darlington-wide. Call +44 7888 502989.";
+const title = "Need Car Recovery? Trust Our Darlington Team";
+const description = "Stuck on the road? Our experienced team provides expert car recovery in Darlington. Reach out now!";
 const path = "/areas/darlington";
 
 export const metadata: Metadata = {

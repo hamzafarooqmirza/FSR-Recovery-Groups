@@ -4,8 +4,8 @@ import { Footer } from "@/components/Footer";
 import { AreaPageLayout, type AreaPageContent } from "@/components/AreaPage";
 import { business } from "@/data/business";
 
-const title = "A67 Breakdown Recovery | 24/7 Recovery Darlington to Barnard Castle | FSR Recovery Group";
-const description = "FSR Recovery Group provides 24/7 breakdown recovery on the A67 between Darlington and Barnard Castle. Call now for fast, local roadside recovery.";
+const title = "A67 Car Recovery Services Near You";
+const description = "In need of A67 car recovery? Our professionals are ready to help you 24/7. Reach out for assistance!";
 const path = "/areas/a67";
 
 export const metadata: Metadata = {

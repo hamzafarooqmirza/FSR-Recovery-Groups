@@ -6,8 +6,8 @@ import { Footer } from "@/components/Footer";
 import { business } from "@/data/business";
 
 export const metadata: Metadata = {
-  title: "About Us",
-  description: `Learn about ${business.name} — 15+ years providing dependable 24/7 vehicle recovery, roadside assistance and transport across the region.`,
+  title: { absolute: "FSR Recovery Group: Expert Guidance for Your Needs" },
+  description: "Experience effective recovery strategies with FSR Recovery Group. Join us and change your future now!",
 };
 
 const values = [
