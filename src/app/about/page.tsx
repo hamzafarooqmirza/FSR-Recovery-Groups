@@ -8,6 +8,7 @@ import { business } from "@/data/business";
 export const metadata: Metadata = {
   title: { absolute: "FSR Recovery Group: Expert Guidance for Your Needs" },
   description: "Experience effective recovery strategies with FSR Recovery Group. Join us and change your future now!",
+  alternates: { canonical: "/about" },
 };
 
 const values = [

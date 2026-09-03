@@ -9,6 +9,7 @@ import { business } from "@/data/business";
 export const metadata: Metadata = {
   title: { absolute: "Expert Vehicle Recovery Services You Can Trust" },
   description: "Need fast help? Our professional vehicle recovery services are just a call away. Get assistance today!",
+  alternates: { canonical: "/services" },
 };
 
 const services = [
