@@ -11,6 +11,7 @@ import { getServiceNavigation } from "@/data/services";
 export const metadata: Metadata = {
   title: { absolute: "Emergency Breakdown Recovery Darlington Available Now" },
   description: "Get reliable 24/7 breakdown recovery in Darlington. We're here to help—call us for immediate assistance!",
+  alternates: { canonical: "/" },
   openGraph: {
     images: [
       {

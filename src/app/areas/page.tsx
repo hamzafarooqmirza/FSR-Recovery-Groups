@@ -9,6 +9,7 @@ import { cityAreas, roadAreas } from "@/data/areas";
 export const metadata: Metadata = {
   title: { absolute: "Explore Our Vehicle Recovery Service Areas Today" },
   description: "Get quick and efficient vehicle recovery services nearby. Reach out to us and get back on the road!",
+  alternates: { canonical: "/areas" },
 };
 
 const faqs = [

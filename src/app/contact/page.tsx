@@ -7,6 +7,7 @@ import { business } from "@/data/business";
 export const metadata: Metadata = {
   title: { absolute: "Need Assistance? Contact FSR Recovery Group Now" },
   description: "Looking for recovery assistance? FSR Recovery Group is ready to help. Contact us today for guidance.",
+  alternates: { canonical: "/contact" },
 };
 
 const contactMethods = [
