@@ -122,7 +122,7 @@ export default function Home() {
                 <span>FSR Recovery Group</span>
               </p>
               <h1 className="mb-4 text-3xl leading-tight font-extrabold sm:mb-6 sm:text-4xl lg:text-6xl">
-                Car Recovery Darlington – 24/7 Breakdown &amp; Towing
+                Car Recovery Darlington – <span className="text-red">24/7 Breakdown &amp; Towing</span>
               </h1>
               <p className="mb-6 text-base text-white/80 sm:mb-8 sm:text-lg">
                 Need urgent car recovery in Darlington? FSR Recovery Group provides 24/7 vehicle
