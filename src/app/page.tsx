@@ -119,14 +119,15 @@ export default function Home() {
             <div className="fade-up">
               <p className="mb-5 inline-flex flex-wrap items-center gap-2 rounded-full border border-red/30 bg-red/15 px-3 py-1.5 text-xs font-semibold text-red-100 sm:px-4 sm:py-2 sm:text-sm">
                 <i className="fa-solid fa-bolt flex-shrink-0"></i>
-                <span>Available for urgent roadside enquiries</span>
+                <span>FSR Recovery Group</span>
               </p>
               <h1 className="mb-4 text-3xl leading-tight font-extrabold sm:mb-6 sm:text-4xl lg:text-6xl">
-                FSR Recovery Groups <span className="block text-red">24/7 Breakdown &amp; Towing</span>
+                Car Recovery Darlington – 24/7 Breakdown &amp; Towing
               </h1>
               <p className="mb-6 text-base text-white/80 sm:mb-8 sm:text-lg">
-                Need help at the roadside? We provide fast, reliable vehicle recovery, towing,
-                accident assistance and vehicle transport across the region.
+                Need urgent car recovery in Darlington? FSR Recovery Group provides 24/7 vehicle
+                recovery, breakdown recovery, roadside assistance and towing across Darlington and
+                surrounding areas.
               </p>
               <div className="mb-7 flex flex-col gap-3 sm:mb-10 sm:flex-row sm:gap-4">
                 <a
