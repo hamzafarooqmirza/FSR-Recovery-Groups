@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { business } from "@/data/business";
 
 export type ServiceCard = { icon: string; title: string; text: string };
 export type ServiceStep = { number: string; title: string; text: string };
@@ -21,10 +22,10 @@ export function SectionHeading({ eyebrow, title, intro }: { eyebrow: string; tit
 export function ContactButtons({ callLabel = "Call Now", whatsappLabel = "WhatsApp for Recovery", dark = false }: { callLabel?: string; whatsappLabel?: string; dark?: boolean }) {
   return (
     <div className="flex flex-col gap-3 sm:flex-row">
-      <a href="tel:+447888502989" className={`btn-glow rounded-full px-6 py-3.5 text-center font-bold text-white transition ${dark ? "bg-red hover:bg-red-dark" : "bg-navy hover:bg-navy-light"}`}>
+      <a href={business.tel} className={`btn-glow rounded-full px-6 py-3.5 text-center font-bold text-white transition ${dark ? "bg-red hover:bg-red-dark" : "bg-navy hover:bg-navy-light"}`}>
         <i className="fa-solid fa-phone mr-2" />{callLabel}
       </a>
-      <a href="https://wa.me/447888502989" target="_blank" rel="noopener noreferrer" className="rounded-full bg-whatsapp px-6 py-3.5 text-center font-bold text-white transition hover:bg-green-600">
+      <a href={business.whatsapp} target="_blank" rel="noopener noreferrer" className="rounded-full bg-whatsapp px-6 py-3.5 text-center font-bold text-white transition hover:bg-green-600">
         <i className="fa-brands fa-whatsapp mr-2" />{whatsappLabel}
       </a>
     </div>

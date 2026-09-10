@@ -27,32 +27,32 @@ export const serviceNavigation: ServiceNavigationItem[] = [
   {
     key: "winch-out",
     label: "Winch Out",
-    href: "/services#winch-out",
-    available: false,
+    href: "/services/winch-out",
+    available: true,
   },
   {
     key: "accident-emergency-assistance",
     label: "Accident Emergency Assistance",
-    href: "/services#accident-emergency-assistance",
-    available: false,
+    href: "/services/accident-emergency-assistance",
+    available: true,
   },
   {
     key: "changing-spare-tyre",
     label: "Changing Spare Tyre",
-    href: "/services#changing-spare-tyre",
-    available: false,
+    href: "/services/changing-spare-tyre",
+    available: true,
   },
   {
     key: "refueling",
     label: "Refueling",
-    href: "/services#refueling",
-    available: false,
+    href: "/services/refueling",
+    available: true,
   },
   {
     key: "vehicle-transporting",
     label: "Vehicle Transporting",
-    href: "/services#vehicle-transporting",
-    available: false,
+    href: "/services/vehicle-transporting",
+    available: true,
   },
 ];
 
