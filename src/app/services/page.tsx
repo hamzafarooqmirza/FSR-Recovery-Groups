@@ -228,7 +228,7 @@ export default function ServicesPage() {
               {services.map((service) => (
                 <article id={service.key} key={service.title} className="service-card fade-up group flex scroll-mt-28 flex-col overflow-hidden rounded-3xl border border-navy/10 bg-white">
                   <div className="relative overflow-hidden">
-                    <Image src={service.img} alt={service.alt} width={900} height={600} className="h-44 w-full object-cover transition duration-500 group-hover:scale-105" />
+                    <Image src={service.img} alt={service.alt} width={1200} height={900} className="h-52 w-full object-cover transition duration-500 group-hover:scale-105" />
                     <div className="absolute inset-0 bg-gradient-to-t from-navy/60 via-transparent to-transparent" />
                     <div className="absolute bottom-4 left-5 flex h-11 w-11 items-center justify-center rounded-xl border border-white/30 bg-white/95 shadow-lg">
                       <i className={`${service.icon} text-lg text-red`}></i>

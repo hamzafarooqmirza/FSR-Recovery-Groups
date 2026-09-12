@@ -273,8 +273,8 @@ export default function Home() {
                   <Image
                     src={service.img}
                     alt={service.alt}
-                    width={900}
-                    height={600}
+                    width={1200}
+                    height={900}
                     className="h-52 w-full rounded-t-3xl object-cover"
                   />
                   <div className="flex flex-1 flex-col p-6">
