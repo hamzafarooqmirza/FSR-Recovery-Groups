@@ -114,7 +114,7 @@ export default function Home() {
 
       <main>
         {/* ── Hero ── */}
-        <section className="hero-bg text-white">
+        <section className="home-hero-bg text-white">
           <div className="container-site grid items-center gap-8 py-10 sm:py-16 lg:grid-cols-[1.15fr_.85fr] lg:gap-12 lg:py-28">
             <div className="fade-up">
               <p className="mb-5 inline-flex flex-wrap items-center gap-2 rounded-full border border-red/30 bg-red/15 px-3 py-1.5 text-xs font-semibold text-red-100 sm:px-4 sm:py-2 sm:text-sm">
@@ -201,10 +201,10 @@ export default function Home() {
           <div className="container-site grid items-center gap-12 lg:grid-cols-2">
             <div className="fade-up order-2 lg:order-1">
               <Image
-                src="/images/about-tow.jpg"
-                alt="FSR Recovery Groups tow truck loading a vehicle"
-                width={1615}
-                height={1080}
+                src="/images/home-transport-2.jpg"
+                alt="FSR Recovery Groups vehicle transported safely on a flatbed"
+                width={1200}
+                height={900}
                 className="min-h-[360px] w-full rounded-3xl object-cover shadow-2xl"
               />
             </div>
@@ -365,10 +365,10 @@ export default function Home() {
             </div>
             <div className="fade-up">
               <Image
-                src="/images/gallery-2.jpg"
-                alt="FSR Recovery technician winching a vehicle free"
-                width={2000}
-                height={1333}
+                src="/images/home-roadside-2.jpg"
+                alt="FSR Recovery technician providing roadside assistance"
+                width={1200}
+                height={900}
                 className="min-h-[380px] w-full rounded-3xl object-cover shadow-2xl"
               />
             </div>
