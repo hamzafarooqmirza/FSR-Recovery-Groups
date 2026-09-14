@@ -3,6 +3,7 @@ import { Poppins, Inter } from "next/font/google";
 import "./globals.css";
 import { FloatingButtons } from "@/components/FloatingButtons";
 import { ScrollAnimations } from "@/components/ScrollAnimations";
+import { CookieConsentProvider } from "@/components/CookieConsent";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -41,7 +42,7 @@ export default function RootLayout({
       <body className="pb-14 antialiased sm:pb-0">
         <ScrollAnimations />
         <FloatingButtons />
-        {children}
+        <CookieConsentProvider>{children}</CookieConsentProvider>
       </body>
     </html>
   );

@@ -4,6 +4,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { QuoteForm } from "@/components/QuoteForm";
 import { ReviewsSlider } from "@/components/ReviewsSlider";
+import { GoogleMapEmbed } from "@/components/GoogleMapEmbed";
 
 export const metadata: Metadata = {
   openGraph: {
@@ -383,16 +384,7 @@ export default function Home() {
               <h2 className="text-3xl font-extrabold text-navy lg:text-4xl">FSR Recovery Group Location</h2>
             </div>
             <div className="fade-up w-full overflow-hidden rounded-3xl border border-navy/10 shadow-2xl" style={{ height: "420px" }}>
-              <iframe
-                src={GBP_MAP_SRC}
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="strict-origin-when-cross-origin"
-                title="FSR Recovery Group Location"
-              />
+              <GoogleMapEmbed src={GBP_MAP_SRC} title="FSR Recovery Group Location" />
             </div>
           </div>
         </section>
